@@ -17,8 +17,6 @@ const react_1 = require("@chakra-ui/react");
 const chakraTheme_ts_1 = require("../chakraTheme.ts");
 const Provider = (_a) => {
     var { children } = _a, props = __rest(_a, ["children"]);
-    return (<react_1.ChakraProvider theme={chakraTheme_ts_1.theme} {...props}>
-      {children}
-    </react_1.ChakraProvider>);
+    return (React.createElement(react_1.ChakraProvider, Object.assign({ theme: chakraTheme_ts_1.theme }, props), children));
 };
 exports.Provider = Provider;

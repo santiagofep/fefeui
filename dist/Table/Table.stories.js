@@ -15,7 +15,7 @@ exports.Default = {
             size: "md",
         },
         headings: [
-            { title: "Name", key: "name", rightAddon: <md_1.MdPerson size={15}/> },
+            { title: "Name", key: "name", rightAddon: React.createElement(md_1.MdPerson, { size: 15 }) },
             { title: "Age", key: "age" },
             { title: "Email", key: "email" },
         ],
