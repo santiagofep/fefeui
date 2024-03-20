@@ -18,7 +18,7 @@ interface TextFieldButtonProps {
   placeholder?: string;
 }
 
-const TextFieldButton: React.FC<TextFieldButtonProps> = ({
+export const TextFieldButton: React.FC<TextFieldButtonProps> = ({
   label,
   buttonLabel,
   onSubmit,
@@ -47,5 +47,3 @@ const TextFieldButton: React.FC<TextFieldButtonProps> = ({
     </Flex>
   );
 };
-
-export default TextFieldButton;

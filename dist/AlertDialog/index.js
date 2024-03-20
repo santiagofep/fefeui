@@ -23,6 +23,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.AlertDialog = void 0;
 const React = __importStar(require("react"));
 const react_1 = require("@chakra-ui/react");
 const AlertDialog = ({ isOpen, onClose, title = "Dialog", description = "Dialog body", confirmLabel = "Confirm", cancelLabel = "Cancel", leastDestructiveRef, onConfirm, }) => {
@@ -36,4 +37,4 @@ const AlertDialog = ({ isOpen, onClose, title = "Dialog", description = "Dialog 
                     React.createElement(react_1.Button, { onClick: onClose, colorScheme: "red" }, cancelLabel),
                     React.createElement(react_1.Button, { onClick: onConfirm }, confirmLabel))))));
 };
-exports.default = AlertDialog;
+exports.AlertDialog = AlertDialog;

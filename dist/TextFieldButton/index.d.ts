@@ -6,5 +6,5 @@ interface TextFieldButtonProps {
     isLoading?: boolean;
     placeholder?: string;
 }
-declare const TextFieldButton: React.FC<TextFieldButtonProps>;
-export default TextFieldButton;
+export declare const TextFieldButton: React.FC<TextFieldButtonProps>;
+export {};

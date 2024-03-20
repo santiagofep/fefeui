@@ -9,5 +9,5 @@ interface AlertDialogProps {
     cancelLabel: string;
     leastDestructiveRef: React.RefObject<HTMLElement>;
 }
-declare const AlertDialog: React.FC<AlertDialogProps>;
-export default AlertDialog;
+export declare const AlertDialog: React.FC<AlertDialogProps>;
+export {};

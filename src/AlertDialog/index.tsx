@@ -23,7 +23,7 @@ interface AlertDialogProps {
   leastDestructiveRef: React.RefObject<HTMLElement>;
 }
 
-const AlertDialog: React.FC<AlertDialogProps> = ({
+export const AlertDialog: React.FC<AlertDialogProps> = ({
   isOpen,
   onClose,
   title = "Dialog",
@@ -55,5 +55,3 @@ const AlertDialog: React.FC<AlertDialogProps> = ({
     </ChakraAlertDialog>
   );
 };
-
-export default AlertDialog;

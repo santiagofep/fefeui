@@ -2,7 +2,7 @@ import * as React from "react";
 
 import { StoryObj, Meta } from "@storybook/react";
 
-import AlertDialog from "./index";
+import { AlertDialog } from "./index";
 
 const meta: Meta<typeof AlertDialog> = {
   component: AlertDialog,

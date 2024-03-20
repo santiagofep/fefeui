@@ -23,6 +23,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.TextFieldButton = void 0;
 const React = __importStar(require("react"));
 const react_1 = require("react");
 const react_2 = require("@chakra-ui/react");
@@ -35,4 +36,4 @@ const TextFieldButton = ({ label, buttonLabel, onSubmit, isLoading, placeholder,
                 React.createElement(react_2.Input, { placeholder: placeholder, onChange: (e) => setValue(e.target.value) }),
                 React.createElement(react_2.Button, { isLoading: isLoading, onClick: () => onSubmit(value), ml: "0.5rem" }, buttonLabel)))));
 };
-exports.default = TextFieldButton;
+exports.TextFieldButton = TextFieldButton;

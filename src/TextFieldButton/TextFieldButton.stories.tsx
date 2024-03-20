@@ -2,7 +2,7 @@ import * as React from "react";
 
 import type { Meta, StoryObj } from "@storybook/react";
 
-import TextFieldButton from "./index";
+import { TextFieldButton } from "./index";
 
 const meta: Meta<typeof TextFieldButton> = {
   component: TextFieldButton,
