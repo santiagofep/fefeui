@@ -24,11 +24,17 @@ export const WithVideo: Story = {
     onClose: () => console.log("closed"),
     button1: {
       label: "Learn More",
-      onClick: () => console.log("clicked"),
+      buttonProps: {
+        as: "a",
+        href: "https://www.google.com",
+        target: "_blank",
+      },
     },
     button2: {
       label: "Got it!",
-      onClick: () => console.log("clicked"),
+      buttonProps: {
+        onClick: () => console.log("clicked"),
+      },
     },
     video: {
       url: "https://www.youtube.com/embed/_flqrzcGhrE?si=owU7OBckmCVeHNvW",
@@ -44,11 +50,17 @@ export const WithoutVideo: Story = {
     onClose: () => console.log("closed"),
     button1: {
       label: "Learn More",
-      onClick: () => console.log("clicked"),
+      buttonProps: {
+        as: "a",
+        href: "https://www.google.com",
+        target: "_blank",
+      },
     },
     button2: {
       label: "Got it!",
-      onClick: () => console.log("clicked"),
+      buttonProps: {
+        onClick: () => console.log("clicked"),
+      },
     },
   },
 };

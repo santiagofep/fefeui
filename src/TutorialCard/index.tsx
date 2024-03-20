@@ -23,11 +23,11 @@ export interface TutorialCardProps {
   onClose?: () => void;
   button1?: {
     label: string;
-    onClick: () => void;
+    buttonProps: any;
   };
   button2?: {
     label: string;
-    onClick: () => void;
+    buttonProps: any;
   };
 }
 
@@ -55,12 +55,12 @@ export const TutorialCard: React.FC<TutorialCardProps> = ({
           {button1 || button2 ? (
             <HStack>
               {button1 && (
-                <Button onClick={button1.onClick} size={"sm"}>
+                <Button size={"sm"} {...button1.buttonProps}>
                   {button1.label}
                 </Button>
               )}
               {button2 && (
-                <Button onClick={button2.onClick} size="sm">
+                <Button size="sm" {...button2.buttonProps}>
                   {button2.label}
                 </Button>
               )}
