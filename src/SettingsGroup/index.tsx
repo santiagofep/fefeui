@@ -5,7 +5,7 @@ import { Heading, VStack, Text } from "@chakra-ui/react";
 
 export interface SettingsGroupProps {
   title: string;
-  description: string;
+  description?: string;
   children?: React.ReactNode;
   borderTop?: boolean;
   borderBottom?: boolean;
@@ -28,14 +28,16 @@ export const SettingsGroup: React.FC<SettingsGroupProps> = ({
       align={"stretch"}
       borderTop={borderTop ? "1px solid" : ""}
       borderBottom={borderBottom ? "1px solid" : ""}
-      borderColor={"gray.300"}
-      paddingY={3}
+      borderColor={"gray.200"}
+      paddingY={5}
       spacing={1}
       id={settingsGroupId}
     >
       <Heading size="md">{title}</Heading>
-      <Text>{description}</Text>
-      {children}
+      {description && <Text>{description}</Text>}
+      <VStack align={"stretch"} paddingY={4} spacing={5}>
+        {children}
+      </VStack>
     </VStack>
   );
 };

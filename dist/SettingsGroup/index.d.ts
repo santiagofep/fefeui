@@ -1,7 +1,7 @@
 import * as React from "react";
 export interface SettingsGroupProps {
     title: string;
-    description: string;
+    description?: string;
     children?: React.ReactNode;
     borderTop?: boolean;
     borderBottom?: boolean;

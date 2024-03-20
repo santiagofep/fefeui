@@ -10,7 +10,7 @@ import {
 } from "@chakra-ui/react";
 
 interface SelectProps {
-  label: string;
+  label?: string;
   options: { value: string; label: string }[];
   value: string;
   helperText?: string;

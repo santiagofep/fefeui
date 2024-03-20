@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 // Import your component here
 import { SettingsGroup } from "./index";
+import { Select } from "../Select";
 
 const meta: Meta<typeof SettingsGroup> = {
   component: SettingsGroup,
@@ -28,5 +29,29 @@ export const BorderBottom: Story = {
     description:
       "Streamline your shopping with personalized product recommendations and swift checkout.",
     borderBottom: true,
+    children: (
+      <>
+        <Select
+          label="Default currency"
+          value="USD"
+          onChange={() => {}}
+          options={[
+            { label: "USD", value: "USD" },
+            { label: "EUR", value: "EUR" },
+            { label: "GBP", value: "GBP" },
+          ]}
+        />
+        <Select
+          label="Default currency"
+          value="USD"
+          onChange={() => {}}
+          options={[
+            { label: "USD", value: "USD" },
+            { label: "EUR", value: "EUR" },
+            { label: "GBP", value: "GBP" },
+          ]}
+        />
+      </>
+    ),
   },
 };
