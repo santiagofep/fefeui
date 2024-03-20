@@ -30,8 +30,13 @@ interface TableProps {
 
 export const Table: React.FC<TableProps> = ({ headings, rows, tableProps }) => {
   return (
-    <ChakraTable {...tableProps}>
-      <Thead>
+    <ChakraTable
+      {...tableProps}
+      border={"1px solid"}
+      borderColor={"gray.200"}
+      size={"md"}
+    >
+      <Thead background={"gray.50"}>
         <tr>
           {headings.map((heading) => (
             <Th key={heading.key}>
