@@ -27,8 +27,8 @@ exports.Table = void 0;
 const React = __importStar(require("react"));
 const react_1 = require("@chakra-ui/react");
 const Table = ({ headings, rows, tableProps }) => {
-    return (React.createElement(react_1.Table, Object.assign({}, tableProps),
-        React.createElement(react_1.Thead, null,
+    return (React.createElement(react_1.Table, Object.assign({}, tableProps, { border: "1px solid", borderColor: "gray.200", size: "md" }),
+        React.createElement(react_1.Thead, { background: "gray.50" },
             React.createElement("tr", null, headings.map((heading) => (React.createElement(react_1.Th, { key: heading.key },
                 React.createElement(react_1.Flex, { alignItems: "center", align: heading.align },
                     heading.title,
