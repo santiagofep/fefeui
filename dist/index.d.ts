@@ -1,4 +1,5 @@
 export { AlertDialog } from "./AlertDialog";
+export { ChipInput } from "./ChipInput";
 export { Page } from "./Page";
 export { Select } from "./Select";
 export { SettingsGroup } from "./SettingsGroup";
