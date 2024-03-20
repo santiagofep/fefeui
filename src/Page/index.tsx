@@ -26,7 +26,7 @@ export const Page: React.FC<PageProps> = ({
   title,
   description,
   children,
-  maxWidth,
+  maxWidth = "container.xl",
   goBack,
 }) => {
   return (

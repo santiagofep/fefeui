@@ -6,3 +6,4 @@ type Story = StoryObj<typeof Select>;
 export declare const Default: Story;
 export declare const HelperText: Story;
 export declare const HelperTextError: Story;
+export declare const Normalized: Story;

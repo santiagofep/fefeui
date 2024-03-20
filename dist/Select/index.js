@@ -25,17 +25,54 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Select = void 0;
 const React = __importStar(require("react"));
-const react_1 = require("@chakra-ui/react");
-const Select = ({ label, options, value, helperText, onChange, isInvalid, emptyOption, }) => {
-    return (React.createElement(react_1.FormControl, { isInvalid: isInvalid },
-        label && React.createElement(react_1.FormLabel, null, label),
-        React.createElement(react_1.Select, { value: value, onChange: (e) => {
+const react_1 = require("react");
+const react_2 = require("@chakra-ui/react");
+const Select = ({ label, options, value, helperText, onChange, isInvalid, emptyOption, normalizeLabelSeparator, }) => {
+    const [useMonospace, setUseMonospace] = (0, react_1.useState)(false);
+    const normalizedOptions = React.useMemo(() => {
+        if (normalizeLabelSeparator) {
+            setUseMonospace(true);
+            return normalizeStringsinObjectArray([...options], "label", normalizeLabelSeparator);
+        }
+        return options;
+    }, [options]);
+    return (React.createElement(react_2.FormControl, { isInvalid: isInvalid },
+        label && React.createElement(react_2.FormLabel, null, label),
+        React.createElement(react_2.Select, { value: value, onChange: (e) => {
                 onChange(e.target.value);
             } },
             emptyOption && React.createElement("option", { value: "" }, emptyOption),
-            options.map((option, index) => {
-                return (React.createElement("option", { value: option.value, key: index }, option.label));
+            normalizedOptions.map((option, index) => {
+                return (React.createElement("option", { value: option.value, key: index, disabled: option.isDisabled, style: {
+                        fontFamily: useMonospace ? "monospace" : "inherit",
+                    } }, option.label));
             })),
-        helperText && React.createElement(react_1.FormHelperText, null, helperText)));
+        helperText && React.createElement(react_2.FormHelperText, null, helperText)));
 };
 exports.Select = Select;
+const normalizeStringsinObjectArray = (objectArray, key, separator = "|") => {
+    let maxLength = [];
+    for (let i = 0; i < objectArray.length; i++) {
+        // @ts-ignore
+        const item = objectArray[i][key];
+        const itemParts = item.split(separator);
+        for (let j = 0; j < itemParts.length; j++) {
+            if (maxLength[j] === undefined) {
+                maxLength[j] = 0;
+            }
+            maxLength[j] = Math.max(maxLength[j], itemParts[j].length);
+        }
+    }
+    for (let i = 0; i < objectArray.length; i++) {
+        // @ts-ignore
+        const item = objectArray[i][key];
+        const itemParts = item.split(separator);
+        for (let j = 0; j < itemParts.length; j++) {
+            itemParts[j] = itemParts[j].padEnd(maxLength[j], ".");
+        }
+        let newItem = itemParts.join(separator);
+        // @ts-ignore
+        objectArray[i][key] = newItem;
+    }
+    return objectArray;
+};

@@ -85,3 +85,28 @@ export const HelperTextError: Story = {
     ],
   },
 };
+
+export const Normalized: Story = {
+  args: {
+    label: "Select",
+    value: "",
+    helperText: "This is a helper text",
+    onChange: () => {},
+    normalizeLabelSeparator: "|",
+    options: [
+      {
+        value: "1",
+        label: "Option 1 | Option 1",
+      },
+      {
+        value: "2",
+        label: "Option 2222 | Option 2",
+      },
+      {
+        value: "3",
+        label: "Option 3 | Option 3",
+        isDisabled: true,
+      },
+    ],
+  },
+};

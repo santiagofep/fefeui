@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.HelperTextError = exports.HelperText = exports.Default = void 0;
+exports.Normalized = exports.HelperTextError = exports.HelperText = exports.Default = void 0;
 const index_1 = require("./index");
 const meta = {
     component: index_1.Select,
@@ -75,6 +75,30 @@ exports.HelperTextError = {
             {
                 value: "3",
                 label: "Option 3",
+            },
+        ],
+    },
+};
+exports.Normalized = {
+    args: {
+        label: "Select",
+        value: "",
+        helperText: "This is a helper text",
+        onChange: () => { },
+        normalizeLabelSeparator: "|",
+        options: [
+            {
+                value: "1",
+                label: "Option 1 | Option 1",
+            },
+            {
+                value: "2",
+                label: "Option 2222 | Option 2",
+            },
+            {
+                value: "3",
+                label: "Option 3 | Option 3",
+                isDisabled: true,
             },
         ],
     },

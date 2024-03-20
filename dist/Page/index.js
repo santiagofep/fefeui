@@ -27,7 +27,7 @@ exports.Page = void 0;
 const React = __importStar(require("react"));
 const react_1 = require("@chakra-ui/react");
 const md_1 = require("react-icons/md");
-const Page = ({ title, description, children, maxWidth, goBack, }) => {
+const Page = ({ title, description, children, maxWidth = "container.xl", goBack, }) => {
     return (React.createElement(react_1.Container, { maxWidth: maxWidth },
         React.createElement(react_1.VStack, { align: "stretch" },
             React.createElement(react_1.Flex, { alignItems: "center" },
