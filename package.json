@@ -1,19 +1,23 @@
 {
   "name": "fefeui",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "",
-  "main": "dist/index.js",
+  "main": "dist/bundle.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "build": "tsc"
+    "build": "webpack --mode production"
   },
   "keywords": [],
   "author": "Santiago Fernandez",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.24.1",
+    "@babel/preset-env": "^7.24.1",
+    "@babel/preset-react": "^7.24.1",
+    "@babel/preset-typescript": "^7.24.1",
     "@chromatic-com/storybook": "^1.2.23",
     "@storybook/addon-essentials": "^8.0.2",
     "@storybook/addon-interactions": "^8.0.2",
@@ -25,8 +29,12 @@
     "@storybook/react-webpack5": "^8.0.2",
     "@storybook/test": "^8.0.2",
     "@types/node": "^20.11.30",
+    "babel-loader": "^9.1.3",
     "storybook": "^8.0.2",
-    "typescript": "^5.4.2"
+    "typescript": "^5.4.2",
+    "webpack": "^5.90.3",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.4"
   },
   "dependencies": {
     "@chakra-ui/react": "^2.8.2",
