@@ -8,6 +8,7 @@ interface ChipInputProps {
     onAdd: (value: string) => void;
     onRemove: (value: string) => void;
     tagIcon?: React.ElementType;
+    helperText?: string;
 }
 export declare const ChipInput: React.FC<ChipInputProps>;
 export {};

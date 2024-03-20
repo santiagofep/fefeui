@@ -24,5 +24,6 @@ export const Default: Story = {
     onAdd: (value: string) => console.log(`onAdd: ${value}`),
     onRemove: (value: string) => console.log(`onRemove: ${value}`),
     tagIcon: MdTag,
+    helperText: "Helper text",
   },
 };

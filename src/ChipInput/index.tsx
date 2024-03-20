@@ -8,6 +8,9 @@ import {
   TagLabel,
   TagLeftIcon,
   TagRightIcon,
+  FormHelperText,
+  FormControl,
+  VStack,
 } from "@chakra-ui/react";
 import { MdClose } from "react-icons/md";
 
@@ -20,6 +23,7 @@ interface ChipInputProps {
   onAdd: (value: string) => void;
   onRemove: (value: string) => void;
   tagIcon?: React.ElementType;
+  helperText?: string;
 }
 
 export const ChipInput: React.FC<ChipInputProps> = ({
@@ -31,9 +35,10 @@ export const ChipInput: React.FC<ChipInputProps> = ({
   onAdd,
   onRemove,
   tagIcon,
+  helperText,
 }) => {
   return (
-    <>
+    <FormControl>
       <TextFieldButton
         label={label}
         buttonLabel={buttonLabel}
@@ -41,7 +46,7 @@ export const ChipInput: React.FC<ChipInputProps> = ({
         placeholder={placeholder}
         onSubmit={(value) => onAdd(value)}
       />
-      <HStack paddingY={"1rem"}>
+      <HStack marginY={2}>
         {values.map((value: string, index) => {
           return (
             <Tag key={index} size="lg">
@@ -56,6 +61,9 @@ export const ChipInput: React.FC<ChipInputProps> = ({
           );
         })}
       </HStack>
-    </>
+      {helperText && (
+        <FormHelperText marginY={"0"}>{helperText}</FormHelperText>
+      )}
+    </FormControl>
   );
 };

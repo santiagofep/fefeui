@@ -28,14 +28,15 @@ const React = __importStar(require("react"));
 const TextFieldButton_1 = require("../TextFieldButton");
 const react_1 = require("@chakra-ui/react");
 const md_1 = require("react-icons/md");
-const ChipInput = ({ label, buttonLabel, isLoading, placeholder, values, onAdd, onRemove, tagIcon, }) => {
-    return (React.createElement(React.Fragment, null,
+const ChipInput = ({ label, buttonLabel, isLoading, placeholder, values, onAdd, onRemove, tagIcon, helperText, }) => {
+    return (React.createElement(react_1.FormControl, null,
         React.createElement(TextFieldButton_1.TextFieldButton, { label: label, buttonLabel: buttonLabel, isLoading: isLoading, placeholder: placeholder, onSubmit: (value) => onAdd(value) }),
-        React.createElement(react_1.HStack, { paddingY: "1rem" }, values.map((value, index) => {
+        React.createElement(react_1.HStack, { marginY: 2 }, values.map((value, index) => {
             return (React.createElement(react_1.Tag, { key: index, size: "lg" },
                 tagIcon && React.createElement(react_1.TagLeftIcon, { as: tagIcon }),
                 React.createElement(react_1.TagLabel, null, value),
                 React.createElement(react_1.TagRightIcon, { as: md_1.MdClose, onClick: () => onRemove(value), cursor: "pointer" })));
-        }))));
+        })),
+        helperText && (React.createElement(react_1.FormHelperText, { marginY: "0" }, helperText))));
 };
 exports.ChipInput = ChipInput;

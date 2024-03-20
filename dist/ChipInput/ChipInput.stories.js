@@ -18,5 +18,6 @@ exports.Default = {
         onAdd: (value) => console.log(`onAdd: ${value}`),
         onRemove: (value) => console.log(`onRemove: ${value}`),
         tagIcon: md_1.MdTag,
+        helperText: "Helper text",
     },
 };
