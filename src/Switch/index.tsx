@@ -8,18 +8,17 @@ import {
   Flex,
   FormHelperText,
 } from "@chakra-ui/react";
-import { HelperText } from "../Select/Select.stories";
 
 interface SwitchProps {
   label: string;
-  checked: boolean;
+  isChecked: boolean;
   onChange: (newValue: boolean) => void;
   helperText?: string;
 }
 
 export const Switch: React.FC<SwitchProps> = ({
   label,
-  checked,
+  isChecked,
   onChange,
   helperText,
 }) => {
@@ -27,9 +26,9 @@ export const Switch: React.FC<SwitchProps> = ({
     <FormControl>
       <Flex alignItems={"center"}>
         <ChakraSwitch
-          isChecked={checked}
+          isChecked={isChecked}
           onChange={() => {
-            onChange(!checked);
+            onChange(!isChecked);
           }}
         />
         {label && (

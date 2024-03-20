@@ -1,7 +1,7 @@
 import * as React from "react";
 interface SwitchProps {
     label: string;
-    checked: boolean;
+    isChecked: boolean;
     onChange: (newValue: boolean) => void;
     helperText?: string;
 }

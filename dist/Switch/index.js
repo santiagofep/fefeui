@@ -26,11 +26,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Switch = void 0;
 const React = __importStar(require("react"));
 const react_1 = require("@chakra-ui/react");
-const Switch = ({ label, checked, onChange, helperText, }) => {
+const Switch = ({ label, isChecked, onChange, helperText, }) => {
     return (React.createElement(react_1.FormControl, null,
         React.createElement(react_1.Flex, { alignItems: "center" },
-            React.createElement(react_1.Switch, { isChecked: checked, onChange: () => {
-                    onChange(!checked);
+            React.createElement(react_1.Switch, { isChecked: isChecked, onChange: () => {
+                    onChange(!isChecked);
                 } }),
             label && (React.createElement(react_1.FormLabel, { marginLeft: "0.5rem", marginY: "0" }, label))),
         helperText && React.createElement(react_1.FormHelperText, null, helperText)));

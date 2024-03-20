@@ -15,7 +15,7 @@ type Story = StoryObj<typeof Switch>;
 export const Default: Story = {
   args: {
     label: "Switch label",
-    checked: false,
+    isChecked: false,
     onChange: (newValue) => console.log(newValue),
     helperText: "This is a helper text",
   },
