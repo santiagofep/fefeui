@@ -27,7 +27,7 @@ export const Switch: React.FC<SwitchProps> = ({
     <FormControl>
       <Flex alignItems={"center"}>
         <ChakraSwitch
-          checked={checked}
+          isChecked={checked}
           onChange={() => {
             onChange(!checked);
           }}

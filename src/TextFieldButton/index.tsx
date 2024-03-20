@@ -37,7 +37,10 @@ export const TextFieldButton: React.FC<TextFieldButtonProps> = ({
           />
           <Button
             isLoading={isLoading}
-            onClick={() => onSubmit(value)}
+            onClick={() => {
+              setValue("");
+              onSubmit(value);
+            }}
             ml={"0.5rem"}
           >
             {buttonLabel}

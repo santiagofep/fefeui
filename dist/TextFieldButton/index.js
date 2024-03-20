@@ -34,6 +34,9 @@ const TextFieldButton = ({ label, buttonLabel, onSubmit, isLoading, placeholder,
             React.createElement(react_2.FormLabel, null, label),
             React.createElement(react_2.InputGroup, null,
                 React.createElement(react_2.Input, { placeholder: placeholder, onChange: (e) => setValue(e.target.value) }),
-                React.createElement(react_2.Button, { isLoading: isLoading, onClick: () => onSubmit(value), ml: "0.5rem" }, buttonLabel)))));
+                React.createElement(react_2.Button, { isLoading: isLoading, onClick: () => {
+                        setValue("");
+                        onSubmit(value);
+                    }, ml: "0.5rem" }, buttonLabel)))));
 };
 exports.TextFieldButton = TextFieldButton;
