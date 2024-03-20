@@ -38,8 +38,12 @@ export const Select: React.FC<SelectProps> = ({
         }}
       >
         {emptyOption && <option value="">{emptyOption}</option>}
-        {options.map((option) => {
-          return <option value={option.value}>{option.label}</option>;
+        {options.map((option, index) => {
+          return (
+            <option value={option.value} key={index}>
+              {option.label}
+            </option>
+          );
         })}
       </ChakraSelect>
       {helperText && <FormHelperText>{helperText}</FormHelperText>}
