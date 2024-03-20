@@ -13,7 +13,7 @@ import { HelperText } from "../Select/Select.stories";
 interface SwitchProps {
   label: string;
   checked: boolean;
-  onChange: (newValue) => void;
+  onChange: (newValue: boolean) => void;
   helperText?: string;
 }
 

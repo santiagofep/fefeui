@@ -2,7 +2,7 @@ import * as React from "react";
 interface SwitchProps {
     label: string;
     checked: boolean;
-    onChange: (newValue: any) => void;
+    onChange: (newValue: boolean) => void;
     helperText?: string;
 }
 export declare const Switch: React.FC<SwitchProps>;

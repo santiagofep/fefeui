@@ -1,9 +1,17 @@
 {
   "name": "fefeui",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "",
   "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "storybook dev -p 6006",

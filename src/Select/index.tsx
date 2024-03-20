@@ -14,7 +14,7 @@ interface SelectProps {
   options: { value: string; label: string }[];
   value: string;
   helperText?: string;
-  onChange: (newValue) => void;
+  onChange: (newValue: string) => void;
   isInvalid?: boolean;
   emptyOption?: string;
 }
