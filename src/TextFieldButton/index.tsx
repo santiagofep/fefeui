@@ -27,26 +27,29 @@ export const TextFieldButton: React.FC<TextFieldButtonProps> = ({
 }) => {
   const [value, setValue] = useState<string>("");
   return (
-    <Flex>
-      <FormControl>
-        <FormLabel>{label}</FormLabel>
-        <InputGroup>
-          <Input
-            placeholder={placeholder}
-            onChange={(e) => setValue(e.target.value)}
-          />
-          <Button
-            isLoading={isLoading}
-            onClick={() => {
-              setValue("");
-              onSubmit(value);
-            }}
-            ml={"0.5rem"}
-          >
-            {buttonLabel}
-          </Button>
-        </InputGroup>
-      </FormControl>
-    </Flex>
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        setValue("");
+        onSubmit(value);
+      }}
+    >
+      <Flex>
+        <FormControl>
+          <FormLabel>{label}</FormLabel>
+          <InputGroup>
+            <Input
+              value={value}
+              required
+              placeholder={placeholder}
+              onChange={(e) => setValue(e.target.value)}
+            />
+            <Button isLoading={isLoading} type="submit" ml={"0.5rem"}>
+              {buttonLabel}
+            </Button>
+          </InputGroup>
+        </FormControl>
+      </Flex>
+    </form>
   );
 };
