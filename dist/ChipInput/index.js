@@ -31,7 +31,7 @@ const md_1 = require("react-icons/md");
 const ChipInput = ({ label, buttonLabel, isLoading, placeholder, values, onAdd, onRemove, tagIcon, helperText, }) => {
     return (React.createElement(react_1.FormControl, null,
         React.createElement(TextFieldButton_1.TextFieldButton, { label: label, buttonLabel: buttonLabel, isLoading: isLoading, placeholder: placeholder, onSubmit: (value) => onAdd(value) }),
-        React.createElement(react_1.HStack, { marginY: 2 }, values.map((value, index) => {
+        React.createElement(react_1.HStack, { marginY: 2, flexWrap: "wrap" }, values.map((value, index) => {
             return (React.createElement(react_1.Tag, { key: index, size: "lg" },
                 tagIcon && React.createElement(react_1.TagLeftIcon, { as: tagIcon }),
                 React.createElement(react_1.TagLabel, null, value),

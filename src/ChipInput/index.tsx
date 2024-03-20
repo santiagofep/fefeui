@@ -46,7 +46,7 @@ export const ChipInput: React.FC<ChipInputProps> = ({
         placeholder={placeholder}
         onSubmit={(value) => onAdd(value)}
       />
-      <HStack marginY={2}>
+      <HStack marginY={2} flexWrap={"wrap"}>
         {values.map((value: string, index) => {
           return (
             <Tag key={index} size="lg">
