@@ -18,7 +18,7 @@ interface PriceTableProps {
   selectButtonText?: string;
   selectedButtonText?: string;
   recomendedText?: string;
-  recomendedGradient?: string;
+  gradient?: string;
   data: {
     title: string;
     price: number;
@@ -28,6 +28,7 @@ interface PriceTableProps {
     onClick: () => void;
     isRecomented?: boolean;
     isLoading?: boolean;
+    trial?: string;
   }[];
 }
 
@@ -36,7 +37,7 @@ export const PriceTable: React.FC<PriceTableProps> = ({
   selectButtonText = "Activate",
   selectedButtonText = "Current plan",
   recomendedText = "Recomended",
-  recomendedGradient = "linear(to-br, purple.800, blue.300, purple.300)",
+  gradient = "linear(to-br, blue.300, purple.300, purple.800, blue.500)",
 }) => {
   return (
     <HStack align={"stretch"}>
@@ -44,17 +45,12 @@ export const PriceTable: React.FC<PriceTableProps> = ({
         return (
           <Box
             key={index}
-            padding={"2px"}
-            bgGradient={
-              item.isRecomented
-                ? recomendedGradient
-                : "linear(to-r, white, white)"
-            }
+            padding={item.isRecomented ? "2px 2px 2px 2px" : "0px 0px 2px 0px"}
+            bgGradient={gradient}
             borderRadius={"md"}
             shadow={"md"}
             maxW={"400px"}
             width={"100%"}
-            overflow={"hidden"}
           >
             <VStack
               position={"relative"}
@@ -63,7 +59,7 @@ export const PriceTable: React.FC<PriceTableProps> = ({
               padding={"1rem"}
               background={"#fff"}
               borderRadius={"md"}
-              height={"100%"}
+              height={item.trial ? "calc(100% - 1.5rem)" : "100%"}
             >
               <Heading size="lg">{item.title}</Heading>
               <Box lineHeight={"2rem"}>
@@ -101,7 +97,7 @@ export const PriceTable: React.FC<PriceTableProps> = ({
                   position={"absolute"}
                   top={"0.5rem"}
                   right={"0.5rem"}
-                  bgGradient={recomendedGradient}
+                  bgGradient={gradient}
                   paddingX={"0.25rem"}
                   borderRadius={"md"}
                   color={"white"}
@@ -110,6 +106,11 @@ export const PriceTable: React.FC<PriceTableProps> = ({
                 </Text>
               )}
             </VStack>
+            {item.trial && (
+              <Box textAlign={"center"} color={"white"} fontWeight={"500"}>
+                {item.trial}
+              </Box>
+            )}
           </Box>
         );
       })}

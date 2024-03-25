@@ -3,7 +3,7 @@ interface PriceTableProps {
     selectButtonText?: string;
     selectedButtonText?: string;
     recomendedText?: string;
-    recomendedGradient?: string;
+    gradient?: string;
     data: {
         title: string;
         price: number;
@@ -13,6 +13,7 @@ interface PriceTableProps {
         onClick: () => void;
         isRecomented?: boolean;
         isLoading?: boolean;
+        trial?: string;
     }[];
 }
 export declare const PriceTable: React.FC<PriceTableProps>;

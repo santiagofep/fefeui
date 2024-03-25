@@ -27,13 +27,11 @@ exports.PriceTable = void 0;
 const react_1 = require("@chakra-ui/react");
 const React = __importStar(require("react"));
 const md_1 = require("react-icons/md");
-const PriceTable = ({ data, selectButtonText = "Activate", selectedButtonText = "Current plan", recomendedText = "Recomended", recomendedGradient = "linear(to-br, purple.800, blue.300, purple.300)", }) => {
+const PriceTable = ({ data, selectButtonText = "Activate", selectedButtonText = "Current plan", recomendedText = "Recomended", gradient = "linear(to-br, blue.300, purple.300, purple.800, blue.500)", }) => {
     return (React.createElement(react_1.HStack, { align: "stretch" }, data.map((item, index) => {
         var _a;
-        return (React.createElement(react_1.Box, { key: index, padding: "2px", bgGradient: item.isRecomented
-                ? recomendedGradient
-                : "linear(to-r, white, white)", borderRadius: "md", shadow: "md", maxW: "400px", width: "100%", overflow: "hidden" },
-            React.createElement(react_1.VStack, { position: "relative", justifyContent: "start", align: "stretch", padding: "1rem", background: "#fff", borderRadius: "md", height: "100%" },
+        return (React.createElement(react_1.Box, { key: index, padding: item.isRecomented ? "2px 2px 2px 2px" : "0px 0px 2px 0px", bgGradient: gradient, borderRadius: "md", shadow: "md", maxW: "400px", width: "100%" },
+            React.createElement(react_1.VStack, { position: "relative", justifyContent: "start", align: "stretch", padding: "1rem", background: "#fff", borderRadius: "md", height: item.trial ? "calc(100% - 1.5rem)" : "100%" },
                 React.createElement(react_1.Heading, { size: "lg" }, item.title),
                 React.createElement(react_1.Box, { lineHeight: "2rem" },
                     React.createElement(react_1.Text, { fontSize: "4xl" },
@@ -49,7 +47,8 @@ const PriceTable = ({ data, selectButtonText = "Activate", selectedButtonText = 
                             React.createElement(react_1.ListIcon, { as: md_1.MdCheck, color: "green.500" }),
                             feature));
                     })))),
-                item.isRecomented && (React.createElement(react_1.Text, { fontSize: "sm", fontWeight: "bold", position: "absolute", top: "0.5rem", right: "0.5rem", bgGradient: recomendedGradient, paddingX: "0.25rem", borderRadius: "md", color: "white" }, recomendedText)))));
+                item.isRecomented && (React.createElement(react_1.Text, { fontSize: "sm", fontWeight: "bold", position: "absolute", top: "0.5rem", right: "0.5rem", bgGradient: gradient, paddingX: "0.25rem", borderRadius: "md", color: "white" }, recomendedText))),
+            item.trial && (React.createElement(react_1.Box, { textAlign: "center", color: "white", fontWeight: "500" }, item.trial))));
     })));
 };
 exports.PriceTable = PriceTable;
