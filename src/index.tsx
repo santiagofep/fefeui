@@ -10,3 +10,4 @@ export { Table } from "./Table";
 export { TextField } from "./TextField";
 export { TextFieldButton } from "./TextFieldButton";
 export { TutorialCard } from "./TutorialCard";
+export { PriceTable } from "./PriceTable";
