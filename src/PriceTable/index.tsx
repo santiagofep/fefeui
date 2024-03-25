@@ -42,6 +42,7 @@ export const PriceTable: React.FC<PriceTableProps> = ({
       {data.map((item, index) => {
         return (
           <Box
+            key={index}
             padding={"2px"}
             bgGradient={
               item.isRecomented
