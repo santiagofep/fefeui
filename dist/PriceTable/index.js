@@ -40,7 +40,7 @@ const PriceTable = ({ data, selectButtonText = "Activate", selectedButtonText = 
                         "$",
                         item.price),
                     item.paymentFrequency && React.createElement(react_1.Text, null, item.paymentFrequency)),
-                React.createElement(react_1.Button, { onClick: item.onClick, isDisabled: item.isActive }, item.isActive ? selectedButtonText : selectButtonText),
+                React.createElement(react_1.Button, { onClick: item.onClick, isDisabled: item.isActive, isLoading: item.isLoading }, item.isActive ? selectedButtonText : selectButtonText),
                 ((_a = item.features) === null || _a === void 0 ? void 0 : _a.length) > 0 && (React.createElement(React.Fragment, null,
                     React.createElement(react_1.Box, { my: 1 },
                         React.createElement(react_1.Divider, null)),

@@ -27,6 +27,7 @@ exports.Default = {
                 isActive: true,
                 onClick: () => { },
                 isRecomented: false,
+                isLoading: true,
             },
             {
                 title: "Basic",

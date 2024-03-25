@@ -33,6 +33,7 @@ export const Default: Story = {
         isActive: true,
         onClick: () => {},
         isRecomented: false,
+        isLoading: true,
       },
       {
         title: "Basic",

@@ -27,6 +27,7 @@ interface PriceTableProps {
     isActive: boolean;
     onClick: () => void;
     isRecomented?: boolean;
+    isLoading?: boolean;
   }[];
 }
 
@@ -68,7 +69,11 @@ export const PriceTable: React.FC<PriceTableProps> = ({
                 <Text fontSize="4xl">${item.price}</Text>
                 {item.paymentFrequency && <Text>{item.paymentFrequency}</Text>}
               </Box>
-              <Button onClick={item.onClick} isDisabled={item.isActive}>
+              <Button
+                onClick={item.onClick}
+                isDisabled={item.isActive}
+                isLoading={item.isLoading}
+              >
                 {item.isActive ? selectedButtonText : selectButtonText}
               </Button>
               {item.features?.length > 0 && (
