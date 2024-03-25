@@ -82,9 +82,9 @@ export const PriceTable: React.FC<PriceTableProps> = ({
                     <Divider />
                   </Box>
                   <List>
-                    {item.features.map((feature) => {
+                    {item.features.map((feature: string, index: number) => {
                       return (
-                        <ListItem>
+                        <ListItem key={index}>
                           <ListIcon as={MdCheck} color="green.500" />
                           {feature}
                         </ListItem>

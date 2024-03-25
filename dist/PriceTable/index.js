@@ -44,8 +44,8 @@ const PriceTable = ({ data, selectButtonText = "Activate", selectedButtonText = 
                 ((_a = item.features) === null || _a === void 0 ? void 0 : _a.length) > 0 && (React.createElement(React.Fragment, null,
                     React.createElement(react_1.Box, { my: 1 },
                         React.createElement(react_1.Divider, null)),
-                    React.createElement(react_1.List, null, item.features.map((feature) => {
-                        return (React.createElement(react_1.ListItem, null,
+                    React.createElement(react_1.List, null, item.features.map((feature, index) => {
+                        return (React.createElement(react_1.ListItem, { key: index },
                             React.createElement(react_1.ListIcon, { as: md_1.MdCheck, color: "green.500" }),
                             feature));
                     })))),
