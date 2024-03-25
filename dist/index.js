@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TutorialCard = exports.TextFieldButton = exports.TextField = exports.Table = exports.Switch = exports.SettingsGroup = exports.Select = exports.Page = exports.ChipInput = exports.AlertDialog = void 0;
+exports.PriceTable = exports.TutorialCard = exports.TextFieldButton = exports.TextField = exports.Table = exports.Switch = exports.SettingsGroup = exports.Select = exports.Page = exports.ChipInput = exports.AlertDialog = void 0;
 var AlertDialog_1 = require("./AlertDialog");
 Object.defineProperty(exports, "AlertDialog", { enumerable: true, get: function () { return AlertDialog_1.AlertDialog; } });
 var ChipInput_1 = require("./ChipInput");
@@ -21,3 +21,5 @@ var TextFieldButton_1 = require("./TextFieldButton");
 Object.defineProperty(exports, "TextFieldButton", { enumerable: true, get: function () { return TextFieldButton_1.TextFieldButton; } });
 var TutorialCard_1 = require("./TutorialCard");
 Object.defineProperty(exports, "TutorialCard", { enumerable: true, get: function () { return TutorialCard_1.TutorialCard; } });
+var PriceTable_1 = require("./PriceTable");
+Object.defineProperty(exports, "PriceTable", { enumerable: true, get: function () { return PriceTable_1.PriceTable; } });
