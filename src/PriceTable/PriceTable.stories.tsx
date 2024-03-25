@@ -29,7 +29,7 @@ export const Default: Story = {
         title: "Basic",
         price: 10,
         paymentFrequency: "per month",
-        features: ["Feature 1", "Feature 2", "Feature 3"],
+        features: ["Feature 1", "Feature 2", "Feature 3", "Feature 4"],
         isActive: true,
         onClick: () => {},
         isRecomented: false,

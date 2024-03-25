@@ -63,6 +63,7 @@ export const PriceTable: React.FC<PriceTableProps> = ({
               padding={"1rem"}
               background={"#fff"}
               borderRadius={"md"}
+              height={"100%"}
             >
               <Heading size="lg">{item.title}</Heading>
               <Box lineHeight={"2rem"}>

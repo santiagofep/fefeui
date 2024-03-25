@@ -33,7 +33,7 @@ const PriceTable = ({ data, selectButtonText = "Activate", selectedButtonText = 
         return (React.createElement(react_1.Box, { key: index, padding: "2px", bgGradient: item.isRecomented
                 ? recomendedGradient
                 : "linear(to-r, white, white)", borderRadius: "md", shadow: "md", maxW: "400px", width: "100%", overflow: "hidden" },
-            React.createElement(react_1.VStack, { position: "relative", justifyContent: "start", align: "stretch", padding: "1rem", background: "#fff", borderRadius: "md" },
+            React.createElement(react_1.VStack, { position: "relative", justifyContent: "start", align: "stretch", padding: "1rem", background: "#fff", borderRadius: "md", height: "100%" },
                 React.createElement(react_1.Heading, { size: "lg" }, item.title),
                 React.createElement(react_1.Box, { lineHeight: "2rem" },
                     React.createElement(react_1.Text, { fontSize: "4xl" },
