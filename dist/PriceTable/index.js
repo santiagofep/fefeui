@@ -30,7 +30,7 @@ const md_1 = require("react-icons/md");
 const PriceTable = ({ data, selectButtonText = "Activate", selectedButtonText = "Current plan", recomendedText = "Recomended", gradient = "linear(to-br, blue.300, purple.300, purple.800, blue.500)", }) => {
     return (React.createElement(react_1.HStack, { align: "stretch" }, data.map((item, index) => {
         var _a;
-        return (React.createElement(react_1.Box, { key: index, padding: item.isRecomented ? "2px 2px 2px 2px" : "0px 0px 2px 0px", bgGradient: gradient, borderRadius: "md", shadow: "md", maxW: "400px", width: "100%" },
+        return (React.createElement(react_1.Box, { key: index, padding: item.isRecomented ? "2px 2px 2px 2px" : "0px 0px 0px 0px", bgGradient: gradient, borderRadius: "md", shadow: "md", maxW: "400px", width: "100%" },
             React.createElement(react_1.VStack, { position: "relative", justifyContent: "start", align: "stretch", padding: "1rem", background: "#fff", borderRadius: "md", height: item.trial ? "calc(100% - 1.5rem)" : "100%" },
                 React.createElement(react_1.Heading, { size: "lg" }, item.title),
                 React.createElement(react_1.Box, { lineHeight: "2rem" },

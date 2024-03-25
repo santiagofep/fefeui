@@ -45,7 +45,7 @@ export const PriceTable: React.FC<PriceTableProps> = ({
         return (
           <Box
             key={index}
-            padding={item.isRecomented ? "2px 2px 2px 2px" : "0px 0px 2px 0px"}
+            padding={item.isRecomented ? "2px 2px 2px 2px" : "0px 0px 0px 0px"}
             bgGradient={gradient}
             borderRadius={"md"}
             shadow={"md"}

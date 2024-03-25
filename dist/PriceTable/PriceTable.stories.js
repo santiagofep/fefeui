@@ -18,7 +18,6 @@ exports.Default = {
                 isActive: false,
                 onClick: () => { },
                 isRecomented: false,
-                trial: "7 días de prueba",
             },
             {
                 title: "Basic",
