@@ -14,6 +14,8 @@ import {
 
 import { MdSearch } from "react-icons/md";
 
+import { pathWithSearch } from "../utils";
+
 import { Select } from "../index";
 
 interface FilterProps {
@@ -27,13 +29,13 @@ interface FilterProps {
     }[];
     type: "select" | "date";
   }[];
-  initialValue: string;
+  initialPath: string;
   onChange: (filter: string) => void;
 }
 
 export const Filter: React.FC<FilterProps> = ({
   showSearch = true,
-  initialValue = "",
+  initialPath = "",
   options = [],
   onChange,
 }) => {
@@ -41,9 +43,13 @@ export const Filter: React.FC<FilterProps> = ({
     search: "",
   });
 
+  const addOriginToPath = (path: string) => {
+    return new URL(path, window.location.origin);
+  };
+
   useEffect(() => {
-    if (initialValue) {
-      const url = new URL(initialValue);
+    if (initialPath) {
+      const url = addOriginToPath(initialPath);
 
       const searchParams = url.searchParams;
       const values: any = {};
@@ -52,14 +58,14 @@ export const Filter: React.FC<FilterProps> = ({
       });
       setFilterValues(values);
     }
-  }, [initialValue]);
+  }, [initialPath]);
 
   useEffect(() => {
-    let newValue = new URL(initialValue);
+    let newValue = addOriginToPath(initialPath);
     Object.keys(filterValues).forEach((key) => {
       newValue.searchParams.set(key, filterValues[key]);
     });
-    onChange(newValue.toString());
+    onChange(pathWithSearch(newValue.toString()));
   }, [filterValues]);
 
   return (

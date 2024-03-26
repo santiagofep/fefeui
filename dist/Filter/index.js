@@ -28,14 +28,18 @@ const React = __importStar(require("react"));
 const react_1 = require("react");
 const react_2 = require("@chakra-ui/react");
 const md_1 = require("react-icons/md");
+const utils_1 = require("../utils");
 const index_1 = require("../index");
-const Filter = ({ showSearch = true, initialValue = "", options = [], onChange, }) => {
+const Filter = ({ showSearch = true, initialPath = "", options = [], onChange, }) => {
     const [filterValues, setFilterValues] = (0, react_1.useState)({
         search: "",
     });
+    const addOriginToPath = (path) => {
+        return new URL(path, window.location.origin);
+    };
     (0, react_1.useEffect)(() => {
-        if (initialValue) {
-            const url = new URL(initialValue);
+        if (initialPath) {
+            const url = addOriginToPath(initialPath);
             const searchParams = url.searchParams;
             const values = {};
             searchParams.forEach((value, key) => {
@@ -43,13 +47,13 @@ const Filter = ({ showSearch = true, initialValue = "", options = [], onChange, 
             });
             setFilterValues(values);
         }
-    }, [initialValue]);
+    }, [initialPath]);
     (0, react_1.useEffect)(() => {
-        let newValue = new URL(initialValue);
+        let newValue = addOriginToPath(initialPath);
         Object.keys(filterValues).forEach((key) => {
             newValue.searchParams.set(key, filterValues[key]);
         });
-        onChange(newValue.toString());
+        onChange((0, utils_1.pathWithSearch)(newValue.toString()));
     }, [filterValues]);
     return (React.createElement(react_2.VStack, { align: "stretch" },
         showSearch && (React.createElement(react_2.FormControl, null,

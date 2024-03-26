@@ -12,8 +12,10 @@ exports.Default = {
         next: "https://api.example.com/v1/?page=3",
         previous: "https://api.example.com/v1/?page=1",
         pageCount: 10,
-        TotalCount: 100,
-        onChange: () => { },
+        totalCount: 100,
+        onChange: (newPath) => {
+            console.log(newPath);
+        },
     },
 };
 exports.NoPrevious = {
@@ -21,7 +23,9 @@ exports.NoPrevious = {
         next: "https://api.example.com/v1/?page=3",
         previous: null,
         pageCount: 10,
-        TotalCount: 100,
-        onChange: () => { },
+        totalCount: 100,
+        onChange: (newPath) => {
+            console.log(newPath);
+        },
     },
 };

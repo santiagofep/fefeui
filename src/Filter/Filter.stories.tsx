@@ -14,8 +14,8 @@ type Story = StoryObj<typeof Filter>;
 
 export const Default: Story = {
   args: {
-    initialValue:
-      "http://localhost:6006/?search=hello&has_errors=true&status=active&has_invoices=true&from_date=none&to_date=none",
+    initialPath:
+      "/api/?search=hello&has_errors=true&status=active&has_invoices=true&from_date=none&to_date=none",
     showSearch: true,
     options: [
       {

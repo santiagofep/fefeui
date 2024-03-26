@@ -27,7 +27,8 @@ exports.Pagination = void 0;
 const react_1 = require("@chakra-ui/react");
 const React = __importStar(require("react"));
 const md_1 = require("react-icons/md");
-const Pagination = ({ next, previous, TotalCount, pageCount, itemsName = "items", onChange, }) => {
+const utils_1 = require("../utils");
+const Pagination = ({ next, previous, totalCount, pageCount, itemsName = "items", onChange, }) => {
     const getCurrentPage = () => {
         if (!previous) {
             return 1;
@@ -38,21 +39,21 @@ const Pagination = ({ next, previous, TotalCount, pageCount, itemsName = "items"
         }
     };
     return (React.createElement(react_1.Flex, { justifyContent: "space-between" },
-        React.createElement(react_1.Box, null, TotalCount ? (React.createElement("span", null,
-            TotalCount,
+        React.createElement(react_1.Box, null, totalCount ? (React.createElement("span", null,
+            totalCount,
             " ",
             itemsName)) : null),
         React.createElement(react_1.HStack, null,
             React.createElement(react_1.IconButton, { "aria-label": "Previous", icon: React.createElement(md_1.MdChevronLeft, null), isDisabled: !previous, onClick: () => {
-                    onChange(previous || "");
+                    onChange((0, utils_1.pathWithSearch)(previous || ""));
                 } }),
             React.createElement(react_1.IconButton, { "aria-label": "Next", icon: React.createElement(md_1.MdChevronRight, null), isDisabled: !next, onClick: () => {
-                    onChange(next || "");
+                    onChange((0, utils_1.pathWithSearch)(next || ""));
                 } })),
         React.createElement(react_1.Box, null, pageCount ? (React.createElement("span", null,
             "Page ",
             getCurrentPage(),
             " of ",
-            Math.ceil(TotalCount / pageCount))) : null)));
+            Math.ceil(totalCount / pageCount))) : null)));
 };
 exports.Pagination = Pagination;

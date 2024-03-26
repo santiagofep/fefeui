@@ -2,7 +2,7 @@ import * as React from "react";
 interface PaginationProps {
     next: string | null;
     previous: string | null;
-    TotalCount: number;
+    totalCount: number;
     onChange: (newUrl: string) => void;
     pageCount?: number;
     itemsName?: string;

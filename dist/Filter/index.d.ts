@@ -10,7 +10,7 @@ interface FilterProps {
         }[];
         type: "select" | "date";
     }[];
-    initialValue: string;
+    initialPath: string;
     onChange: (filter: string) => void;
 }
 export declare const Filter: React.FC<FilterProps>;

@@ -3,10 +3,12 @@ import * as React from "react";
 import { useState, useEffect } from "react";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 
+import { pathWithSearch } from "../utils";
+
 interface PaginationProps {
   next: string | null;
   previous: string | null;
-  TotalCount: number;
+  totalCount: number;
   onChange: (newUrl: string) => void;
   pageCount?: number;
   itemsName?: string;
@@ -15,7 +17,7 @@ interface PaginationProps {
 export const Pagination: React.FC<PaginationProps> = ({
   next,
   previous,
-  TotalCount,
+  totalCount,
   pageCount,
   itemsName = "items",
   onChange,
@@ -32,9 +34,9 @@ export const Pagination: React.FC<PaginationProps> = ({
   return (
     <Flex justifyContent={"space-between"}>
       <Box>
-        {TotalCount ? (
+        {totalCount ? (
           <span>
-            {TotalCount} {itemsName}
+            {totalCount} {itemsName}
           </span>
         ) : null}
       </Box>
@@ -44,7 +46,7 @@ export const Pagination: React.FC<PaginationProps> = ({
           icon={<MdChevronLeft />}
           isDisabled={!previous}
           onClick={() => {
-            onChange(previous || "");
+            onChange(pathWithSearch(previous || ""));
           }}
         />
         <IconButton
@@ -52,14 +54,14 @@ export const Pagination: React.FC<PaginationProps> = ({
           icon={<MdChevronRight />}
           isDisabled={!next}
           onClick={() => {
-            onChange(next || "");
+            onChange(pathWithSearch(next || ""));
           }}
         />
       </HStack>
       <Box>
         {pageCount ? (
           <span>
-            Page {getCurrentPage()} of {Math.ceil(TotalCount / pageCount)}
+            Page {getCurrentPage()} of {Math.ceil(totalCount / pageCount)}
           </span>
         ) : null}
       </Box>
