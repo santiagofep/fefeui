@@ -65,6 +65,7 @@ export const Filter: React.FC<FilterProps> = ({
     Object.keys(filterValues).forEach((key) => {
       newValue.searchParams.set(key, filterValues[key]);
     });
+    newValue.searchParams.set("page", "1");
     onChange(pathWithSearch(newValue.toString()));
   }, [filterValues]);
 

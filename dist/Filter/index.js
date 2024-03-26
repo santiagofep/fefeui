@@ -53,6 +53,7 @@ const Filter = ({ showSearch = true, initialPath = "", options = [], onChange, }
         Object.keys(filterValues).forEach((key) => {
             newValue.searchParams.set(key, filterValues[key]);
         });
+        newValue.searchParams.set("page", "1");
         onChange((0, utils_1.pathWithSearch)(newValue.toString()));
     }, [filterValues]);
     return (React.createElement(react_2.VStack, { align: "stretch" },
