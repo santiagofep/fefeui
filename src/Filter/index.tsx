@@ -60,12 +60,19 @@ export const Filter: React.FC<FilterProps> = ({
     }
   }, [initialPath]);
 
+  const setNewValue = (key: string, value: string) => {
+    setFilterValues({
+      ...filterValues,
+      [key]: value,
+      page: "1",
+    });
+  };
+
   useEffect(() => {
     let newValue = addOriginToPath(initialPath);
     Object.keys(filterValues).forEach((key) => {
       newValue.searchParams.set(key, filterValues[key]);
     });
-    newValue.searchParams.set("page", "1");
     onChange(pathWithSearch(newValue.toString()));
   }, [filterValues]);
 
@@ -77,7 +84,7 @@ export const Filter: React.FC<FilterProps> = ({
             <Input
               value={filterValues.search}
               onChange={(e) => {
-                setFilterValues({ ...filterValues, search: e.target.value });
+                setNewValue("search", e.target.value);
               }}
             />
             <InputRightAddon>
@@ -101,10 +108,7 @@ export const Filter: React.FC<FilterProps> = ({
                     options={option.values || []}
                     value={filterValues[option.key] || ""}
                     onChange={(newValue) => {
-                      setFilterValues({
-                        ...filterValues,
-                        [option.key]: newValue,
-                      });
+                      setNewValue(option.key, newValue);
                     }}
                   />
                 </Box>
@@ -118,10 +122,7 @@ export const Filter: React.FC<FilterProps> = ({
                       type={"date"}
                       value={filterValues[option.key] || ""}
                       onChange={(e) => {
-                        setFilterValues({
-                          ...filterValues,
-                          [option.key]: e.target.value,
-                        });
+                        setNewValue(option.key, e.target.value);
                       }}
                     />
                   </FormControl>

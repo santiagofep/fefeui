@@ -48,19 +48,21 @@ const Filter = ({ showSearch = true, initialPath = "", options = [], onChange, }
             setFilterValues(values);
         }
     }, [initialPath]);
+    const setNewValue = (key, value) => {
+        setFilterValues(Object.assign(Object.assign({}, filterValues), { [key]: value, page: "1" }));
+    };
     (0, react_1.useEffect)(() => {
         let newValue = addOriginToPath(initialPath);
         Object.keys(filterValues).forEach((key) => {
             newValue.searchParams.set(key, filterValues[key]);
         });
-        newValue.searchParams.set("page", "1");
         onChange((0, utils_1.pathWithSearch)(newValue.toString()));
     }, [filterValues]);
     return (React.createElement(react_2.VStack, { align: "stretch" },
         showSearch && (React.createElement(react_2.FormControl, null,
             React.createElement(react_2.InputGroup, null,
                 React.createElement(react_2.Input, { value: filterValues.search, onChange: (e) => {
-                        setFilterValues(Object.assign(Object.assign({}, filterValues), { search: e.target.value }));
+                        setNewValue("search", e.target.value);
                     } }),
                 React.createElement(react_2.InputRightAddon, null,
                     React.createElement(md_1.MdSearch, null))))),
@@ -71,7 +73,7 @@ const Filter = ({ showSearch = true, initialPath = "", options = [], onChange, }
             if (option.type === "select") {
                 return (React.createElement(react_2.Box, { key: index },
                     React.createElement(index_1.Select, { label: option.label, key: index, options: option.values || [], value: filterValues[option.key] || "", onChange: (newValue) => {
-                            setFilterValues(Object.assign(Object.assign({}, filterValues), { [option.key]: newValue }));
+                            setNewValue(option.key, newValue);
                         } })));
             }
             else if (option.type === "date") {
@@ -79,7 +81,7 @@ const Filter = ({ showSearch = true, initialPath = "", options = [], onChange, }
                     React.createElement(react_2.FormControl, null,
                         React.createElement(react_2.FormLabel, null, option.label),
                         React.createElement(react_2.Input, { type: "date", value: filterValues[option.key] || "", onChange: (e) => {
-                                setFilterValues(Object.assign(Object.assign({}, filterValues), { [option.key]: e.target.value }));
+                                setNewValue(option.key, e.target.value);
                             } }))));
             }
             return null;
