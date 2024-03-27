@@ -14,3 +14,4 @@ export { PriceTable } from "./PriceTable";
 export { Filter } from "./Filter";
 export { Pagination } from "./Pagination";
 export { Sidebar } from "./Sidebar";
+export { Header } from "./Header";
