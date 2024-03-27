@@ -42,9 +42,9 @@ const React = __importStar(require("react"));
 const react_1 = require("@chakra-ui/react");
 const SidebarItem_1 = __importDefault(require("./SidebarItem"));
 const Sidebar = (_a) => {
-    var { items, itemsAs = "a", extra, overflowY = "auto", overflowX = "hidden", height = "100vh", maxW = "250px", borderRight = "1px solid", borderColor = "gray.200", flexDirection = "column", justifyContent = "space-between" } = _a, props = __rest(_a, ["items", "itemsAs", "extra", "overflowY", "overflowX", "height", "maxW", "borderRight", "borderColor", "flexDirection", "justifyContent"]);
-    return (React.createElement(react_1.Flex, Object.assign({ overflowY: overflowY, overflowX: overflowX, height: height, maxW: maxW, borderRight: borderRight, borderColor: borderColor, flexDirection: flexDirection, justifyContent: justifyContent }, props),
-        React.createElement(react_1.VStack, { align: "stretch", paddingX: "0.5rem", width: "100%", marginBottom: "2rem" }, items.map((item) => {
+    var { items, itemsAs = "a", extra, overflowY = "auto", overflowX = "hidden", height = "100vh", width = "250px", flexDirection = "column", justifyContent = "space-between" } = _a, props = __rest(_a, ["items", "itemsAs", "extra", "overflowY", "overflowX", "height", "width", "flexDirection", "justifyContent"]);
+    return (React.createElement(react_1.Flex, Object.assign({ overflowY: overflowY, overflowX: overflowX, height: height, width: width, flexDirection: flexDirection, justifyContent: justifyContent }, props),
+        React.createElement(react_1.VStack, { align: "stretch", paddingX: "0.5rem", width: "100%", marginBottom: "2rem", spacing: 1 }, items.map((item) => {
             return React.createElement(SidebarItem_1.default, Object.assign({ as: itemsAs }, item));
         })),
         extra && React.createElement(react_1.Box, null, extra)));

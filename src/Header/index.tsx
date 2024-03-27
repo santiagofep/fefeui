@@ -14,7 +14,7 @@ import {
 } from "@chakra-ui/react";
 import { MdMenu } from "react-icons/md";
 
-interface HeaderProps extends FlexProps {
+export interface HeaderProps extends FlexProps {
   hamburger?: {
     display: IconButtonProps["display"];
     onClick: () => void;
@@ -48,6 +48,7 @@ export const Header: React.FC<HeaderProps> = ({
   height = "63px",
   alignItems = "center",
   paddingX = "0.5rem",
+  width = "100%",
   ...props
 }) => {
   return (
@@ -57,6 +58,7 @@ export const Header: React.FC<HeaderProps> = ({
       height={height}
       alignItems={alignItems}
       paddingX={paddingX}
+      width={width}
       {...props}
     >
       <HStack>
@@ -69,19 +71,20 @@ export const Header: React.FC<HeaderProps> = ({
             />
           </Box>
         )}
-        <a href={logo.href}>
-          <Image
-            src={logo.src}
-            alt={logo.alt}
-            height={logo.height}
-            width={logo.width}
-            fit="contain"
-          />
-        </a>
+        <Box display={["none", "block"]}>
+          <a href={logo.href}>
+            <Image
+              src={logo.src}
+              alt={logo.alt}
+              height={logo.height}
+              width={logo.width}
+              fit="contain"
+            />
+          </a>
+        </Box>
       </HStack>
       {user && (
         <HStack
-          shadow={"md"}
           paddingY={"0.25rem"}
           paddingX={"0.5rem"}
           backgroundColor={"white"}

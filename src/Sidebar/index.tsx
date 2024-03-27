@@ -4,7 +4,7 @@ import { Box, ButtonProps, Flex, FlexProps, VStack } from "@chakra-ui/react";
 
 import SidebarItem, { SidebarItemWithChildrenProps } from "./SidebarItem";
 
-interface SidebarProps extends FlexProps {
+export interface SidebarProps extends FlexProps {
   items: SidebarItemWithChildrenProps[];
   itemsAs?: ButtonProps["as"];
   extra?: React.ReactNode;
@@ -17,9 +17,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
   overflowY = "auto",
   overflowX = "hidden",
   height = "100vh",
-  maxW = "250px",
-  borderRight = "1px solid",
-  borderColor = "gray.200",
+  width = "250px",
+
   flexDirection = "column",
   justifyContent = "space-between",
   ...props
@@ -29,9 +28,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
       overflowY={overflowY}
       overflowX={overflowX}
       height={height}
-      maxW={maxW}
-      borderRight={borderRight}
-      borderColor={borderColor}
+      width={width}
       flexDirection={flexDirection}
       justifyContent={justifyContent}
       {...props}
@@ -41,6 +38,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
         paddingX={"0.5rem"}
         width={"100%"}
         marginBottom={"2rem"}
+        spacing={1}
       >
         {items.map((item) => {
           return <SidebarItem as={itemsAs} {...item} />;

@@ -1,6 +1,6 @@
 import * as React from "react";
 import { FlexProps, IconButtonProps } from "@chakra-ui/react";
-interface HeaderProps extends FlexProps {
+export interface HeaderProps extends FlexProps {
     hamburger?: {
         display: IconButtonProps["display"];
         onClick: () => void;
@@ -24,4 +24,3 @@ interface HeaderProps extends FlexProps {
     };
 }
 export declare const Header: React.FC<HeaderProps>;
-export {};
