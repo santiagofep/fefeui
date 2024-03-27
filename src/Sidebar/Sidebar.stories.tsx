@@ -57,6 +57,7 @@ export const Default: Story = {
             title: "Invoices",
             href: "/invoices",
             isActive: false,
+            target: "_blank",
           },
         ],
       },
@@ -71,6 +72,7 @@ export const Default: Story = {
         icon: <MdPerson />,
         href: "/customers",
         isActive: false,
+        target: "_blank",
       },
       {
         title: "Documents",

@@ -52,6 +52,7 @@ exports.Default = {
                         title: "Invoices",
                         href: "/invoices",
                         isActive: false,
+                        target: "_blank",
                     },
                 ],
             },
@@ -66,6 +67,7 @@ exports.Default = {
                 icon: React.createElement(md_1.MdPerson, null),
                 href: "/customers",
                 isActive: false,
+                target: "_blank",
             },
             {
                 title: "Documents",

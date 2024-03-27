@@ -10,13 +10,15 @@ import {
   VStack,
 } from "@chakra-ui/react";
 
-import { MdArrowDropDown } from "react-icons/md";
+import { MdArrowDropDown, MdOpenInNew } from "react-icons/md";
 
 import { getButtonVariant } from "./utils";
 
 export interface SidebarChildItemProps {
   title: string;
   href: string;
+  to?: string;
+  target?: string;
   isActive: boolean;
 }
 
@@ -29,13 +31,27 @@ export interface SidebarItemProps extends SidebarItemWithChildrenProps {
   as: ButtonProps["as"];
 }
 
+const ButtonInner: React.FC<{
+  title: string;
+  isExternal: boolean;
+}> = ({ title, isExternal }) => {
+  return (
+    <Flex width={"100%"} alignItems={"center"}>
+      {title}
+      {isExternal && <MdOpenInNew size={10} style={{ marginLeft: "4px" }} />}
+    </Flex>
+  );
+};
+
 const SidebarItem: React.FC<SidebarItemProps> = ({
   children,
   title,
   icon,
   href,
   isActive,
+  to,
   as = "a",
+  target = "_self",
 }) => {
   const childrenIsActive =
     (children && children.some((child) => child.isActive)) || false;
@@ -50,8 +66,10 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
         size={"sm"}
         as={as}
         href={href}
+        target={target}
+        to={to}
       >
-        <Flex width={"100%"}>{title}</Flex>
+        <ButtonInner title={title} isExternal={target === "_blank"} />
       </Button>
       {children && (
         <Collapse in={childrenIsActive}>
@@ -63,8 +81,15 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
                   variant={getButtonVariant(child.isActive, false)}
                   as={as}
                   href={child.href}
+                  target={child.target}
+                  to={child.to}
                 >
-                  <Flex width={"100%"}>{child.title}</Flex>
+                  <Flex width={"100%"} alignItems={"center"}>
+                    <ButtonInner
+                      title={child.title}
+                      isExternal={child.target === "_blank"}
+                    />
+                  </Flex>
                 </Button>
               );
             })}
