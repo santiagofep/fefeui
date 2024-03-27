@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Pagination = exports.Filter = exports.PriceTable = exports.TutorialCard = exports.TextFieldButton = exports.TextField = exports.Table = exports.Switch = exports.SettingsGroup = exports.Select = exports.Page = exports.ChipInput = exports.AlertDialog = void 0;
+exports.Sidebar = exports.Pagination = exports.Filter = exports.PriceTable = exports.TutorialCard = exports.TextFieldButton = exports.TextField = exports.Table = exports.Switch = exports.SettingsGroup = exports.Select = exports.Page = exports.ChipInput = exports.AlertDialog = void 0;
 var AlertDialog_1 = require("./AlertDialog");
 Object.defineProperty(exports, "AlertDialog", { enumerable: true, get: function () { return AlertDialog_1.AlertDialog; } });
 var ChipInput_1 = require("./ChipInput");
@@ -27,3 +27,5 @@ var Filter_1 = require("./Filter");
 Object.defineProperty(exports, "Filter", { enumerable: true, get: function () { return Filter_1.Filter; } });
 var Pagination_1 = require("./Pagination");
 Object.defineProperty(exports, "Pagination", { enumerable: true, get: function () { return Pagination_1.Pagination; } });
+var Sidebar_1 = require("./Sidebar");
+Object.defineProperty(exports, "Sidebar", { enumerable: true, get: function () { return Sidebar_1.Sidebar; } });

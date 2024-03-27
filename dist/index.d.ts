@@ -11,3 +11,4 @@ export { TutorialCard } from "./TutorialCard";
 export { PriceTable } from "./PriceTable";
 export { Filter } from "./Filter";
 export { Pagination } from "./Pagination";
+export { Sidebar } from "./Sidebar";
