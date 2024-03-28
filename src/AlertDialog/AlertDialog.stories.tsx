@@ -6,7 +6,7 @@ import { AlertDialog } from "./index";
 
 const meta: Meta<typeof AlertDialog> = {
   component: AlertDialog,
-  title: "AlertDialog",
+  title: "Disclosure / AlertDialog",
 };
 
 export default meta;

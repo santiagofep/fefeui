@@ -4,7 +4,7 @@ exports.Default = void 0;
 const index_1 = require("./index");
 const meta = {
     component: index_1.AlertDialog,
-    title: "AlertDialog",
+    title: "Disclosure / AlertDialog",
 };
 exports.default = meta;
 exports.Default = {
