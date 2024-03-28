@@ -46,11 +46,11 @@ const Steps = ({ steps, currentStep, completedMessage = "completed", currentMess
             if (stepNumber === currentStep) {
                 stepStatus = "active";
                 stepIcon = stepNumber;
-                color = "purple";
+                color = "gray";
                 message = currentMessage;
             }
-            return (React.createElement(react_1.VStack, { spacing: 0, width: "100%", align: "center" },
-                React.createElement(react_1.Circle, { backgroundColor: "gray", size: stepStatus === "active" ? "40px" : "30px", marginTop: stepStatus !== "active" ? "5px" : "0px", background: stepStatus === "active" ? `${color}.500` : `${color}.50`, color: stepStatus === "active" ? "white" : `${color}.800`, border: "2px solid", fontWeight: "bold" },
+            return (React.createElement(react_1.VStack, { spacing: 0, width: "100%", align: "center", textAlign: "center" },
+                React.createElement(react_1.Circle, { backgroundColor: "gray", size: stepStatus === "active" ? "40px" : "30px", marginTop: stepStatus !== "active" ? "5px" : "0px", background: stepStatus === "active" ? `${color}.900` : `${color}.50`, color: stepStatus === "active" ? "white" : `${color}.800`, border: "2px solid", fontWeight: "bold" },
                     React.createElement(react_1.Box, null, stepIcon)),
                 stepStatus !== "active" && React.createElement(react_1.Box, { height: "5px" }),
                 React.createElement(react_1.Heading, { size: "sm" }, step.title),

@@ -59,18 +59,23 @@ export const Steps: React.FC<StepsProps> = ({
           if (stepNumber === currentStep) {
             stepStatus = "active";
             stepIcon = stepNumber;
-            color = "purple";
+            color = "gray";
             message = currentMessage;
           }
 
           return (
-            <VStack spacing={0} width={"100%"} align={"center"}>
+            <VStack
+              spacing={0}
+              width={"100%"}
+              align={"center"}
+              textAlign={"center"}
+            >
               <Circle
                 backgroundColor={"gray"}
                 size={stepStatus === "active" ? "40px" : "30px"}
                 marginTop={stepStatus !== "active" ? "5px" : "0px"}
                 background={
-                  stepStatus === "active" ? `${color}.500` : `${color}.50`
+                  stepStatus === "active" ? `${color}.900` : `${color}.50`
                 }
                 color={stepStatus === "active" ? "white" : `${color}.800`}
                 border="2px solid"

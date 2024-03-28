@@ -8,6 +8,7 @@ interface TextFieldProps {
     helperText?: string;
     isSkeleton?: boolean;
     required?: boolean;
+    isInvalid?: boolean;
 }
 export declare const TextField: React.FC<TextFieldProps>;
 export {};

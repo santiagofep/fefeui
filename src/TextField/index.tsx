@@ -18,6 +18,7 @@ interface TextFieldProps {
   helperText?: string;
   isSkeleton?: boolean;
   required?: boolean;
+  isInvalid?: boolean;
 }
 
 export const TextField: React.FC<TextFieldProps> = ({
@@ -29,6 +30,7 @@ export const TextField: React.FC<TextFieldProps> = ({
   helperText,
   isSkeleton,
   required,
+  isInvalid,
 }) => {
   return (
     <Skeleton isLoaded={!isSkeleton}>
@@ -42,6 +44,7 @@ export const TextField: React.FC<TextFieldProps> = ({
           type={type}
           placeholder={placeholder}
           required={required}
+          isInvalid={isInvalid}
         />
         {helperText && <FormHelperText>{helperText}</FormHelperText>}
       </FormControl>
