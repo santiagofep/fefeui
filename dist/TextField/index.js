@@ -26,13 +26,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.TextField = void 0;
 const React = __importStar(require("react"));
 const react_1 = require("@chakra-ui/react");
-const TextField = ({ label, placeholder, value, onChange, type, helperText, isSkeleton, }) => {
+const TextField = ({ label, placeholder, value, onChange, type, helperText, isSkeleton, required, }) => {
     return (React.createElement(react_1.Skeleton, { isLoaded: !isSkeleton },
         React.createElement(react_1.FormControl, null,
             label && React.createElement(react_1.FormLabel, null, label),
             React.createElement(react_1.Input, { value: value, onChange: (e) => {
                     onChange(e.target.value);
-                }, type: type, placeholder: placeholder }),
+                }, type: type, placeholder: placeholder, required: required }),
             helperText && React.createElement(react_1.FormHelperText, null, helperText))));
 };
 exports.TextField = TextField;
