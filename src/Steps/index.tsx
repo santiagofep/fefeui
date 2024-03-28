@@ -90,11 +90,21 @@ export const Steps: React.FC<StepsProps> = ({
                 <Box>{stepIcon}</Box>
               </Circle>
               {stepStatus !== "active" && <Box height={"5px"}></Box>}
-              <Heading size="sm" fontWeight={"700"}>
+              <Heading
+                size="sm"
+                fontWeight={"700"}
+                display={["none", "none", "none", "block"]}
+              >
                 {step.title}
               </Heading>
-              <Text>{step.description}</Text>
-              <Box color={`${color}.800`} fontSize={"0.85rem"}>
+              <Text display={["none", "none", "none", "block"]}>
+                {step.description}
+              </Text>
+              <Box
+                color={`${color}.800`}
+                fontSize={"0.85rem"}
+                display={["none", "none", "none", "block"]}
+              >
                 {message}
               </Box>
             </VStack>

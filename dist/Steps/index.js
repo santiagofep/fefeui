@@ -55,9 +55,9 @@ const Steps = ({ steps, currentStep, onStepClick, completedMessage = "completed"
                     }, cursor: stepIsClickable ? "pointer" : "default", backgroundColor: "gray", size: stepStatus === "active" ? "40px" : "30px", marginTop: stepStatus !== "active" ? "5px" : "0px", background: stepStatus === "active" ? `${color}.900` : `${color}.50`, color: stepStatus === "active" ? "white" : `${color}.800`, border: "2px solid", fontWeight: "bold" },
                     React.createElement(react_1.Box, null, stepIcon)),
                 stepStatus !== "active" && React.createElement(react_1.Box, { height: "5px" }),
-                React.createElement(react_1.Heading, { size: "sm", fontWeight: "700" }, step.title),
-                React.createElement(react_1.Text, null, step.description),
-                React.createElement(react_1.Box, { color: `${color}.800`, fontSize: "0.85rem" }, message)));
+                React.createElement(react_1.Heading, { size: "sm", fontWeight: "700", display: ["none", "none", "none", "block"] }, step.title),
+                React.createElement(react_1.Text, { display: ["none", "none", "none", "block"] }, step.description),
+                React.createElement(react_1.Box, { color: `${color}.800`, fontSize: "0.85rem", display: ["none", "none", "none", "block"] }, message)));
         }))));
 };
 exports.Steps = Steps;
