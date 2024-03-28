@@ -27,6 +27,8 @@ export const WithButton: Story = {
     status: "info",
     button: {
       children: "Action",
+      as: "a",
+      href: "#",
     },
   },
 };

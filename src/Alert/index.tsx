@@ -7,10 +7,15 @@ import {
   AlertIcon,
   AlertTitle,
   AlertDescription,
-  ButtonProps,
+  ButtonProps as ChakraButtonProps,
   Box,
   Button,
 } from "@chakra-ui/react";
+
+interface ButtonProps extends ChakraButtonProps {
+  href?: string;
+  target?: string;
+}
 
 interface AlertProps {
   title: string;

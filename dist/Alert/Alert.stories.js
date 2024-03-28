@@ -21,6 +21,8 @@ exports.WithButton = {
         status: "info",
         button: {
             children: "Action",
+            as: "a",
+            href: "#",
         },
     },
 };

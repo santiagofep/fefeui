@@ -1,5 +1,9 @@
 import * as React from "react";
-import { AlertProps as ChakraAlertProps, ButtonProps } from "@chakra-ui/react";
+import { AlertProps as ChakraAlertProps, ButtonProps as ChakraButtonProps } from "@chakra-ui/react";
+interface ButtonProps extends ChakraButtonProps {
+    href?: string;
+    target?: string;
+}
 interface AlertProps {
     title: string;
     description?: string;
