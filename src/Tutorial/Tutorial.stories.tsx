@@ -29,7 +29,7 @@ export const Default: Story = {
       onClick: () => console.log("clicked"),
     },
     video: {
-      url: "https://www.youtube.com/embed/_flqrzcGhrE?si=owU7OBckmCVeHNvW",
+      src: "https://www.youtube.com/embed/_flqrzcGhrE?si=owU7OBckmCVeHNvW",
     },
   },
 };

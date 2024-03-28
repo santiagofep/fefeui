@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useState, useEffect } from "react";
 
-import { ButtonProps } from "../types";
+import { ButtonProps, VideoProps } from "../types";
 import {
   BoxProps,
   Box,
@@ -11,13 +11,12 @@ import {
   Heading,
   HStack,
 } from "@chakra-ui/react";
+import { Video } from "../Video";
 
 export interface TutorialProps extends BoxProps {
   title: string;
-  description: string;
-  video?: {
-    url: string;
-  };
+  description: React.ReactNode;
+  video?: VideoProps;
   button1?: ButtonProps;
   button2?: ButtonProps;
 }
@@ -33,11 +32,7 @@ export const Tutorial: React.FC<TutorialProps> = ({
   return (
     <Box width={"100%"} {...props}>
       <VStack align={"stretch"} spacing={3}>
-        {video && (
-          <AspectRatio ratio={16 / 9} minW={"300px"} width={["100%", "100%"]}>
-            <iframe src={video.url} allowFullScreen />
-          </AspectRatio>
-        )}
+        {video && <Video {...video} />}
         <Heading size="md">{title}</Heading>
         {description && <Box>{description}</Box>}
         <HStack spacing={3}>

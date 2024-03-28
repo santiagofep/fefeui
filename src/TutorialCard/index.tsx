@@ -15,14 +15,13 @@ import {
 
 import { MdClose } from "react-icons/md";
 
-import { ButtonProps } from "../types";
+import { ButtonProps, VideoProps } from "../types";
+import { Video } from "../Video";
 
 export interface TutorialCardProps {
   title: string;
   description: string;
-  video?: {
-    url: string;
-  };
+  video?: VideoProps;
   onClose?: () => void;
   button1?: ButtonProps;
   button2?: ButtonProps;
@@ -58,20 +57,19 @@ export const TutorialCard: React.FC<TutorialCardProps> = ({
             </HStack>
           ) : null}
         </VStack>
-        <AspectRatio
-          ratio={16 / 9}
-          minW={"300px"}
-          width={["100%", "100%", "fit-content"]}
-        >
+
+        <Box minW={"300px"} width={["100%", "100%", "fit-content"]}>
           {video ? (
-            <iframe src={video.url} allowFullScreen />
+            <Video {...video} />
           ) : (
-            <Image
-              src="https://cdn.shopify.com/s/files/1/0628/3047/7483/files/2150836116.jpg?v=1710883876"
-              objectFit="cover"
-            />
+            <AspectRatio ratio={16 / 9}>
+              <Image
+                src="https://cdn.shopify.com/s/files/1/0628/3047/7483/files/2150836116.jpg?v=1710883876"
+                objectFit="cover"
+              />
+            </AspectRatio>
           )}
-        </AspectRatio>
+        </Box>
       </HStack>
       {onClose && (
         <IconButton

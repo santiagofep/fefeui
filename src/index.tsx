@@ -10,6 +10,7 @@ export { OnboardFrame } from "./OnboardFrame";
 export { Page } from "./Page";
 export { Pagination } from "./Pagination";
 export { PriceTable } from "./PriceTable";
+export { RightButton } from "./RightButton";
 export { Select } from "./Select";
 export { SettingsGroup } from "./SettingsGroup";
 export { Sidebar } from "./Sidebar";

@@ -2,6 +2,10 @@ import * as React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { OnboardFrame } from "./index";
+import { List, ListItem, VStack } from "@chakra-ui/react";
+
+import { TextField } from "../TextField";
+import { RightButton } from "../RightButton";
 
 const meta: Meta<typeof OnboardFrame> = {
   component: OnboardFrame,
@@ -21,9 +25,17 @@ export const Default: Story = {
     description: "This is the description of the Onboard",
     tutorial: {
       title: "Tutorial",
-      description: "This is the description of the Tutorial",
+      description: (
+        <List>
+          <ListItem>Step 1: Do this</ListItem>
+          <ListItem>Step 2: Do this</ListItem>
+          <ListItem>Step 3: Do this</ListItem>
+        </List>
+      ),
       video: {
-        url: "https://www.youtube.com/embed/1yuc4BI5NWU",
+        src: "https://www.youtube.com/embed/1yuc4BI5NWU",
+        thumbnailSrc: "https://img.youtube.com/vi/1yuc4BI5NWU/0.jpg",
+        embed: true,
       },
       button1: {
         children: "Button 1",
@@ -52,5 +64,24 @@ export const Default: Story = {
       ],
       currentStep: 2,
     },
+    children: (
+      <VStack spacing={2.5} align={"stretch"}>
+        <TextField
+          label="Name"
+          type="text"
+          placeholder="Enter your name"
+          value=""
+          onChange={() => {}}
+        />
+        <TextField
+          label="Name"
+          type="text"
+          placeholder="Enter your name"
+          value=""
+          onChange={() => {}}
+        />
+        <RightButton>Next</RightButton>
+      </VStack>
+    ),
   },
 };

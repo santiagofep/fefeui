@@ -44,7 +44,7 @@ export const OnboardFrame: React.FC<OnboardFrameProps> = ({
           <Tutorial {...tutorial} />
         </Flex>
         <Flex flex={8} {...col2Props}>
-          <VStack align={"stretch"} spacing={5} width={"100%"}>
+          <VStack align={"stretch"} spacing={5} width={"100%"} marginTop={5}>
             <Steps {...steps} />
             <Container maxW="container.lg">
               <VStack align={"stretch"} spacing={2} width={"100%"}>

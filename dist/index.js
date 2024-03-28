@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TutorialCard = exports.Tutorial = exports.TextFieldButton = exports.TextField = exports.Table = exports.Switch = exports.Steps = exports.Sidebar = exports.SettingsGroup = exports.Select = exports.PriceTable = exports.Pagination = exports.Page = exports.OnboardFrame = exports.Header = exports.Filter = exports.DashboardFrame = exports.ChipInput = exports.AlertDialog = exports.Alert = void 0;
+exports.TutorialCard = exports.Tutorial = exports.TextFieldButton = exports.TextField = exports.Table = exports.Switch = exports.Steps = exports.Sidebar = exports.SettingsGroup = exports.Select = exports.RightButton = exports.PriceTable = exports.Pagination = exports.Page = exports.OnboardFrame = exports.Header = exports.Filter = exports.DashboardFrame = exports.ChipInput = exports.AlertDialog = exports.Alert = void 0;
 var Alert_1 = require("./Alert");
 Object.defineProperty(exports, "Alert", { enumerable: true, get: function () { return Alert_1.Alert; } });
 var AlertDialog_1 = require("./AlertDialog");
@@ -21,6 +21,8 @@ var Pagination_1 = require("./Pagination");
 Object.defineProperty(exports, "Pagination", { enumerable: true, get: function () { return Pagination_1.Pagination; } });
 var PriceTable_1 = require("./PriceTable");
 Object.defineProperty(exports, "PriceTable", { enumerable: true, get: function () { return PriceTable_1.PriceTable; } });
+var RightButton_1 = require("./RightButton");
+Object.defineProperty(exports, "RightButton", { enumerable: true, get: function () { return RightButton_1.RightButton; } });
 var Select_1 = require("./Select");
 Object.defineProperty(exports, "Select", { enumerable: true, get: function () { return Select_1.Select; } });
 var SettingsGroup_1 = require("./SettingsGroup");

@@ -33,7 +33,9 @@ export const WithVideo: Story = {
       onClick: () => console.log("clicked"),
     },
     video: {
-      url: "https://www.youtube.com/embed/_flqrzcGhrE?si=owU7OBckmCVeHNvW",
+      src: "https://www.youtube.com/embed/1yuc4BI5NWU",
+      thumbnailSrc: "https://img.youtube.com/vi/1yuc4BI5NWU/0.jpg",
+      embed: true,
     },
   },
 };

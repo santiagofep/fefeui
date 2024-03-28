@@ -37,12 +37,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Tutorial = void 0;
 const React = __importStar(require("react"));
 const react_1 = require("@chakra-ui/react");
+const Video_1 = require("../Video");
 const Tutorial = (_a) => {
     var { title, description, video, button1, button2 } = _a, props = __rest(_a, ["title", "description", "video", "button1", "button2"]);
     return (React.createElement(react_1.Box, Object.assign({ width: "100%" }, props),
         React.createElement(react_1.VStack, { align: "stretch", spacing: 3 },
-            video && (React.createElement(react_1.AspectRatio, { ratio: 16 / 9, minW: "300px", width: ["100%", "100%"] },
-                React.createElement("iframe", { src: video.url, allowFullScreen: true }))),
+            video && React.createElement(Video_1.Video, Object.assign({}, video)),
             React.createElement(react_1.Heading, { size: "md" }, title),
             description && React.createElement(react_1.Box, null, description),
             React.createElement(react_1.HStack, { spacing: 3 },

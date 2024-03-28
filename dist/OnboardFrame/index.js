@@ -48,7 +48,7 @@ const OnboardFrame = (_a) => {
             React.createElement(react_1.Flex, Object.assign({ flex: 4, padding: 3 }, col1Props),
                 React.createElement(Tutorial_1.Tutorial, Object.assign({}, tutorial))),
             React.createElement(react_1.Flex, Object.assign({ flex: 8 }, col2Props),
-                React.createElement(react_1.VStack, { align: "stretch", spacing: 5, width: "100%" },
+                React.createElement(react_1.VStack, { align: "stretch", spacing: 5, width: "100%", marginTop: 5 },
                     React.createElement(Steps_1.Steps, Object.assign({}, steps)),
                     React.createElement(react_1.Container, { maxW: "container.lg" },
                         React.createElement(react_1.VStack, { align: "stretch", spacing: 2, width: "100%" },
