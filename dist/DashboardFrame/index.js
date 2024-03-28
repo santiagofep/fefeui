@@ -31,11 +31,17 @@ const Sidebar_1 = require("../Sidebar");
 const react_2 = require("@chakra-ui/react");
 const DashboardFrame = ({ header, sidebar, children, }) => {
     const [isSidebarOpen, setIsSidebarOpen] = (0, react_1.useState)(false);
-    if (sidebar.width === undefined) {
+    if (!sidebar.width) {
         sidebar.width = "250px";
     }
-    if (header.height === undefined) {
+    if (!header.height) {
         header.height = "60px";
+    }
+    if (!sidebar.borderRight) {
+        sidebar.borderRight = "1px solid";
+    }
+    if (!sidebar.borderColor) {
+        sidebar.borderColor = "gray.200";
     }
     sidebar.height = `calc(100vh - ${header.height})`;
     const sidebarProps = Object.assign({ paddingTop: "0.5rem", display: ["none", "none", "flex"] }, sidebar);

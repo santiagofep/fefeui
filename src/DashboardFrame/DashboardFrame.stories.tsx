@@ -35,12 +35,7 @@ export const Default: Story = {
     },
     sidebar: sidebarArgs,
     children: (
-      <Container
-        maxW={"container.xl"}
-        paddingY={"0.5rem"}
-        height={"200vh"}
-        background={"gray.200"}
-      >
+      <Container maxW={"container.xl"} paddingY={"0.5rem"} height={"200vh"}>
         Content
       </Container>
     ),

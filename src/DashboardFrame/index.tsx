@@ -28,11 +28,17 @@ export const DashboardFrame: React.FC<DashboardFrameProps> = ({
 }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-  if (sidebar.width === undefined) {
+  if (!sidebar.width) {
     sidebar.width = "250px";
   }
-  if (header.height === undefined) {
+  if (!header.height) {
     header.height = "60px";
+  }
+  if (!sidebar.borderRight) {
+    sidebar.borderRight = "1px solid";
+  }
+  if (!sidebar.borderColor) {
+    sidebar.borderColor = "gray.200";
   }
 
   sidebar.height = `calc(100vh - ${header.height})`;
