@@ -74,9 +74,10 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
       {children && (
         <Collapse in={childrenIsActive}>
           <VStack align={"stretch"} marginLeft={"1.5rem"} spacing={1}>
-            {children.map((child) => {
+            {children.map((child: SidebarChildItemProps, index: number) => {
               return (
                 <Button
+                  key={index}
                   size={"sm"}
                   variant={getButtonVariant(child.isActive, false)}
                   as={as}

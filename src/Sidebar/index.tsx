@@ -39,8 +39,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
         marginBottom={"2rem"}
         spacing={1}
       >
-        {items.map((item) => {
-          return <SidebarItem as={itemsAs} {...item} />;
+        {items.map((item: SidebarItemWithChildrenProps, index: number) => {
+          return <SidebarItem as={itemsAs} {...item} key={index} />;
         })}
       </VStack>
       {extra && <Box>{extra}</Box>}

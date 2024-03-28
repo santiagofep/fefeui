@@ -27,7 +27,7 @@ exports.Loading = void 0;
 const React = __importStar(require("react"));
 const react_1 = require("@chakra-ui/react");
 const Loading = ({ image }) => {
-    return (React.createElement(react_1.Flex, { width: "100%", height: `calc(100vh - 240px)`, align: "center", justifyContent: "center" },
+    return (React.createElement(react_1.Flex, { width: "100%", height: `calc(100vh - 240px)`, align: "center", justifyContent: "center", position: "fixed", top: "0", left: "0" },
         React.createElement(react_1.VStack, { justifyContent: "center", width: "100%" },
             React.createElement(react_1.Image, { src: image.src, alt: image.alt, height: image.height, marginY: "1rem" }),
             React.createElement(react_1.Box, { minW: "300px" },

@@ -27,7 +27,7 @@ exports.Default = void 0;
 const React = __importStar(require("react"));
 const index_1 = require("./index");
 const Sidebar_stories_1 = require("../Sidebar/Sidebar.stories");
-const Loading_1 = require("../Loading");
+const react_1 = require("@chakra-ui/react");
 const meta = {
     component: index_1.DashboardFrame,
     title: "Dashboard / DashboardFrame",
@@ -53,10 +53,6 @@ exports.Default = {
             },
         },
         sidebar: Sidebar_stories_1.sidebarArgs,
-        children: (React.createElement(Loading_1.Loading, { image: {
-                src: "https://integracion-siigo.moship.io/static/frontend/dist/moship-logo-8863c36b37fac88c840f0740eddccc2e.png",
-                alt: "Logo",
-                height: "40px",
-            } })),
+        children: (React.createElement(react_1.Container, { maxW: "container.xl", paddingY: "0.5rem", height: "200vh", background: "green.100" }, "Content")),
     },
 };
