@@ -8,7 +8,6 @@ import {
   VStack,
   AspectRatio,
   Button,
-  Text,
   Heading,
   HStack,
 } from "@chakra-ui/react";
@@ -32,7 +31,7 @@ export const Tutorial: React.FC<TutorialProps> = ({
   ...props
 }) => {
   return (
-    <Box {...props}>
+    <Box width={"100%"} {...props}>
       <VStack align={"stretch"} spacing={3}>
         {video && (
           <AspectRatio ratio={16 / 9} minW={"300px"} width={["100%", "100%"]}>

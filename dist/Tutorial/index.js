@@ -39,7 +39,7 @@ const React = __importStar(require("react"));
 const react_1 = require("@chakra-ui/react");
 const Tutorial = (_a) => {
     var { title, description, video, button1, button2 } = _a, props = __rest(_a, ["title", "description", "video", "button1", "button2"]);
-    return (React.createElement(react_1.Box, Object.assign({}, props),
+    return (React.createElement(react_1.Box, Object.assign({ width: "100%" }, props),
         React.createElement(react_1.VStack, { align: "stretch", spacing: 3 },
             video && (React.createElement(react_1.AspectRatio, { ratio: 16 / 9, minW: "300px", width: ["100%", "100%"] },
                 React.createElement("iframe", { src: video.url, allowFullScreen: true }))),
