@@ -40,15 +40,24 @@ const Steps_1 = require("../Steps");
 const react_1 = require("@chakra-ui/react");
 const Tutorial_1 = require("../Tutorial");
 const OnboardFrame = (_a) => {
-    var { title, description, tutorial, steps, children, width = "100%", height = "100vh" } = _a, props = __rest(_a, ["title", "description", "tutorial", "steps", "children", "width", "height"]);
-    return (React.createElement(react_1.Box, Object.assign({ display: "flex", width: width, height: height }, props),
-        React.createElement(react_1.Box, { flex: 3, bg: "gray.50", padding: "1rem" },
-            React.createElement(Tutorial_1.Tutorial, Object.assign({}, tutorial))),
-        React.createElement(react_1.Box, { flex: 7, padding: "1rem" },
-            React.createElement(react_1.VStack, { align: "stretch", spacing: 5 },
-                React.createElement(Steps_1.Steps, Object.assign({}, steps)),
-                React.createElement(react_1.Heading, { size: "md" }, title),
-                React.createElement(react_1.Box, null, description),
-                children))));
+    var { title, description, tutorial, steps, children, width = "100%", height = "100vh", marginTop = "1.5rem" } = _a, props = __rest(_a, ["title", "description", "tutorial", "steps", "children", "width", "height", "marginTop"]);
+    const { isOpen, onClose, onOpen } = (0, react_1.useDisclosure)();
+    return (React.createElement(react_1.Box, Object.assign({ width: width, height: height, marginTop: marginTop }, props),
+        React.createElement(react_1.VStack, { align: "stretch", spacing: 5, width: "100%" },
+            React.createElement(Steps_1.Steps, Object.assign({}, steps)),
+            React.createElement(react_1.Container, { maxW: "container.lg" },
+                React.createElement(react_1.VStack, { align: "stretch", spacing: 2, width: "100%" },
+                    React.createElement(react_1.Heading, { size: "md" }, title),
+                    React.createElement(react_1.Box, null, description),
+                    React.createElement(react_1.Box, null,
+                        React.createElement(react_1.Button, { onClick: onOpen }, "Ver gu\u00EDa")))),
+            React.createElement(react_1.Container, { maxW: "container.lg" }, children)),
+        React.createElement(react_1.Drawer, { isOpen: isOpen, onClose: onClose, size: "lg" },
+            React.createElement(react_1.DrawerOverlay, null),
+            React.createElement(react_1.DrawerContent, null,
+                React.createElement(react_1.DrawerCloseButton, null),
+                React.createElement(react_1.DrawerHeader, null, "Gu\u00EDa de uso"),
+                React.createElement(react_1.DrawerBody, null,
+                    React.createElement(Tutorial_1.Tutorial, Object.assign({}, tutorial)))))));
 };
 exports.OnboardFrame = OnboardFrame;
