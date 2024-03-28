@@ -43,6 +43,9 @@ const OnboardFrame = (_a) => {
     var { title, description, tutorial, steps, children, width = "100%", height = "100vh", col1Props = {
         backgroundColor: "gray.200",
     }, col2Props, contentMaxWidth = "container.lg", logo } = _a, props = __rest(_a, ["title", "description", "tutorial", "steps", "children", "width", "height", "col1Props", "col2Props", "contentMaxWidth", "logo"]);
+    if (!col1Props.maxW) {
+        col1Props.maxW = "380px";
+    }
     return (React.createElement(react_1.Box, Object.assign({ width: width, height: height }, props),
         React.createElement(react_1.Flex, { height: "100%" },
             React.createElement(react_1.Flex, Object.assign({ flex: 3, padding: 3 }, col1Props),

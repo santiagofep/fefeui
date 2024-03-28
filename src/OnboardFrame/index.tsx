@@ -42,6 +42,10 @@ export const OnboardFrame: React.FC<OnboardFrameProps> = ({
   logo,
   ...props
 }) => {
+  if (!col1Props.maxW) {
+    col1Props.maxW = "380px";
+  }
+
   return (
     <Box width={width} height={height} {...props}>
       <Flex height={"100%"}>
