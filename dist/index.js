@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DashboardFrame = exports.Header = exports.Sidebar = exports.Pagination = exports.Filter = exports.PriceTable = exports.TutorialCard = exports.TextFieldButton = exports.TextField = exports.Table = exports.Switch = exports.SettingsGroup = exports.Select = exports.Page = exports.ChipInput = exports.AlertDialog = void 0;
+exports.Alert = exports.DashboardFrame = exports.Header = exports.Sidebar = exports.Pagination = exports.Filter = exports.PriceTable = exports.TutorialCard = exports.TextFieldButton = exports.TextField = exports.Table = exports.Switch = exports.SettingsGroup = exports.Select = exports.Page = exports.ChipInput = exports.AlertDialog = void 0;
 var AlertDialog_1 = require("./AlertDialog");
 Object.defineProperty(exports, "AlertDialog", { enumerable: true, get: function () { return AlertDialog_1.AlertDialog; } });
 var ChipInput_1 = require("./ChipInput");
@@ -33,3 +33,5 @@ var Header_1 = require("./Header");
 Object.defineProperty(exports, "Header", { enumerable: true, get: function () { return Header_1.Header; } });
 var DashboardFrame_1 = require("./DashboardFrame");
 Object.defineProperty(exports, "DashboardFrame", { enumerable: true, get: function () { return DashboardFrame_1.DashboardFrame; } });
+var Alert_1 = require("./Alert");
+Object.defineProperty(exports, "Alert", { enumerable: true, get: function () { return Alert_1.Alert; } });

@@ -16,3 +16,4 @@ export { Pagination } from "./Pagination";
 export { Sidebar } from "./Sidebar";
 export { Header } from "./Header";
 export { DashboardFrame } from "./DashboardFrame";
+export { Alert } from "./Alert";
