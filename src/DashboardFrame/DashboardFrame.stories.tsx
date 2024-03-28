@@ -4,6 +4,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { DashboardFrame } from "./index";
 import { sidebarArgs } from "../Sidebar/Sidebar.stories";
 import { Container } from "@chakra-ui/react";
+import { Loading } from "../Loading";
 
 const meta: Meta<typeof DashboardFrame> = {
   component: DashboardFrame,
@@ -35,9 +36,13 @@ export const Default: Story = {
     },
     sidebar: sidebarArgs,
     children: (
-      <Container maxW={"container.xl"} paddingY={"0.5rem"} height={"200vh"}>
-        Content
-      </Container>
+      <Loading
+        image={{
+          src: "https://integracion-siigo.moship.io/static/frontend/dist/moship-logo-8863c36b37fac88c840f0740eddccc2e.png",
+          alt: "Logo",
+          height: "40px",
+        }}
+      />
     ),
   },
 };
