@@ -28,6 +28,7 @@ interface TableProps {
   }[];
   tableProps?: React.ComponentProps<typeof ChakraTable>;
   isSkeleton?: boolean;
+  skeletonRows?: number;
 }
 
 export const Table: React.FC<TableProps> = ({
@@ -35,7 +36,12 @@ export const Table: React.FC<TableProps> = ({
   rows,
   tableProps,
   isSkeleton,
+  skeletonRows = 5,
 }) => {
+  const skeletonArray = Array.from(
+    { length: skeletonRows },
+    (_, index) => index
+  );
   return (
     <ChakraTable
       {...tableProps}
@@ -60,7 +66,7 @@ export const Table: React.FC<TableProps> = ({
 
       <Tbody>
         {isSkeleton ? (
-          [1, 2, 3, 4, 5].map((index) => (
+          skeletonArray.map((index) => (
             <Tr key={index}>
               {headings.map((heading, index) => (
                 <Td key={index}>

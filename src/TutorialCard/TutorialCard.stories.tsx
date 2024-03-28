@@ -23,18 +23,14 @@ export const WithVideo: Story = {
       "Streamline your shopping with personalized product recommendations and swift checkout.",
     onClose: () => console.log("closed"),
     button1: {
-      label: "Learn More",
-      buttonProps: {
-        as: "a",
-        href: "https://www.google.com",
-        target: "_blank",
-      },
+      children: "Learn More",
+      as: "a",
+      href: "https://www.google.com",
+      target: "_blank",
     },
     button2: {
-      label: "Got it!",
-      buttonProps: {
-        onClick: () => console.log("clicked"),
-      },
+      children: "Got it!",
+      onClick: () => console.log("clicked"),
     },
     video: {
       url: "https://www.youtube.com/embed/_flqrzcGhrE?si=owU7OBckmCVeHNvW",
@@ -49,18 +45,14 @@ export const WithoutVideo: Story = {
       "Streamline your shopping with personalized product recommendations and swift checkout.",
     onClose: () => console.log("closed"),
     button1: {
-      label: "Learn More",
-      buttonProps: {
-        as: "a",
-        href: "https://www.google.com",
-        target: "_blank",
-      },
+      children: "Learn More",
+      as: "a",
+      href: "https://www.google.com",
+      target: "_blank",
     },
     button2: {
-      label: "Got it!",
-      buttonProps: {
-        onClick: () => console.log("clicked"),
-      },
+      children: "Got it!",
+      onClick: () => console.log("clicked"),
     },
   },
 };

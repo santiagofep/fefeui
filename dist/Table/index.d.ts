@@ -14,6 +14,7 @@ interface TableProps {
     }[];
     tableProps?: React.ComponentProps<typeof ChakraTable>;
     isSkeleton?: boolean;
+    skeletonRows?: number;
 }
 export declare const Table: React.FC<TableProps>;
 export {};

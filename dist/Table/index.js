@@ -26,7 +26,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Table = void 0;
 const React = __importStar(require("react"));
 const react_1 = require("@chakra-ui/react");
-const Table = ({ headings, rows, tableProps, isSkeleton, }) => {
+const Table = ({ headings, rows, tableProps, isSkeleton, skeletonRows = 5, }) => {
+    const skeletonArray = Array.from({ length: skeletonRows }, (_, index) => index);
     return (React.createElement(react_1.Table, Object.assign({}, tableProps, { border: "1px solid", borderColor: "gray.200", size: "md" }),
         React.createElement(react_1.Thead, { background: "gray.50" },
             React.createElement("tr", null, headings.map((heading) => (React.createElement(react_1.Th, { key: heading.key },
@@ -34,7 +35,7 @@ const Table = ({ headings, rows, tableProps, isSkeleton, }) => {
                     heading.title,
                     " ",
                     heading.rightAddon && (React.createElement(react_1.Box, { marginLeft: "0.25rem" }, heading.rightAddon)))))))),
-        React.createElement(react_1.Tbody, null, isSkeleton ? ([1, 2, 3, 4, 5].map((index) => (React.createElement(react_1.Tr, { key: index }, headings.map((heading, index) => (React.createElement(react_1.Td, { key: index },
+        React.createElement(react_1.Tbody, null, isSkeleton ? (skeletonArray.map((index) => (React.createElement(react_1.Tr, { key: index }, headings.map((heading, index) => (React.createElement(react_1.Td, { key: index },
             React.createElement(react_1.Skeleton, { height: "20px" })))))))) : (React.createElement(React.Fragment, null, rows.map((row, index) => {
             return (React.createElement(react_1.Tr, { key: index }, headings.map((heading, index) => (React.createElement(react_1.Td, { key: index, align: heading.align }, row[heading.key].value)))));
         }))))));

@@ -1,14 +1,13 @@
 import * as React from "react";
 import { ButtonProps } from "../types";
-export interface TutorialCardProps {
+import { BoxProps } from "@chakra-ui/react";
+export interface TutorialProps extends BoxProps {
     title: string;
     description: string;
     video?: {
         url: string;
     };
-    onClose?: () => void;
     button1?: ButtonProps;
     button2?: ButtonProps;
-    shadow?: string;
 }
-export declare const TutorialCard: React.FC<TutorialCardProps>;
+export declare const Tutorial: React.FC<TutorialProps>;

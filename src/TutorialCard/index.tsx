@@ -12,7 +12,10 @@ import {
   IconButton,
   Button,
 } from "@chakra-ui/react";
+
 import { MdClose } from "react-icons/md";
+
+import { ButtonProps } from "../types";
 
 export interface TutorialCardProps {
   title: string;
@@ -21,14 +24,9 @@ export interface TutorialCardProps {
     url: string;
   };
   onClose?: () => void;
-  button1?: {
-    label: string;
-    buttonProps: any;
-  };
-  button2?: {
-    label: string;
-    buttonProps: any;
-  };
+  button1?: ButtonProps;
+  button2?: ButtonProps;
+  shadow?: string;
 }
 
 export const TutorialCard: React.FC<TutorialCardProps> = ({
@@ -38,6 +36,7 @@ export const TutorialCard: React.FC<TutorialCardProps> = ({
   onClose,
   button1,
   button2,
+  shadow = "md",
 }) => {
   return (
     <Box position={"relative"}>
@@ -45,7 +44,7 @@ export const TutorialCard: React.FC<TutorialCardProps> = ({
         justifyContent={"space-between"}
         borderRadius={"md"}
         overflow={"hidden"}
-        shadow={"md"}
+        shadow={shadow}
         flexWrap={["wrap", "nowrap"]}
         flexDirection={["column-reverse", "column-reverse", "row"]}
       >
@@ -54,16 +53,8 @@ export const TutorialCard: React.FC<TutorialCardProps> = ({
           <Text>{description}</Text>
           {button1 || button2 ? (
             <HStack>
-              {button1 && (
-                <Button size={"sm"} {...button1.buttonProps}>
-                  {button1.label}
-                </Button>
-              )}
-              {button2 && (
-                <Button size="sm" {...button2.buttonProps}>
-                  {button2.label}
-                </Button>
-              )}
+              {button1 && <Button size="sm" {...button1} />}
+              {button2 && <Button size="sm" {...button2} />}
             </HStack>
           ) : null}
         </VStack>

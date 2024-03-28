@@ -32,9 +32,8 @@ export const Steps: React.FC<StepsProps> = ({
   currentMessage = "current",
   pendingMessage = "pending",
 }) => {
-  const currentStepData = steps[currentStep - 1];
   return (
-    <>
+    <Box>
       <Box
         marginX={"15px"}
         borderBottomColor={"gray.100"}
@@ -53,7 +52,7 @@ export const Steps: React.FC<StepsProps> = ({
           if (stepNumber < currentStep) {
             stepStatus = "completed";
             stepIcon = <MdCheck />;
-            color = "green";
+            color = "gray";
             message = completedMessage;
           }
           if (stepNumber === currentStep) {
@@ -84,13 +83,17 @@ export const Steps: React.FC<StepsProps> = ({
                 <Box>{stepIcon}</Box>
               </Circle>
               {stepStatus !== "active" && <Box height={"5px"}></Box>}
-              <Heading size="sm">{step.title}</Heading>
+              <Heading size="sm" fontWeight={"700"}>
+                {step.title}
+              </Heading>
               <Text>{step.description}</Text>
-              <Text color={`${color}.800`}>{message}</Text>
+              <Box color={`${color}.800`} fontSize={"0.85rem"}>
+                {message}
+              </Box>
             </VStack>
           );
         })}
       </HStack>
-    </>
+    </Box>
   );
 };
