@@ -5,11 +5,12 @@ import { Steps, StepsProps } from "../Steps";
 import {
   Box,
   BoxProps,
-  Button,
+  Image,
   Container,
   Flex,
   Heading,
   VStack,
+  ImageProps,
 } from "@chakra-ui/react";
 import { Tutorial, TutorialProps } from "../Tutorial";
 
@@ -21,6 +22,8 @@ interface OnboardFrameProps extends BoxProps {
   children?: React.ReactNode;
   col1Props?: BoxProps;
   col2Props?: BoxProps;
+  contentMaxWidth?: string;
+  logo?: ImageProps;
 }
 
 export const OnboardFrame: React.FC<OnboardFrameProps> = ({
@@ -35,24 +38,29 @@ export const OnboardFrame: React.FC<OnboardFrameProps> = ({
     backgroundColor: "gray.200",
   },
   col2Props,
+  contentMaxWidth = "container.lg",
+  logo,
   ...props
 }) => {
   return (
     <Box width={width} height={height} {...props}>
       <Flex height={"100%"}>
-        <Flex flex={4} padding={3} {...col1Props}>
-          <Tutorial {...tutorial} />
+        <Flex flex={3} padding={3} {...col1Props}>
+          <VStack align={"stretch"} spacing={5} width={"100%"} marginTop={2}>
+            {logo && <Image {...logo} />}
+            {tutorial && <Tutorial {...tutorial} />}
+          </VStack>
         </Flex>
         <Flex flex={8} {...col2Props}>
           <VStack align={"stretch"} spacing={5} width={"100%"} marginTop={5}>
             <Steps {...steps} />
-            <Container maxW="container.lg">
+            <Container maxW={contentMaxWidth}>
               <VStack align={"stretch"} spacing={2} width={"100%"}>
                 <Heading size="md">{title}</Heading>
                 <Box>{description}</Box>
               </VStack>
             </Container>
-            <Container maxW="container.lg">{children}</Container>
+            <Container maxW={contentMaxWidth}>{children}</Container>
           </VStack>
         </Flex>
       </Flex>

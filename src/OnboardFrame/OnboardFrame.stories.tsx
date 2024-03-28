@@ -2,7 +2,7 @@ import * as React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { OnboardFrame } from "./index";
-import { List, ListItem, VStack } from "@chakra-ui/react";
+import { Container, List, ListItem, VStack } from "@chakra-ui/react";
 
 import { TextField } from "../TextField";
 import { RightButton } from "../RightButton";
@@ -45,6 +45,9 @@ export const Default: Story = {
       },
     },
     steps: {
+      onStepClick: (step: number) => {
+        console.log(step);
+      },
       steps: [
         {
           title: "Step 1",
@@ -83,5 +86,68 @@ export const Default: Story = {
         <RightButton>Next</RightButton>
       </VStack>
     ),
+    logo: {
+      marginX: "auto",
+      src: "https://integracion-siigo.moship.io/static/frontend/dist/moship-logo-8863c36b37fac88c840f0740eddccc2e.png",
+      height: "50px",
+    },
+  },
+};
+
+export const NoTutorial: Story = {
+  parameters: {
+    layout: "fullscreen",
+  },
+  args: {
+    title: "Welcome to the Onboard",
+    description: "This is the description of the Onboard",
+    steps: {
+      onStepClick: (step: number) => {
+        console.log(step);
+      },
+      steps: [
+        {
+          title: "Step 1",
+        },
+        {
+          title: "Step 2",
+        },
+        {
+          title: "Step 3",
+        },
+        {
+          title: "Step 4",
+        },
+        {
+          title: "Step 5",
+        },
+      ],
+      currentStep: 1,
+    },
+    children: (
+      <VStack spacing={2.5} align={"stretch"}>
+        <TextField
+          label="Name"
+          type="text"
+          placeholder="Enter your name"
+          value=""
+          onChange={() => {}}
+        />
+        <TextField
+          label="Name"
+          type="text"
+          placeholder="Enter your name"
+          value=""
+          onChange={() => {}}
+        />
+        <RightButton>Next</RightButton>
+      </VStack>
+    ),
+    contentMaxWidth: "container.sm",
+    logo: {
+      marginX: "auto",
+      src: "https://integracion-siigo.moship.io/static/frontend/dist/moship-logo-8863c36b37fac88c840f0740eddccc2e.png",
+      height: "50px",
+    },
   },
 };

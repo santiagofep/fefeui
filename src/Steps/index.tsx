@@ -19,6 +19,7 @@ export interface StepProps {
 
 export interface StepsProps {
   steps: StepProps[];
+  onStepClick?: (step: number) => void;
   currentStep: number;
   completedMessage?: string;
   currentMessage?: string;
@@ -28,6 +29,7 @@ export interface StepsProps {
 export const Steps: React.FC<StepsProps> = ({
   steps,
   currentStep,
+  onStepClick,
   completedMessage = "completed",
   currentMessage = "current",
   pendingMessage = "pending",
@@ -61,15 +63,20 @@ export const Steps: React.FC<StepsProps> = ({
             color = "gray";
             message = currentMessage;
           }
-
+          const stepIsClickable = onStepClick && stepNumber < currentStep;
           return (
             <VStack
+              key={index}
               spacing={0}
               width={"100%"}
               align={"center"}
               textAlign={"center"}
             >
               <Circle
+                onClick={() => {
+                  stepIsClickable && onStepClick(stepNumber);
+                }}
+                cursor={stepIsClickable ? "pointer" : "default"}
                 backgroundColor={"gray"}
                 size={stepStatus === "active" ? "40px" : "30px"}
                 marginTop={stepStatus !== "active" ? "5px" : "0px"}

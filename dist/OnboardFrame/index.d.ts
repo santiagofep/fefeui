@@ -1,6 +1,6 @@
 import * as React from "react";
 import { StepsProps } from "../Steps";
-import { BoxProps } from "@chakra-ui/react";
+import { BoxProps, ImageProps } from "@chakra-ui/react";
 import { TutorialProps } from "../Tutorial";
 interface OnboardFrameProps extends BoxProps {
     title: string;
@@ -10,6 +10,8 @@ interface OnboardFrameProps extends BoxProps {
     children?: React.ReactNode;
     col1Props?: BoxProps;
     col2Props?: BoxProps;
+    contentMaxWidth?: string;
+    logo?: ImageProps;
 }
 export declare const OnboardFrame: React.FC<OnboardFrameProps>;
 export {};

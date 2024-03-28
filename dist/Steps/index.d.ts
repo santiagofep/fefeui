@@ -5,6 +5,7 @@ export interface StepProps {
 }
 export interface StepsProps {
     steps: StepProps[];
+    onStepClick?: (step: number) => void;
     currentStep: number;
     completedMessage?: string;
     currentMessage?: string;

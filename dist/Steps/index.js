@@ -27,7 +27,7 @@ exports.Steps = void 0;
 const react_1 = require("@chakra-ui/react");
 const React = __importStar(require("react"));
 const md_1 = require("react-icons/md");
-const Steps = ({ steps, currentStep, completedMessage = "completed", currentMessage = "current", pendingMessage = "pending", }) => {
+const Steps = ({ steps, currentStep, onStepClick, completedMessage = "completed", currentMessage = "current", pendingMessage = "pending", }) => {
     return (React.createElement(react_1.Box, null,
         React.createElement(react_1.Box, { marginX: "15px", borderBottomColor: "gray.100", borderBottom: "2px solid", marginBottom: "-20px", marginTop: "20px" }),
         React.createElement(react_1.HStack, { justifyContent: "space-between", align: "start" }, steps.map((step, index) => {
@@ -48,8 +48,11 @@ const Steps = ({ steps, currentStep, completedMessage = "completed", currentMess
                 color = "gray";
                 message = currentMessage;
             }
-            return (React.createElement(react_1.VStack, { spacing: 0, width: "100%", align: "center", textAlign: "center" },
-                React.createElement(react_1.Circle, { backgroundColor: "gray", size: stepStatus === "active" ? "40px" : "30px", marginTop: stepStatus !== "active" ? "5px" : "0px", background: stepStatus === "active" ? `${color}.900` : `${color}.50`, color: stepStatus === "active" ? "white" : `${color}.800`, border: "2px solid", fontWeight: "bold" },
+            const stepIsClickable = onStepClick && stepNumber < currentStep;
+            return (React.createElement(react_1.VStack, { key: index, spacing: 0, width: "100%", align: "center", textAlign: "center" },
+                React.createElement(react_1.Circle, { onClick: () => {
+                        stepIsClickable && onStepClick(stepNumber);
+                    }, cursor: stepIsClickable ? "pointer" : "default", backgroundColor: "gray", size: stepStatus === "active" ? "40px" : "30px", marginTop: stepStatus !== "active" ? "5px" : "0px", background: stepStatus === "active" ? `${color}.900` : `${color}.50`, color: stepStatus === "active" ? "white" : `${color}.800`, border: "2px solid", fontWeight: "bold" },
                     React.createElement(react_1.Box, null, stepIcon)),
                 stepStatus !== "active" && React.createElement(react_1.Box, { height: "5px" }),
                 React.createElement(react_1.Heading, { size: "sm", fontWeight: "700" }, step.title),

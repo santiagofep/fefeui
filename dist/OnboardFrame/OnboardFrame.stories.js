@@ -23,7 +23,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Default = void 0;
+exports.NoTutorial = exports.Default = void 0;
 const React = __importStar(require("react"));
 const index_1 = require("./index");
 const react_1 = require("@chakra-ui/react");
@@ -60,6 +60,9 @@ exports.Default = {
             },
         },
         steps: {
+            onStepClick: (step) => {
+                console.log(step);
+            },
             steps: [
                 {
                     title: "Step 1",
@@ -83,5 +86,52 @@ exports.Default = {
             React.createElement(TextField_1.TextField, { label: "Name", type: "text", placeholder: "Enter your name", value: "", onChange: () => { } }),
             React.createElement(TextField_1.TextField, { label: "Name", type: "text", placeholder: "Enter your name", value: "", onChange: () => { } }),
             React.createElement(RightButton_1.RightButton, null, "Next"))),
+        logo: {
+            marginX: "auto",
+            src: "https://integracion-siigo.moship.io/static/frontend/dist/moship-logo-8863c36b37fac88c840f0740eddccc2e.png",
+            height: "50px",
+        },
+    },
+};
+exports.NoTutorial = {
+    parameters: {
+        layout: "fullscreen",
+    },
+    args: {
+        title: "Welcome to the Onboard",
+        description: "This is the description of the Onboard",
+        steps: {
+            onStepClick: (step) => {
+                console.log(step);
+            },
+            steps: [
+                {
+                    title: "Step 1",
+                },
+                {
+                    title: "Step 2",
+                },
+                {
+                    title: "Step 3",
+                },
+                {
+                    title: "Step 4",
+                },
+                {
+                    title: "Step 5",
+                },
+            ],
+            currentStep: 1,
+        },
+        children: (React.createElement(react_1.VStack, { spacing: 2.5, align: "stretch" },
+            React.createElement(TextField_1.TextField, { label: "Name", type: "text", placeholder: "Enter your name", value: "", onChange: () => { } }),
+            React.createElement(TextField_1.TextField, { label: "Name", type: "text", placeholder: "Enter your name", value: "", onChange: () => { } }),
+            React.createElement(RightButton_1.RightButton, null, "Next"))),
+        contentMaxWidth: "container.sm",
+        logo: {
+            marginX: "auto",
+            src: "https://integracion-siigo.moship.io/static/frontend/dist/moship-logo-8863c36b37fac88c840f0740eddccc2e.png",
+            height: "50px",
+        },
     },
 };
