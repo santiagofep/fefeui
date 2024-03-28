@@ -56,7 +56,11 @@ export const DashboardFrame: React.FC<DashboardFrameProps> = ({
       <Header {...headerProps} />
       <Flex width={"100%"}>
         <Sidebar {...sidebarProps} />
-        <Box width={["100%", "100%", `calc(100% - ${sidebar.width})`]}>
+        <Box
+          width={["100%", "100%", `calc(100% - ${sidebar.width})`]}
+          maxH={sidebar.height}
+          overflowY={"auto"}
+        >
           {children}
         </Box>
       </Flex>

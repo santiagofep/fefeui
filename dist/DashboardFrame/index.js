@@ -48,7 +48,7 @@ const DashboardFrame = ({ header, sidebar, children, }) => {
         React.createElement(Header_1.Header, Object.assign({}, headerProps)),
         React.createElement(react_2.Flex, { width: "100%" },
             React.createElement(Sidebar_1.Sidebar, Object.assign({}, sidebarProps)),
-            React.createElement(react_2.Box, { width: ["100%", "100%", `calc(100% - ${sidebar.width})`] }, children)),
+            React.createElement(react_2.Box, { width: ["100%", "100%", `calc(100% - ${sidebar.width})`], maxH: sidebar.height, overflowY: "auto" }, children)),
         React.createElement(react_2.Drawer, { isOpen: isSidebarOpen, placement: "left", onClose: () => setIsSidebarOpen(false) },
             React.createElement(react_2.DrawerOverlay, null),
             React.createElement(react_2.DrawerContent, null,

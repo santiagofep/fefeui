@@ -53,6 +53,6 @@ exports.Default = {
             },
         },
         sidebar: Sidebar_stories_1.sidebarArgs,
-        children: (React.createElement(react_1.Container, { maxW: "container.xl", paddingY: "0.5rem" }, "Content")),
+        children: (React.createElement(react_1.Container, { maxW: "container.xl", paddingY: "0.5rem", height: "200vh", background: "gray.200" }, "Content")),
     },
 };
