@@ -47,7 +47,7 @@ export const Header: React.FC<HeaderProps> = ({
   backgroundColor = "gray.100",
   height = "63px",
   alignItems = "center",
-  paddingX = "0.5rem",
+  paddingX = "1rem",
   width = "100%",
   ...props
 }) => {

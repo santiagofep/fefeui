@@ -2,7 +2,7 @@ import * as React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { DashboardFrame } from "./index";
-import { MdDashboard } from "react-icons/md";
+import { sidebarArgs } from "../Sidebar/Sidebar.stories";
 import { Container } from "@chakra-ui/react";
 
 const meta: Meta<typeof DashboardFrame> = {
@@ -33,22 +33,7 @@ export const Default: Story = {
         row2: "Shop name",
       },
     },
-    sidebar: {
-      items: [
-        {
-          title: "Dashboard",
-          icon: <MdDashboard />,
-          href: "/",
-          isActive: true,
-        },
-        {
-          title: "Settings",
-          icon: <MdDashboard />,
-          href: "/settings",
-          isActive: false,
-        },
-      ],
-    },
+    sidebar: sidebarArgs,
     children: (
       <Container maxW={"container.xl"} paddingY={"0.5rem"}>
         Content

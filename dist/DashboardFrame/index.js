@@ -31,6 +31,13 @@ const Sidebar_1 = require("../Sidebar");
 const react_2 = require("@chakra-ui/react");
 const DashboardFrame = ({ header, sidebar, children, }) => {
     const [isSidebarOpen, setIsSidebarOpen] = (0, react_1.useState)(false);
+    if (sidebar.width === undefined) {
+        sidebar.width = "250px";
+    }
+    if (header.height === undefined) {
+        header.height = "60px";
+    }
+    sidebar.height = `calc(100vh - ${header.height})`;
     const sidebarProps = Object.assign({ paddingTop: "0.5rem", display: ["none", "none", "flex"] }, sidebar);
     delete header.hamburger;
     const headerProps = Object.assign({ hamburger: {
@@ -39,9 +46,9 @@ const DashboardFrame = ({ header, sidebar, children, }) => {
         } }, header);
     return (React.createElement(react_2.Flex, { flexWrap: "wrap" },
         React.createElement(Header_1.Header, Object.assign({}, headerProps)),
-        React.createElement(react_2.Flex, null,
+        React.createElement(react_2.Flex, { width: "100%" },
             React.createElement(Sidebar_1.Sidebar, Object.assign({}, sidebarProps)),
-            React.createElement(react_2.Box, null, children)),
+            React.createElement(react_2.Box, { width: ["100%", "100%", `calc(100% - ${sidebar.width})`] }, children)),
         React.createElement(react_2.Drawer, { isOpen: isSidebarOpen, placement: "left", onClose: () => setIsSidebarOpen(false) },
             React.createElement(react_2.DrawerOverlay, null),
             React.createElement(react_2.DrawerContent, null,

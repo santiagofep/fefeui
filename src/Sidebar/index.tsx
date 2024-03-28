@@ -18,7 +18,6 @@ export const Sidebar: React.FC<SidebarProps> = ({
   overflowX = "hidden",
   height = "100vh",
   width = "250px",
-
   flexDirection = "column",
   justifyContent = "space-between",
   ...props

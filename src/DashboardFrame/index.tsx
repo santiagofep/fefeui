@@ -27,6 +27,16 @@ export const DashboardFrame: React.FC<DashboardFrameProps> = ({
   children,
 }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  if (sidebar.width === undefined) {
+    sidebar.width = "250px";
+  }
+  if (header.height === undefined) {
+    header.height = "60px";
+  }
+
+  sidebar.height = `calc(100vh - ${header.height})`;
+
   const sidebarProps = {
     paddingTop: "0.5rem",
     display: ["none", "none", "flex"],
@@ -40,12 +50,15 @@ export const DashboardFrame: React.FC<DashboardFrameProps> = ({
     },
     ...header,
   };
+
   return (
     <Flex flexWrap={"wrap"}>
       <Header {...headerProps} />
-      <Flex>
+      <Flex width={"100%"}>
         <Sidebar {...sidebarProps} />
-        <Box>{children}</Box>
+        <Box width={["100%", "100%", `calc(100% - ${sidebar.width})`]}>
+          {children}
+        </Box>
       </Flex>
       <Drawer
         isOpen={isSidebarOpen}

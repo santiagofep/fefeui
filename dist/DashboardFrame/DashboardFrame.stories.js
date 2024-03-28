@@ -26,7 +26,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Default = void 0;
 const React = __importStar(require("react"));
 const index_1 = require("./index");
-const md_1 = require("react-icons/md");
+const Sidebar_stories_1 = require("../Sidebar/Sidebar.stories");
 const react_1 = require("@chakra-ui/react");
 const meta = {
     component: index_1.DashboardFrame,
@@ -52,22 +52,7 @@ exports.Default = {
                 row2: "Shop name",
             },
         },
-        sidebar: {
-            items: [
-                {
-                    title: "Dashboard",
-                    icon: React.createElement(md_1.MdDashboard, null),
-                    href: "/",
-                    isActive: true,
-                },
-                {
-                    title: "Settings",
-                    icon: React.createElement(md_1.MdDashboard, null),
-                    href: "/settings",
-                    isActive: false,
-                },
-            ],
-        },
+        sidebar: Sidebar_stories_1.sidebarArgs,
         children: (React.createElement(react_1.Container, { maxW: "container.xl", paddingY: "0.5rem" }, "Content")),
     },
 };
