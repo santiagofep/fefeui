@@ -12,7 +12,7 @@ const preview = {
     ),
   ],
   parameters: {
-    layout: "fullscreen",
+    // layout: "fullscreen",
     controls: {
       matchers: {
         color: /(background|color)$/i,

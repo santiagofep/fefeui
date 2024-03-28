@@ -39,18 +39,18 @@ const React = __importStar(require("react"));
 const react_1 = require("@chakra-ui/react");
 const md_1 = require("react-icons/md");
 const Header = (_a) => {
-    var { hamburger, logo, notifications, user, justifyContent = "space-between", backgroundColor = "gray.100", height = "63px", alignItems = "center", paddingX = "1rem", width = "100%" } = _a, props = __rest(_a, ["hamburger", "logo", "notifications", "user", "justifyContent", "backgroundColor", "height", "alignItems", "paddingX", "width"]);
-    return (React.createElement(react_1.Flex, Object.assign({ justifyContent: justifyContent, backgroundColor: backgroundColor, height: height, alignItems: alignItems, paddingX: paddingX, width: width }, props),
+    var { hamburger, logo, notifications, user, justifyContent = "space-between", backgroundColor = "white", borderBottom = "1px solid", borderBottomColor = "gray.200", height = "63px", alignItems = "center", paddingX = "1rem", width = "100%" } = _a, props = __rest(_a, ["hamburger", "logo", "notifications", "user", "justifyContent", "backgroundColor", "borderBottom", "borderBottomColor", "height", "alignItems", "paddingX", "width"]);
+    return (React.createElement(react_1.Flex, Object.assign({ justifyContent: justifyContent, backgroundColor: backgroundColor, borderBottom: borderBottom, borderBottomColor: borderBottomColor, height: height, alignItems: alignItems, paddingX: paddingX, width: width }, props),
         React.createElement(react_1.HStack, null,
             hamburger && (React.createElement(react_1.Box, { display: hamburger.display },
                 React.createElement(react_1.IconButton, { "aria-label": "Open menu", icon: React.createElement(md_1.MdMenu, null), onClick: hamburger.onClick }))),
             React.createElement(react_1.Box, { display: ["none", "block"] },
                 React.createElement("a", { href: logo.href },
                     React.createElement(react_1.Image, { src: logo.src, alt: logo.alt, height: logo.height, width: logo.width, fit: "contain" })))),
-        user && (React.createElement(react_1.HStack, { paddingY: "0.25rem", paddingX: "0.5rem", backgroundColor: "white", borderRadius: "md", height: "fit-content" },
-            React.createElement(react_1.Avatar, { name: user.name, src: user.avatar, size: "sm" }),
-            React.createElement(react_1.VStack, { align: "stretch", spacing: 0, lineHeight: "1.25rem", paddingRight: "0.50rem" },
+        user && (React.createElement(react_1.HStack, { paddingY: "0.25rem", paddingX: "0.5rem", backgroundColor: "white", borderRadius: "md", height: "fit-content", spacing: 1 },
+            React.createElement(react_1.VStack, { align: "end", spacing: 0, lineHeight: "1.25rem", paddingRight: "0.50rem" },
                 user.row1 && React.createElement(react_1.Box, null, user.row1),
-                user.row2 && React.createElement(react_1.Box, { fontWeight: "600" }, user.row2))))));
+                user.row2 && React.createElement(react_1.Box, { fontWeight: "600" }, user.row2)),
+            React.createElement(react_1.Avatar, { name: user.name, src: user.avatar, size: "sm" })))));
 };
 exports.Header = Header;

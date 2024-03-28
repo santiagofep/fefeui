@@ -34,6 +34,9 @@ const meta = {
 };
 exports.default = meta;
 exports.Default = {
+    parameters: {
+        layout: "fullscreen",
+    },
     args: {
         header: {
             hamburger: {
@@ -53,6 +56,6 @@ exports.Default = {
             },
         },
         sidebar: Sidebar_stories_1.sidebarArgs,
-        children: (React.createElement(react_1.Container, { maxW: "container.xl", paddingY: "0.5rem", height: "200vh", background: "green.100" }, "Content")),
+        children: (React.createElement(react_1.Container, { maxW: "container.xl", paddingY: "0.5rem", height: "200vh" }, "Content")),
     },
 };

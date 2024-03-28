@@ -15,6 +15,9 @@ export default meta;
 type Story = StoryObj<typeof DashboardFrame>;
 
 export const Default: Story = {
+  parameters: {
+    layout: "fullscreen",
+  },
   args: {
     header: {
       hamburger: {
@@ -35,12 +38,7 @@ export const Default: Story = {
     },
     sidebar: sidebarArgs,
     children: (
-      <Container
-        maxW={"container.xl"}
-        paddingY={"0.5rem"}
-        height={"200vh"}
-        background={"green.100"}
-      >
+      <Container maxW={"container.xl"} paddingY={"0.5rem"} height={"200vh"}>
         Content
       </Container>
     ),

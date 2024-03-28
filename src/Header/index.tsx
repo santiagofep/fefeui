@@ -44,7 +44,9 @@ export const Header: React.FC<HeaderProps> = ({
   notifications,
   user,
   justifyContent = "space-between",
-  backgroundColor = "gray.100",
+  backgroundColor = "white",
+  borderBottom = "1px solid",
+  borderBottomColor = "gray.200",
   height = "63px",
   alignItems = "center",
   paddingX = "1rem",
@@ -55,6 +57,8 @@ export const Header: React.FC<HeaderProps> = ({
     <Flex
       justifyContent={justifyContent}
       backgroundColor={backgroundColor}
+      borderBottom={borderBottom}
+      borderBottomColor={borderBottomColor}
       height={height}
       alignItems={alignItems}
       paddingX={paddingX}
@@ -90,10 +94,10 @@ export const Header: React.FC<HeaderProps> = ({
           backgroundColor={"white"}
           borderRadius={"md"}
           height={"fit-content"}
+          spacing={1}
         >
-          <Avatar name={user.name} src={user.avatar} size="sm" />
           <VStack
-            align={"stretch"}
+            align={"end"}
             spacing={0}
             lineHeight={"1.25rem"}
             paddingRight={"0.50rem"}
@@ -101,6 +105,7 @@ export const Header: React.FC<HeaderProps> = ({
             {user.row1 && <Box>{user.row1}</Box>}
             {user.row2 && <Box fontWeight={"600"}>{user.row2}</Box>}
           </VStack>
+          <Avatar name={user.name} src={user.avatar} size="sm" />
         </HStack>
       )}
     </Flex>
