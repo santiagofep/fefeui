@@ -1,5 +1,6 @@
 import * as React from "react";
 
+export { Accordion } from "./Accordion";
 export { Alert } from "./Alert";
 export { AlertDialog } from "./AlertDialog";
 export { ChipInput } from "./ChipInput";

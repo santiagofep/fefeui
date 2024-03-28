@@ -1,6 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TutorialCard = exports.Tutorial = exports.TextFieldButton = exports.TextField = exports.Table = exports.Switch = exports.Steps = exports.Sidebar = exports.SettingsGroup = exports.Select = exports.RightButton = exports.PriceTable = exports.Pagination = exports.Page = exports.OnboardFrame = exports.Header = exports.Filter = exports.DashboardFrame = exports.ChipInput = exports.AlertDialog = exports.Alert = void 0;
+exports.TutorialCard = exports.Tutorial = exports.TextFieldButton = exports.TextField = exports.Table = exports.Switch = exports.Steps = exports.Sidebar = exports.SettingsGroup = exports.Select = exports.RightButton = exports.PriceTable = exports.Pagination = exports.Page = exports.OnboardFrame = exports.Header = exports.Filter = exports.DashboardFrame = exports.ChipInput = exports.AlertDialog = exports.Alert = exports.Accordion = void 0;
+var Accordion_1 = require("./Accordion");
+Object.defineProperty(exports, "Accordion", { enumerable: true, get: function () { return Accordion_1.Accordion; } });
 var Alert_1 = require("./Alert");
 Object.defineProperty(exports, "Alert", { enumerable: true, get: function () { return Alert_1.Alert; } });
 var AlertDialog_1 = require("./AlertDialog");

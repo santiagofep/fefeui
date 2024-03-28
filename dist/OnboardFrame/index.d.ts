@@ -5,8 +5,8 @@ import { TutorialProps } from "../Tutorial";
 interface OnboardFrameProps extends BoxProps {
     title: string;
     description: string;
-    tutorial: TutorialProps;
     steps: StepsProps;
+    tutorial?: TutorialProps;
     children?: React.ReactNode;
     col1Props?: BoxProps;
     col2Props?: BoxProps;
