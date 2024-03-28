@@ -18,6 +18,7 @@ exports.Default = {
         value: "",
         onChange: () => { },
         emptyOption: "Select an option",
+        isSkeleton: true,
         options: [
             {
                 value: "1",

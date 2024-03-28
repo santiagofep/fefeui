@@ -12,6 +12,7 @@ interface SelectProps {
     isInvalid?: boolean;
     emptyOption?: string;
     normalizeLabelSeparator?: string;
+    isSkeleton?: boolean;
 }
 export declare const Select: React.FC<SelectProps>;
 export {};

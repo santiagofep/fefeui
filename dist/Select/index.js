@@ -27,7 +27,7 @@ exports.Select = void 0;
 const React = __importStar(require("react"));
 const react_1 = require("react");
 const react_2 = require("@chakra-ui/react");
-const Select = ({ label, options, value, helperText, onChange, isInvalid, emptyOption, normalizeLabelSeparator, }) => {
+const Select = ({ label, options, value, helperText, onChange, isInvalid, emptyOption, normalizeLabelSeparator, isSkeleton, }) => {
     const [useMonospace, setUseMonospace] = (0, react_1.useState)(false);
     const normalizedOptions = React.useMemo(() => {
         if (normalizeLabelSeparator) {
@@ -36,18 +36,19 @@ const Select = ({ label, options, value, helperText, onChange, isInvalid, emptyO
         }
         return options;
     }, [options]);
-    return (React.createElement(react_2.FormControl, { isInvalid: isInvalid },
-        label && React.createElement(react_2.FormLabel, null, label),
-        React.createElement(react_2.Select, { value: value, onChange: (e) => {
-                onChange(e.target.value);
-            } },
-            emptyOption && React.createElement("option", { value: "" }, emptyOption),
-            normalizedOptions.map((option, index) => {
-                return (React.createElement("option", { value: option.value, key: index, disabled: option.isDisabled, style: {
-                        fontFamily: useMonospace ? "monospace" : "inherit",
-                    } }, option.label));
-            })),
-        helperText && React.createElement(react_2.FormHelperText, null, helperText)));
+    return (React.createElement(react_2.Skeleton, { isLoaded: !isSkeleton },
+        React.createElement(react_2.FormControl, { isInvalid: isInvalid },
+            label && React.createElement(react_2.FormLabel, null, label),
+            React.createElement(react_2.Select, { value: value, onChange: (e) => {
+                    onChange(e.target.value);
+                } },
+                emptyOption && React.createElement("option", { value: "" }, emptyOption),
+                normalizedOptions.map((option, index) => {
+                    return (React.createElement("option", { value: option.value, key: index, disabled: option.isDisabled, style: {
+                            fontFamily: useMonospace ? "monospace" : "inherit",
+                        } }, option.label));
+                })),
+            helperText && React.createElement(react_2.FormHelperText, null, helperText))));
 };
 exports.Select = Select;
 const normalizeStringsinObjectArray = (objectArray, key, separator = "|") => {

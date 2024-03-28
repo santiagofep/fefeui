@@ -38,3 +38,29 @@ export const Default: Story = {
     ],
   },
 };
+
+export const IsSkeleton: Story = {
+  args: {
+    tableProps: {
+      size: "md",
+    },
+    headings: [
+      { title: "Name", key: "name", rightAddon: <MdPerson size={15} /> },
+      { title: "Age", key: "age" },
+      { title: "Email", key: "email" },
+    ],
+    rows: [
+      {
+        name: { value: "John Doe" },
+        age: { value: 30 },
+        email: { value: "email@test.com" },
+      },
+      {
+        name: { value: "Jane Doe" },
+        age: { value: 25 },
+        email: { value: "email@test.com" },
+      },
+    ],
+    isSkeleton: true,
+  },
+};

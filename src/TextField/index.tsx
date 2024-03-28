@@ -6,6 +6,7 @@ import {
   FormLabel,
   Input,
   FormHelperText,
+  Skeleton,
 } from "@chakra-ui/react";
 
 interface TextFieldProps {
@@ -15,6 +16,7 @@ interface TextFieldProps {
   onChange: (value: string) => void;
   type: "text" | "email" | "password";
   helperText?: string;
+  isSkeleton?: boolean;
 }
 
 export const TextField: React.FC<TextFieldProps> = ({
@@ -24,19 +26,22 @@ export const TextField: React.FC<TextFieldProps> = ({
   onChange,
   type,
   helperText,
+  isSkeleton,
 }) => {
   return (
-    <FormControl>
-      {label && <FormLabel>{label}</FormLabel>}
-      <Input
-        value={value}
-        onChange={(e) => {
-          onChange(e.target.value);
-        }}
-        type={type}
-        placeholder={placeholder}
-      />
-      {helperText && <FormHelperText>{helperText}</FormHelperText>}
-    </FormControl>
+    <Skeleton isLoaded={!isSkeleton}>
+      <FormControl>
+        {label && <FormLabel>{label}</FormLabel>}
+        <Input
+          value={value}
+          onChange={(e) => {
+            onChange(e.target.value);
+          }}
+          type={type}
+          placeholder={placeholder}
+        />
+        {helperText && <FormHelperText>{helperText}</FormHelperText>}
+      </FormControl>
+    </Skeleton>
   );
 };

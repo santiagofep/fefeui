@@ -9,6 +9,7 @@ interface ChipInputProps {
     onRemove: (value: string) => void;
     tagIcon?: React.ElementType;
     helperText?: string;
+    isSkeleton?: boolean;
 }
 export declare const ChipInput: React.FC<ChipInputProps>;
 export {};

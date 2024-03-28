@@ -22,6 +22,7 @@ export const Default: Story = {
     value: "",
     onChange: () => {},
     emptyOption: "Select an option",
+    isSkeleton: true,
     options: [
       {
         value: "1",

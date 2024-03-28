@@ -23,7 +23,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Default = void 0;
+exports.IsSkeleton = exports.Default = void 0;
 const React = __importStar(require("react"));
 const index_1 = require("./index");
 const md_1 = require("react-icons/md");
@@ -54,5 +54,30 @@ exports.Default = {
                 email: { value: "email@test.com" },
             },
         ],
+    },
+};
+exports.IsSkeleton = {
+    args: {
+        tableProps: {
+            size: "md",
+        },
+        headings: [
+            { title: "Name", key: "name", rightAddon: React.createElement(md_1.MdPerson, { size: 15 }) },
+            { title: "Age", key: "age" },
+            { title: "Email", key: "email" },
+        ],
+        rows: [
+            {
+                name: { value: "John Doe" },
+                age: { value: 30 },
+                email: { value: "email@test.com" },
+            },
+            {
+                name: { value: "Jane Doe" },
+                age: { value: 25 },
+                email: { value: "email@test.com" },
+            },
+        ],
+        isSkeleton: true,
     },
 };

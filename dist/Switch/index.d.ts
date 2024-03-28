@@ -4,6 +4,7 @@ interface SwitchProps {
     isChecked: boolean;
     onChange: (newValue: boolean) => void;
     helperText?: string;
+    isSkeleton?: boolean;
 }
 export declare const Switch: React.FC<SwitchProps>;
 export {};

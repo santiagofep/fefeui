@@ -7,6 +7,7 @@ import {
   Switch as ChakraSwitch,
   Flex,
   FormHelperText,
+  Skeleton,
 } from "@chakra-ui/react";
 
 interface SwitchProps {
@@ -14,6 +15,7 @@ interface SwitchProps {
   isChecked: boolean;
   onChange: (newValue: boolean) => void;
   helperText?: string;
+  isSkeleton?: boolean;
 }
 
 export const Switch: React.FC<SwitchProps> = ({
@@ -21,23 +23,26 @@ export const Switch: React.FC<SwitchProps> = ({
   isChecked,
   onChange,
   helperText,
+  isSkeleton,
 }) => {
   return (
-    <FormControl>
-      <Flex alignItems={"center"}>
-        <ChakraSwitch
-          isChecked={isChecked}
-          onChange={() => {
-            onChange(!isChecked);
-          }}
-        />
-        {label && (
-          <FormLabel marginLeft={"0.5rem"} marginY="0">
-            {label}
-          </FormLabel>
-        )}
-      </Flex>
-      {helperText && <FormHelperText>{helperText}</FormHelperText>}
-    </FormControl>
+    <Skeleton isLoaded={!isSkeleton}>
+      <FormControl>
+        <Flex alignItems={"center"}>
+          <ChakraSwitch
+            isChecked={isChecked}
+            onChange={() => {
+              onChange(!isChecked);
+            }}
+          />
+          {label && (
+            <FormLabel marginLeft={"0.5rem"} marginY="0">
+              {label}
+            </FormLabel>
+          )}
+        </Flex>
+        {helperText && <FormHelperText>{helperText}</FormHelperText>}
+      </FormControl>
+    </Skeleton>
   );
 };

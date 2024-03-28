@@ -7,6 +7,7 @@ import {
   FormLabel,
   FormHelperText,
   FormControlProps,
+  Skeleton,
 } from "@chakra-ui/react";
 
 interface SelectProps {
@@ -18,6 +19,7 @@ interface SelectProps {
   isInvalid?: boolean;
   emptyOption?: string;
   normalizeLabelSeparator?: string;
+  isSkeleton?: boolean;
 }
 
 export const Select: React.FC<SelectProps> = ({
@@ -29,6 +31,7 @@ export const Select: React.FC<SelectProps> = ({
   isInvalid,
   emptyOption,
   normalizeLabelSeparator,
+  isSkeleton,
 }) => {
   const [useMonospace, setUseMonospace] = useState(false);
 
@@ -45,32 +48,34 @@ export const Select: React.FC<SelectProps> = ({
   }, [options]);
 
   return (
-    <FormControl isInvalid={isInvalid}>
-      {label && <FormLabel>{label}</FormLabel>}
-      <ChakraSelect
-        value={value}
-        onChange={(e) => {
-          onChange(e.target.value);
-        }}
-      >
-        {emptyOption && <option value="">{emptyOption}</option>}
-        {normalizedOptions.map((option: any, index: number) => {
-          return (
-            <option
-              value={option.value}
-              key={index}
-              disabled={option.isDisabled}
-              style={{
-                fontFamily: useMonospace ? "monospace" : "inherit",
-              }}
-            >
-              {option.label}
-            </option>
-          );
-        })}
-      </ChakraSelect>
-      {helperText && <FormHelperText>{helperText}</FormHelperText>}
-    </FormControl>
+    <Skeleton isLoaded={!isSkeleton}>
+      <FormControl isInvalid={isInvalid}>
+        {label && <FormLabel>{label}</FormLabel>}
+        <ChakraSelect
+          value={value}
+          onChange={(e) => {
+            onChange(e.target.value);
+          }}
+        >
+          {emptyOption && <option value="">{emptyOption}</option>}
+          {normalizedOptions.map((option: any, index: number) => {
+            return (
+              <option
+                value={option.value}
+                key={index}
+                disabled={option.isDisabled}
+                style={{
+                  fontFamily: useMonospace ? "monospace" : "inherit",
+                }}
+              >
+                {option.label}
+              </option>
+            );
+          })}
+        </ChakraSelect>
+        {helperText && <FormHelperText>{helperText}</FormHelperText>}
+      </FormControl>
+    </Skeleton>
   );
 };
 

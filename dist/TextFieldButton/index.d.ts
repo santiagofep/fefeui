@@ -5,6 +5,7 @@ interface TextFieldButtonProps {
     onSubmit: (value: string) => void;
     isLoading?: boolean;
     placeholder?: string;
+    isSkeleton?: boolean;
 }
 export declare const TextFieldButton: React.FC<TextFieldButtonProps>;
 export {};

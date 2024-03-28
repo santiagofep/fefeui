@@ -11,6 +11,7 @@ import {
   TableCaption,
   Flex,
   Box,
+  Skeleton,
 } from "@chakra-ui/react";
 
 interface TableProps {
@@ -26,9 +27,15 @@ interface TableProps {
     };
   }[];
   tableProps?: React.ComponentProps<typeof ChakraTable>;
+  isSkeleton?: boolean;
 }
 
-export const Table: React.FC<TableProps> = ({ headings, rows, tableProps }) => {
+export const Table: React.FC<TableProps> = ({
+  headings,
+  rows,
+  tableProps,
+  isSkeleton,
+}) => {
   return (
     <ChakraTable
       {...tableProps}
@@ -50,18 +57,33 @@ export const Table: React.FC<TableProps> = ({ headings, rows, tableProps }) => {
           ))}
         </tr>
       </Thead>
+
       <Tbody>
-        {rows.map((row, index) => {
-          return (
+        {isSkeleton ? (
+          [1, 2, 3, 4, 5].map((index) => (
             <Tr key={index}>
               {headings.map((heading, index) => (
-                <Td key={index} align={heading.align}>
-                  {row[heading.key].value}
+                <Td key={index}>
+                  <Skeleton height={"20px"} />
                 </Td>
               ))}
             </Tr>
-          );
-        })}
+          ))
+        ) : (
+          <>
+            {rows.map((row, index) => {
+              return (
+                <Tr key={index}>
+                  {headings.map((heading, index) => (
+                    <Td key={index} align={heading.align}>
+                      {row[heading.key].value}
+                    </Td>
+                  ))}
+                </Tr>
+              );
+            })}
+          </>
+        )}
       </Tbody>
     </ChakraTable>
   );

@@ -11,6 +11,7 @@ import {
   FormHelperText,
   FormControl,
   VStack,
+  Skeleton,
 } from "@chakra-ui/react";
 import { MdClose } from "react-icons/md";
 
@@ -24,6 +25,7 @@ interface ChipInputProps {
   onRemove: (value: string) => void;
   tagIcon?: React.ElementType;
   helperText?: string;
+  isSkeleton?: boolean;
 }
 
 export const ChipInput: React.FC<ChipInputProps> = ({
@@ -36,34 +38,37 @@ export const ChipInput: React.FC<ChipInputProps> = ({
   onRemove,
   tagIcon,
   helperText,
+  isSkeleton,
 }) => {
   return (
-    <FormControl>
-      <TextFieldButton
-        label={label}
-        buttonLabel={buttonLabel}
-        isLoading={isLoading}
-        placeholder={placeholder}
-        onSubmit={(value) => onAdd(value)}
-      />
-      <HStack marginY={3} flexWrap={"wrap"}>
-        {values.map((value: string, index) => {
-          return (
-            <Tag key={index} size="lg">
-              {tagIcon && <TagLeftIcon as={tagIcon} />}
-              <TagLabel>{value}</TagLabel>
-              <TagRightIcon
-                as={MdClose}
-                onClick={() => onRemove(value)}
-                cursor={"pointer"}
-              />
-            </Tag>
-          );
-        })}
-      </HStack>
-      {helperText && (
-        <FormHelperText marginY={"0"}>{helperText}</FormHelperText>
-      )}
-    </FormControl>
+    <Skeleton isLoaded={!isSkeleton}>
+      <FormControl>
+        <TextFieldButton
+          label={label}
+          buttonLabel={buttonLabel}
+          isLoading={isLoading}
+          placeholder={placeholder}
+          onSubmit={(value) => onAdd(value)}
+        />
+        <HStack marginY={3} flexWrap={"wrap"}>
+          {values.map((value: string, index) => {
+            return (
+              <Tag key={index} size="lg">
+                {tagIcon && <TagLeftIcon as={tagIcon} />}
+                <TagLabel>{value}</TagLabel>
+                <TagRightIcon
+                  as={MdClose}
+                  onClick={() => onRemove(value)}
+                  cursor={"pointer"}
+                />
+              </Tag>
+            );
+          })}
+        </HStack>
+        {helperText && (
+          <FormHelperText marginY={"0"}>{helperText}</FormHelperText>
+        )}
+      </FormControl>
+    </Skeleton>
   );
 };

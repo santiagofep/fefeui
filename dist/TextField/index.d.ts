@@ -6,6 +6,7 @@ interface TextFieldProps {
     onChange: (value: string) => void;
     type: "text" | "email" | "password";
     helperText?: string;
+    isSkeleton?: boolean;
 }
 export declare const TextField: React.FC<TextFieldProps>;
 export {};

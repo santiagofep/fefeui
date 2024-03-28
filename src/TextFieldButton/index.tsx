@@ -8,6 +8,7 @@ import {
   Input,
   InputGroup,
   Button,
+  Skeleton,
 } from "@chakra-ui/react";
 
 interface TextFieldButtonProps {
@@ -16,6 +17,7 @@ interface TextFieldButtonProps {
   onSubmit: (value: string) => void;
   isLoading?: boolean;
   placeholder?: string;
+  isSkeleton?: boolean;
 }
 
 export const TextFieldButton: React.FC<TextFieldButtonProps> = ({
@@ -24,32 +26,35 @@ export const TextFieldButton: React.FC<TextFieldButtonProps> = ({
   onSubmit,
   isLoading,
   placeholder,
+  isSkeleton,
 }) => {
   const [value, setValue] = useState<string>("");
   return (
-    <form
-      onSubmit={(e) => {
-        e.preventDefault();
-        setValue("");
-        onSubmit(value);
-      }}
-    >
-      <Flex>
-        <FormControl>
-          <FormLabel>{label}</FormLabel>
-          <InputGroup>
-            <Input
-              value={value}
-              required
-              placeholder={placeholder}
-              onChange={(e) => setValue(e.target.value)}
-            />
-            <Button isLoading={isLoading} type="submit" ml={"0.5rem"}>
-              {buttonLabel}
-            </Button>
-          </InputGroup>
-        </FormControl>
-      </Flex>
-    </form>
+    <Skeleton isLoaded={!isSkeleton}>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          setValue("");
+          onSubmit(value);
+        }}
+      >
+        <Flex>
+          <FormControl>
+            <FormLabel>{label}</FormLabel>
+            <InputGroup>
+              <Input
+                value={value}
+                required
+                placeholder={placeholder}
+                onChange={(e) => setValue(e.target.value)}
+              />
+              <Button isLoading={isLoading} type="submit" ml={"0.5rem"}>
+                {buttonLabel}
+              </Button>
+            </InputGroup>
+          </FormControl>
+        </Flex>
+      </form>
+    </Skeleton>
   );
 };

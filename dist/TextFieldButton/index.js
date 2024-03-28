@@ -27,18 +27,19 @@ exports.TextFieldButton = void 0;
 const React = __importStar(require("react"));
 const react_1 = require("react");
 const react_2 = require("@chakra-ui/react");
-const TextFieldButton = ({ label, buttonLabel, onSubmit, isLoading, placeholder, }) => {
+const TextFieldButton = ({ label, buttonLabel, onSubmit, isLoading, placeholder, isSkeleton, }) => {
     const [value, setValue] = (0, react_1.useState)("");
-    return (React.createElement("form", { onSubmit: (e) => {
-            e.preventDefault();
-            setValue("");
-            onSubmit(value);
-        } },
-        React.createElement(react_2.Flex, null,
-            React.createElement(react_2.FormControl, null,
-                React.createElement(react_2.FormLabel, null, label),
-                React.createElement(react_2.InputGroup, null,
-                    React.createElement(react_2.Input, { value: value, required: true, placeholder: placeholder, onChange: (e) => setValue(e.target.value) }),
-                    React.createElement(react_2.Button, { isLoading: isLoading, type: "submit", ml: "0.5rem" }, buttonLabel))))));
+    return (React.createElement(react_2.Skeleton, { isLoaded: !isSkeleton },
+        React.createElement("form", { onSubmit: (e) => {
+                e.preventDefault();
+                setValue("");
+                onSubmit(value);
+            } },
+            React.createElement(react_2.Flex, null,
+                React.createElement(react_2.FormControl, null,
+                    React.createElement(react_2.FormLabel, null, label),
+                    React.createElement(react_2.InputGroup, null,
+                        React.createElement(react_2.Input, { value: value, required: true, placeholder: placeholder, onChange: (e) => setValue(e.target.value) }),
+                        React.createElement(react_2.Button, { isLoading: isLoading, type: "submit", ml: "0.5rem" }, buttonLabel)))))));
 };
 exports.TextFieldButton = TextFieldButton;
