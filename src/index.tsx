@@ -22,3 +22,4 @@ export { TextField } from "./TextField";
 export { TextFieldButton } from "./TextFieldButton";
 export { Tutorial } from "./Tutorial";
 export { TutorialCard } from "./TutorialCard";
+export { Video } from "./Video";

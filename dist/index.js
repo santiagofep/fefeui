@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TutorialCard = exports.Tutorial = exports.TextFieldButton = exports.TextField = exports.Table = exports.Switch = exports.Steps = exports.Sidebar = exports.SettingsGroup = exports.Select = exports.RightButton = exports.PriceTable = exports.Pagination = exports.Page = exports.OnboardFrame = exports.Header = exports.Filter = exports.DashboardFrame = exports.ChipInput = exports.AlertDialog = exports.Alert = exports.Accordion = void 0;
+exports.Video = exports.TutorialCard = exports.Tutorial = exports.TextFieldButton = exports.TextField = exports.Table = exports.Switch = exports.Steps = exports.Sidebar = exports.SettingsGroup = exports.Select = exports.RightButton = exports.PriceTable = exports.Pagination = exports.Page = exports.OnboardFrame = exports.Header = exports.Filter = exports.DashboardFrame = exports.ChipInput = exports.AlertDialog = exports.Alert = exports.Accordion = void 0;
 var Accordion_1 = require("./Accordion");
 Object.defineProperty(exports, "Accordion", { enumerable: true, get: function () { return Accordion_1.Accordion; } });
 var Alert_1 = require("./Alert");
@@ -45,3 +45,5 @@ var Tutorial_1 = require("./Tutorial");
 Object.defineProperty(exports, "Tutorial", { enumerable: true, get: function () { return Tutorial_1.Tutorial; } });
 var TutorialCard_1 = require("./TutorialCard");
 Object.defineProperty(exports, "TutorialCard", { enumerable: true, get: function () { return TutorialCard_1.TutorialCard; } });
+var Video_1 = require("./Video");
+Object.defineProperty(exports, "Video", { enumerable: true, get: function () { return Video_1.Video; } });
