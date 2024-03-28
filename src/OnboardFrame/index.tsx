@@ -37,25 +37,28 @@ export const OnboardFrame: React.FC<OnboardFrameProps> = ({
   col1Props = {
     backgroundColor: "gray.200",
   },
-  col2Props,
+  col2Props = {},
   contentMaxWidth = "container.lg",
   logo,
   ...props
 }) => {
-  if (!col1Props.maxW) {
-    col1Props.maxW = "380px";
+  if (!col1Props.width) {
+    col1Props.width = ["100%", "100%", "320px"];
+  }
+  if (!col2Props.width) {
+    col2Props.width = ["100%", "100%", "calc(100% - 320px)"];
   }
 
   return (
     <Box width={width} height={height} {...props}>
-      <Flex height={"100%"}>
-        <Flex flex={3} padding={3} {...col1Props}>
+      <Flex height={"100%"} flexWrap={"wrap"}>
+        <Flex padding={3} {...col1Props}>
           <VStack align={"stretch"} spacing={5} width={"100%"} marginTop={2}>
             {logo && <Image {...logo} />}
             {tutorial && <Tutorial {...tutorial} />}
           </VStack>
         </Flex>
-        <Flex flex={8} {...col2Props}>
+        <Flex {...col2Props}>
           <VStack align={"stretch"} spacing={5} width={"100%"} marginTop={5}>
             <Steps {...steps} />
             <Container maxW={contentMaxWidth}>

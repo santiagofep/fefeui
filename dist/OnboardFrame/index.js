@@ -42,17 +42,20 @@ const Tutorial_1 = require("../Tutorial");
 const OnboardFrame = (_a) => {
     var { title, description, tutorial, steps, children, width = "100%", height = "100vh", col1Props = {
         backgroundColor: "gray.200",
-    }, col2Props, contentMaxWidth = "container.lg", logo } = _a, props = __rest(_a, ["title", "description", "tutorial", "steps", "children", "width", "height", "col1Props", "col2Props", "contentMaxWidth", "logo"]);
-    if (!col1Props.maxW) {
-        col1Props.maxW = "380px";
+    }, col2Props = {}, contentMaxWidth = "container.lg", logo } = _a, props = __rest(_a, ["title", "description", "tutorial", "steps", "children", "width", "height", "col1Props", "col2Props", "contentMaxWidth", "logo"]);
+    if (!col1Props.width) {
+        col1Props.width = ["100%", "100%", "320px"];
+    }
+    if (!col2Props.width) {
+        col2Props.width = ["100%", "100%", "calc(100% - 320px)"];
     }
     return (React.createElement(react_1.Box, Object.assign({ width: width, height: height }, props),
-        React.createElement(react_1.Flex, { height: "100%" },
-            React.createElement(react_1.Flex, Object.assign({ flex: 3, padding: 3 }, col1Props),
+        React.createElement(react_1.Flex, { height: "100%", flexWrap: "wrap" },
+            React.createElement(react_1.Flex, Object.assign({ padding: 3 }, col1Props),
                 React.createElement(react_1.VStack, { align: "stretch", spacing: 5, width: "100%", marginTop: 2 },
                     logo && React.createElement(react_1.Image, Object.assign({}, logo)),
                     tutorial && React.createElement(Tutorial_1.Tutorial, Object.assign({}, tutorial)))),
-            React.createElement(react_1.Flex, Object.assign({ flex: 8 }, col2Props),
+            React.createElement(react_1.Flex, Object.assign({}, col2Props),
                 React.createElement(react_1.VStack, { align: "stretch", spacing: 5, width: "100%", marginTop: 5 },
                     React.createElement(Steps_1.Steps, Object.assign({}, steps)),
                     React.createElement(react_1.Container, { maxW: contentMaxWidth },
