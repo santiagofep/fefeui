@@ -1,6 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Video = exports.TutorialCard = exports.Tutorial = exports.TextFieldButton = exports.TextField = exports.Table = exports.Switch = exports.Steps = exports.Sidebar = exports.SettingsGroup = exports.Select = exports.RightButton = exports.PriceTable = exports.Pagination = exports.Page = exports.OnboardFrame = exports.Header = exports.Filter = exports.DashboardFrame = exports.ChipInput = exports.AlertDialog = exports.Alert = exports.Accordion = void 0;
+exports.Video = exports.TutorialCard = exports.Tutorial = exports.TextFieldButton = exports.TextField = exports.Table = exports.Switch = exports.Steps = exports.Sidebar = exports.SettingsGroup = exports.Select = exports.RightButton = exports.PriceTable = exports.Pagination = exports.Page = exports.OnboardFrame = exports.Header = exports.Filter = exports.DashboardFrame = exports.ChipInput = exports.AlertDialog = exports.Alert = exports.Accordion = exports.theme = void 0;
+var chakraTheme_1 = require("./chakraTheme");
+Object.defineProperty(exports, "theme", { enumerable: true, get: function () { return chakraTheme_1.theme; } });
 var Accordion_1 = require("./Accordion");
 Object.defineProperty(exports, "Accordion", { enumerable: true, get: function () { return Accordion_1.Accordion; } });
 var Alert_1 = require("./Alert");

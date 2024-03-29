@@ -1,5 +1,7 @@
 import * as React from "react";
 
+export { theme } from "./chakraTheme";
+
 export { Accordion } from "./Accordion";
 export { Alert } from "./Alert";
 export { AlertDialog } from "./AlertDialog";
