@@ -50,19 +50,25 @@ export const Default: Story = {
       },
       steps: [
         {
-          title: "Step 1",
+          title: "Hola, te damos la bienvenida",
         },
         {
-          title: "Step 2",
+          title: "Necesario para iniciar",
         },
         {
-          title: "Step 3",
+          title: "Conecta tu cuenta",
         },
         {
-          title: "Step 4",
+          title: "Selecciona tu plan",
         },
         {
-          title: "Step 5",
+          title: "Configuración de Productos",
+        },
+        {
+          title: "Configuración de Formas de pago",
+        },
+        {
+          title: "Resolución de facturación",
         },
       ],
       currentStep: 2,

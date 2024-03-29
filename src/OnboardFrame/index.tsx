@@ -59,7 +59,13 @@ export const OnboardFrame: React.FC<OnboardFrameProps> = ({
           </VStack>
         </Flex>
         <Flex {...col2Props}>
-          <VStack align={"stretch"} spacing={5} width={"100%"} marginTop={5}>
+          <VStack
+            align={"stretch"}
+            spacing={5}
+            width={"100%"}
+            marginTop={5}
+            paddingX={3}
+          >
             <Steps {...steps} />
             <Container maxW={contentMaxWidth}>
               <VStack align={"stretch"} spacing={2} width={"100%"}>
