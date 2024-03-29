@@ -24,7 +24,7 @@ export interface AccordionProps {
 
 export const Accordion: React.FC<AccordionProps> = ({ items }) => {
   return (
-    <ChakraAccordion allowToggle>
+    <ChakraAccordion allowToggle width="100%">
       {items?.map((item, index) => (
         <AccordionItem key={index}>
           {({ isExpanded }) => (

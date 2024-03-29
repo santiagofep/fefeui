@@ -27,7 +27,7 @@ exports.Accordion = void 0;
 const React = __importStar(require("react"));
 const react_1 = require("@chakra-ui/react");
 const Accordion = ({ items }) => {
-    return (React.createElement(react_1.Accordion, { allowToggle: true }, items === null || items === void 0 ? void 0 : items.map((item, index) => (React.createElement(react_1.AccordionItem, { key: index }, ({ isExpanded }) => (React.createElement(React.Fragment, null,
+    return (React.createElement(react_1.Accordion, { allowToggle: true, width: "100%" }, items === null || items === void 0 ? void 0 : items.map((item, index) => (React.createElement(react_1.AccordionItem, { key: index }, ({ isExpanded }) => (React.createElement(React.Fragment, null,
         React.createElement(react_1.AccordionButton, { _expanded: { bg: "gray.200" } },
             React.createElement(react_1.Flex, { as: "span", flex: "1", textAlign: "left", align: "center" },
                 item.leftIcon && React.createElement(react_1.Box, { mr: "0.5rem" }, item.leftIcon),
