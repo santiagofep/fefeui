@@ -22,40 +22,27 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
+var __rest = (this && this.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Default = void 0;
-const React = __importStar(require("react"));
-const index_1 = require("./index");
-const Sidebar_stories_1 = require("../Sidebar/Sidebar.stories");
+exports.CenteredFullPage = void 0;
 const react_1 = require("@chakra-ui/react");
-const meta = {
-    component: index_1.DashboardFrame,
-    title: "Frame / DashboardFrame",
+const React = __importStar(require("react"));
+const CenteredFullPage = (_a) => {
+    var { children, variant } = _a, rest = __rest(_a, ["children", "variant"]);
+    const styles = (0, react_1.useMultiStyleConfig)("CenteredFullPage", { variant });
+    console.log(styles);
+    return (React.createElement(react_1.Box, Object.assign({ __css: styles.wrapper }, rest),
+        React.createElement(react_1.Center, { sx: styles.center },
+            React.createElement(react_1.Container, { sx: styles.inner }, children))));
 };
-exports.default = meta;
-exports.Default = {
-    parameters: {
-        layout: "fullscreen",
-    },
-    args: {
-        header: {
-            hamburger: {
-                display: ["block", "block", "none"],
-                onClick: () => { },
-            },
-            logo: {
-                src: "https://integracion-siigo.moship.io/static/frontend/dist/moship-logo-8863c36b37fac88c840f0740eddccc2e.png",
-                alt: "Logo",
-                href: "/",
-                height: "40px",
-            },
-            user: {
-                name: "",
-                row1: "Integración Siigo Shopify",
-                row2: "Shop name",
-            },
-        },
-        sidebar: Sidebar_stories_1.sidebarArgs,
-        children: (React.createElement(react_1.Container, { maxW: "container.xl", paddingY: "0.5rem", height: "200vh" }, "Content")),
-    },
-};
+exports.CenteredFullPage = CenteredFullPage;

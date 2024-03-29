@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Video = exports.TutorialCard = exports.Tutorial = exports.TextFieldButton = exports.TextField = exports.Table = exports.Switch = exports.Steps = exports.Sidebar = exports.SettingsGroup = exports.Select = exports.RightButton = exports.PriceTable = exports.Pagination = exports.Page = exports.OnboardFrame = exports.Header = exports.Filter = exports.DashboardFrame = exports.ChipInput = exports.AlertDialog = exports.Alert = exports.Accordion = exports.theme = void 0;
+exports.Video = exports.TutorialCard = exports.Tutorial = exports.TextFieldButton = exports.TextField = exports.Table = exports.Switch = exports.Steps = exports.Sidebar = exports.SettingsGroup = exports.Select = exports.RightButton = exports.PriceTable = exports.Pagination = exports.Page = exports.OnboardFrame = exports.Header = exports.Filter = exports.DashboardFrame = exports.ChipInput = exports.CenteredFullPage = exports.AlertDialog = exports.Alert = exports.Accordion = exports.theme = void 0;
 var chakraTheme_1 = require("./chakraTheme");
 Object.defineProperty(exports, "theme", { enumerable: true, get: function () { return chakraTheme_1.theme; } });
 var Accordion_1 = require("./Accordion");
@@ -9,6 +9,8 @@ var Alert_1 = require("./Alert");
 Object.defineProperty(exports, "Alert", { enumerable: true, get: function () { return Alert_1.Alert; } });
 var AlertDialog_1 = require("./AlertDialog");
 Object.defineProperty(exports, "AlertDialog", { enumerable: true, get: function () { return AlertDialog_1.AlertDialog; } });
+var CenteredFullPage_1 = require("./CenteredFullPage");
+Object.defineProperty(exports, "CenteredFullPage", { enumerable: true, get: function () { return CenteredFullPage_1.CenteredFullPage; } });
 var ChipInput_1 = require("./ChipInput");
 Object.defineProperty(exports, "ChipInput", { enumerable: true, get: function () { return ChipInput_1.ChipInput; } });
 var DashboardFrame_1 = require("./DashboardFrame");

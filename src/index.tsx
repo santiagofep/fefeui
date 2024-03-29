@@ -5,6 +5,7 @@ export { theme } from "./chakraTheme";
 export { Accordion } from "./Accordion";
 export { Alert } from "./Alert";
 export { AlertDialog } from "./AlertDialog";
+export { CenteredFullPage } from "./CenteredFullPage";
 export { ChipInput } from "./ChipInput";
 export { DashboardFrame } from "./DashboardFrame";
 export { Filter } from "./Filter";

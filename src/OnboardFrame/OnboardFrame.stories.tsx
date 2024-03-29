@@ -9,7 +9,7 @@ import { RightButton } from "../RightButton";
 
 const meta: Meta<typeof OnboardFrame> = {
   component: OnboardFrame,
-  title: "Onboard / OnboardFrame",
+  title: "Frame / OnboardFrame",
 };
 
 export default meta;

@@ -26,11 +26,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Default = void 0;
 const React = __importStar(require("react"));
 const index_1 = require("./index");
-const Sidebar_stories_1 = require("../Sidebar/Sidebar.stories");
+const TutorialCard_1 = require("../TutorialCard");
 const react_1 = require("@chakra-ui/react");
 const meta = {
-    component: index_1.DashboardFrame,
-    title: "Frame / DashboardFrame",
+    component: index_1.CenteredFullPage,
+    title: "Frame / CenteredFullPage",
 };
 exports.default = meta;
 exports.Default = {
@@ -38,24 +38,8 @@ exports.Default = {
         layout: "fullscreen",
     },
     args: {
-        header: {
-            hamburger: {
-                display: ["block", "block", "none"],
-                onClick: () => { },
-            },
-            logo: {
-                src: "https://integracion-siigo.moship.io/static/frontend/dist/moship-logo-8863c36b37fac88c840f0740eddccc2e.png",
-                alt: "Logo",
-                href: "/",
-                height: "40px",
-            },
-            user: {
-                name: "",
-                row1: "Integración Siigo Shopify",
-                row2: "Shop name",
-            },
-        },
-        sidebar: Sidebar_stories_1.sidebarArgs,
-        children: (React.createElement(react_1.Container, { maxW: "container.xl", paddingY: "0.5rem", height: "200vh" }, "Content")),
+        children: (React.createElement(react_1.VStack, { align: "stretch" },
+            React.createElement(TutorialCard_1.TutorialCard, { title: "Welcome to the tutorial", description: "This is a tutorial card" }),
+            React.createElement(TutorialCard_1.TutorialCard, { title: "Welcome to the tutorial", description: "This is a tutorial card" }))),
     },
 };

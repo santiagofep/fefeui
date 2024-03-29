@@ -31,7 +31,7 @@ const TextField_1 = require("../TextField");
 const RightButton_1 = require("../RightButton");
 const meta = {
     component: index_1.OnboardFrame,
-    title: "Onboard / OnboardFrame",
+    title: "Frame / OnboardFrame",
 };
 exports.default = meta;
 exports.Default = {

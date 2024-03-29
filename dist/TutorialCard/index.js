@@ -28,9 +28,10 @@ const React = __importStar(require("react"));
 const react_1 = require("@chakra-ui/react");
 const md_1 = require("react-icons/md");
 const Video_1 = require("../Video");
-const TutorialCard = ({ title, description, video, onClose, button1, button2, shadow = "md", }) => {
-    return (React.createElement(react_1.Box, { position: "relative" },
-        React.createElement(react_1.HStack, { justifyContent: "space-between", borderRadius: "md", overflow: "hidden", shadow: shadow, flexWrap: ["wrap", "nowrap"], flexDirection: ["column-reverse", "column-reverse", "row"] },
+const TutorialCard = ({ title, description, video, onClose, button1, button2, variant, }) => {
+    const styles = (0, react_1.useMultiStyleConfig)("TutorialCard", { variant });
+    return (React.createElement(react_1.Box, { position: "relative", __css: styles.wrapper },
+        React.createElement(react_1.HStack, { justifyContent: "space-between", borderRadius: "md", overflow: "hidden", flexWrap: ["wrap", "nowrap"], flexDirection: ["column-reverse", "column-reverse", "row"] },
             React.createElement(react_1.VStack, { align: "stretch", padding: 5, spacing: 2 },
                 React.createElement(react_1.Heading, { size: "md" }, title),
                 React.createElement(react_1.Text, null, description),

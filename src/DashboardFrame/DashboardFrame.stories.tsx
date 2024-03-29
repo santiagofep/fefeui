@@ -7,7 +7,7 @@ import { Container } from "@chakra-ui/react";
 
 const meta: Meta<typeof DashboardFrame> = {
   component: DashboardFrame,
-  title: "Dashboard / DashboardFrame",
+  title: "Frame / DashboardFrame",
 };
 
 export default meta;

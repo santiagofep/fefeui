@@ -11,6 +11,7 @@ import {
   Box,
   IconButton,
   Button,
+  useMultiStyleConfig,
 } from "@chakra-ui/react";
 
 import { MdClose } from "react-icons/md";
@@ -25,7 +26,7 @@ export interface TutorialCardProps {
   onClose?: () => void;
   button1?: ButtonProps;
   button2?: ButtonProps;
-  shadow?: string;
+  variant?: string;
 }
 
 export const TutorialCard: React.FC<TutorialCardProps> = ({
@@ -35,15 +36,15 @@ export const TutorialCard: React.FC<TutorialCardProps> = ({
   onClose,
   button1,
   button2,
-  shadow = "md",
+  variant,
 }) => {
+  const styles = useMultiStyleConfig("TutorialCard", { variant });
   return (
-    <Box position={"relative"}>
+    <Box position={"relative"} __css={styles.wrapper}>
       <HStack
         justifyContent={"space-between"}
         borderRadius={"md"}
         overflow={"hidden"}
-        shadow={shadow}
         flexWrap={["wrap", "nowrap"]}
         flexDirection={["column-reverse", "column-reverse", "row"]}
       >

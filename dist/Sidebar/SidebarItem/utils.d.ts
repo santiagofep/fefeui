@@ -1,1 +1,1 @@
-export declare const getButtonVariant: (isActive: boolean, childrenIsActive: boolean) => "solid" | "ghost";
+export declare const getButtonVariant: (isActive: boolean, childrenIsActive: boolean) => "ghost" | "solid";

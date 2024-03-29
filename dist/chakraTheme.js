@@ -2,6 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.theme = void 0;
 const react_1 = require("@chakra-ui/react");
+const styleConfig_1 = require("./CenteredFullPage/styleConfig");
+const styleConfig_2 = require("./TutorialCard/styleConfig");
 exports.theme = (0, react_1.extendTheme)({
     colors: {
         brand: {
@@ -18,6 +20,8 @@ exports.theme = (0, react_1.extendTheme)({
         },
     },
     components: {
+        CenteredFullPage: styleConfig_1.CenteredFullPage,
+        TutorialCard: styleConfig_2.TutorialCard,
         Button: {
             baseStyle: {},
             defaultProps: {

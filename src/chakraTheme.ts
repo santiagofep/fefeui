@@ -1,4 +1,7 @@
-import { extendTheme } from "@chakra-ui/react";
+import { extendTheme, defineStyleConfig, VStack } from "@chakra-ui/react";
+
+import { CenteredFullPage } from "./CenteredFullPage/styleConfig";
+import { TutorialCard } from "./TutorialCard/styleConfig";
 
 export const theme = extendTheme({
   colors: {
@@ -16,6 +19,8 @@ export const theme = extendTheme({
     },
   },
   components: {
+    CenteredFullPage,
+    TutorialCard,
     Button: {
       baseStyle: {},
       defaultProps: {

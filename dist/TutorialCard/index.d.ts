@@ -7,6 +7,6 @@ export interface TutorialCardProps {
     onClose?: () => void;
     button1?: ButtonProps;
     button2?: ButtonProps;
-    shadow?: string;
+    variant?: string;
 }
 export declare const TutorialCard: React.FC<TutorialCardProps>;
