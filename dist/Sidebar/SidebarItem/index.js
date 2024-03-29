@@ -32,14 +32,14 @@ const ButtonInner = ({ title, isExternal }) => {
         title,
         isExternal && React.createElement(md_1.MdOpenInNew, { size: 10, style: { marginLeft: "4px" } })));
 };
-const SidebarItem = ({ children, title, icon, href, isActive, to, as = "a", target = "_self", }) => {
+const SidebarItem = ({ children, title, icon, href, isActive, to, as = "a", target = "_self", colorScheme = "gray", }) => {
     const childrenIsActive = (children && children.some((child) => child.isActive)) || false;
     return (React.createElement(React.Fragment, null,
-        React.createElement(react_1.Button, { width: "100%", variant: (0, utils_1.getButtonVariant)(isActive, childrenIsActive), leftIcon: icon, rightIcon: children ? React.createElement(md_1.MdArrowDropDown, null) : undefined, size: "sm", as: as, href: href, target: target, to: to },
+        React.createElement(react_1.Button, { colorScheme: colorScheme, width: "100%", variant: (0, utils_1.getButtonVariant)(isActive, childrenIsActive), leftIcon: icon, rightIcon: children ? React.createElement(md_1.MdArrowDropDown, null) : undefined, size: "sm", as: as, href: href, target: target, to: to },
             React.createElement(ButtonInner, { title: title, isExternal: target === "_blank" })),
         children && (React.createElement(react_1.Collapse, { in: childrenIsActive },
             React.createElement(react_1.VStack, { align: "stretch", marginLeft: "1.5rem", spacing: 1 }, children.map((child, index) => {
-                return (React.createElement(react_1.Button, { key: index, size: "sm", variant: (0, utils_1.getButtonVariant)(child.isActive, false), as: as, href: child.href, target: child.target, to: child.to },
+                return (React.createElement(react_1.Button, { colorScheme: colorScheme, key: index, size: "sm", variant: (0, utils_1.getButtonVariant)(child.isActive, false), as: as, href: child.href, target: child.target, to: child.to },
                     React.createElement(react_1.Flex, { width: "100%", alignItems: "center" },
                         React.createElement(ButtonInner, { title: child.title, isExternal: child.target === "_blank" }))));
             }))))));

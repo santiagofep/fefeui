@@ -29,6 +29,7 @@ export interface SidebarItemWithChildrenProps extends SidebarChildItemProps {
 
 export interface SidebarItemProps extends SidebarItemWithChildrenProps {
   as: ButtonProps["as"];
+  colorScheme?: ButtonProps["colorScheme"];
 }
 
 const ButtonInner: React.FC<{
@@ -52,6 +53,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
   to,
   as = "a",
   target = "_self",
+  colorScheme = "gray",
 }) => {
   const childrenIsActive =
     (children && children.some((child) => child.isActive)) || false;
@@ -59,6 +61,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
   return (
     <>
       <Button
+        colorScheme={colorScheme}
         width={"100%"}
         variant={getButtonVariant(isActive, childrenIsActive)}
         leftIcon={icon}
@@ -77,6 +80,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
             {children.map((child: SidebarChildItemProps, index: number) => {
               return (
                 <Button
+                  colorScheme={colorScheme}
                   key={index}
                   size={"sm"}
                   variant={getButtonVariant(child.isActive, false)}

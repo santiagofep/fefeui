@@ -41,7 +41,7 @@ const react_1 = require("@chakra-ui/react");
 const Tutorial_1 = require("../Tutorial");
 const OnboardFrame = (_a) => {
     var { title, description, tutorial, steps, children, width = "100%", height = "100vh", col1Props = {
-        backgroundColor: "gray.200",
+        backgroundColor: "gray.100",
     }, col2Props = {}, contentMaxWidth = "container.lg", logo } = _a, props = __rest(_a, ["title", "description", "tutorial", "steps", "children", "width", "height", "col1Props", "col2Props", "contentMaxWidth", "logo"]);
     if (!col1Props.width) {
         col1Props.width = ["100%", "100%", "320px"];

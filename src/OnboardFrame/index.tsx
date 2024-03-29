@@ -35,7 +35,7 @@ export const OnboardFrame: React.FC<OnboardFrameProps> = ({
   width = "100%",
   height = "100vh",
   col1Props = {
-    backgroundColor: "gray.200",
+    backgroundColor: "gray.100",
   },
   col2Props = {},
   contentMaxWidth = "container.lg",

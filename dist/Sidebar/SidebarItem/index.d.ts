@@ -13,6 +13,7 @@ export interface SidebarItemWithChildrenProps extends SidebarChildItemProps {
 }
 export interface SidebarItemProps extends SidebarItemWithChildrenProps {
     as: ButtonProps["as"];
+    colorScheme?: ButtonProps["colorScheme"];
 }
 declare const SidebarItem: React.FC<SidebarItemProps>;
 export default SidebarItem;
