@@ -15,9 +15,7 @@ export const CenteredFullPage = helpers.defineMultiStyleConfig({
       wrapper: {
         bgGradient: "linear(to-br, brand.300, brand.500, brand.800)",
       },
-      inner: {
-        maxWidth: "container.md",
-      },
+      inner: {},
     },
   },
   // The default variant value

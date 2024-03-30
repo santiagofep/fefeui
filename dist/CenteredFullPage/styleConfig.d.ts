@@ -18,9 +18,7 @@ export declare const CenteredFullPage: {
             wrapper: {
                 bgGradient: string;
             };
-            inner: {
-                maxWidth: string;
-            };
+            inner: {};
         };
     } | undefined;
     defaultProps?: {
