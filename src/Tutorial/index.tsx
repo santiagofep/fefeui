@@ -10,6 +10,7 @@ import {
   Button,
   Heading,
   HStack,
+  StackProps,
 } from "@chakra-ui/react";
 import { Video } from "../Video";
 
@@ -19,6 +20,7 @@ export interface TutorialProps extends BoxProps {
   video?: VideoProps;
   button1?: ButtonProps;
   button2?: ButtonProps;
+  buttonsWrap?: StackProps["wrap"];
 }
 
 export const Tutorial: React.FC<TutorialProps> = ({
@@ -27,6 +29,7 @@ export const Tutorial: React.FC<TutorialProps> = ({
   video,
   button1,
   button2,
+  buttonsWrap,
   ...props
 }) => {
   return (
@@ -35,9 +38,9 @@ export const Tutorial: React.FC<TutorialProps> = ({
         {video && <Video {...video} />}
         <Heading size="md">{title}</Heading>
         {description && <Box>{description}</Box>}
-        <HStack spacing={3}>
-          {button1 && <Button {...button1} />}
-          {button2 && <Button {...button2} />}
+        <HStack spacing={3} wrap={buttonsWrap}>
+          {button1 && <Button width="full" {...button1} />}
+          {button2 && <Button width="full" {...button2} />}
         </HStack>
       </VStack>
     </Box>

@@ -53,10 +53,16 @@ exports.Default = {
                 embed: true,
             },
             button1: {
-                children: "Button 1",
+                children: "Como crear forma de pago en Siigo",
+                as: "a",
+                href: "https://siigonube.portaldeclientes.siigo.com/crear-formas-de-pago/#:~:text=Para%20configurar%20o%20crear%20las,formas%20de%20pago%20previamente%20creadas.",
+                target: "_blank",
             },
             button2: {
-                children: "Button 2",
+                children: "Ver formas de pago en Siigo",
+                as: "a",
+                href: "https://siigonube.siigo.com/#/paymentmeans/",
+                target: "_blank",
             },
         },
         steps: {

@@ -39,14 +39,14 @@ const React = __importStar(require("react"));
 const react_1 = require("@chakra-ui/react");
 const Video_1 = require("../Video");
 const Tutorial = (_a) => {
-    var { title, description, video, button1, button2 } = _a, props = __rest(_a, ["title", "description", "video", "button1", "button2"]);
+    var { title, description, video, button1, button2, buttonsWrap } = _a, props = __rest(_a, ["title", "description", "video", "button1", "button2", "buttonsWrap"]);
     return (React.createElement(react_1.Box, Object.assign({ width: "100%" }, props),
         React.createElement(react_1.VStack, { align: "stretch", spacing: 3 },
             video && React.createElement(Video_1.Video, Object.assign({}, video)),
             React.createElement(react_1.Heading, { size: "md" }, title),
             description && React.createElement(react_1.Box, null, description),
-            React.createElement(react_1.HStack, { spacing: 3 },
-                button1 && React.createElement(react_1.Button, Object.assign({}, button1)),
-                button2 && React.createElement(react_1.Button, Object.assign({}, button2))))));
+            React.createElement(react_1.HStack, { spacing: 3, wrap: buttonsWrap },
+                button1 && React.createElement(react_1.Button, Object.assign({ width: "full" }, button1)),
+                button2 && React.createElement(react_1.Button, Object.assign({ width: "full" }, button2))))));
 };
 exports.Tutorial = Tutorial;
