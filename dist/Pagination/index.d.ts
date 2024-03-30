@@ -3,7 +3,7 @@ interface PaginationProps {
     next: string | null;
     previous: string | null;
     totalCount: number;
-    onChange: (newUrl: string) => void;
+    onChange: (urlSearch: URLSearchParams) => void;
     pageCount?: number;
     itemsName?: string;
 }

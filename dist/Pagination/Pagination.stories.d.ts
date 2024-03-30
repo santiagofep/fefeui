@@ -5,3 +5,4 @@ export default meta;
 type Story = StoryObj<typeof Pagination>;
 export declare const Default: Story;
 export declare const NoPrevious: Story;
+export declare const NoNext: Story;

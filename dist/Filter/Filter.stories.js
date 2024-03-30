@@ -9,8 +9,11 @@ const meta = {
 exports.default = meta;
 exports.Default = {
     args: {
-        initialPath: "/api/?search=hello&has_errors=true&status=active&has_invoices=true&from_date=none&to_date=none",
-        showSearch: true,
+        urlSearch: "?orders=hello&has_errors=true&status=active&has_invoices=true&from_date=none&to_date=none",
+        searchBar: {
+            searchParam: "orders",
+            helperText: "Search for orders",
+        },
         options: [
             {
                 label: "Initial Date",
@@ -76,8 +79,8 @@ exports.Default = {
                 type: "select",
             },
         ],
-        onChange: (newFilterUrl) => {
-            console.log("Filter changed", newFilterUrl);
+        onChange: (urlSearch) => {
+            console.log("Filter changed", urlSearch.toString());
         },
     },
 };

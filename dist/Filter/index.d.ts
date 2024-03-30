@@ -1,6 +1,11 @@
 import * as React from "react";
 interface FilterProps {
-    showSearch?: boolean;
+    urlSearch: string;
+    onChange: (urlSearch: URLSearchParams) => void;
+    searchBar?: {
+        searchParam: string;
+        helperText?: string;
+    };
     options?: {
         label: string;
         key: string;
@@ -10,8 +15,6 @@ interface FilterProps {
         }[];
         type: "select" | "date";
     }[];
-    initialPath: string;
-    onChange: (filter: string) => void;
 }
 export declare const Filter: React.FC<FilterProps>;
 export {};

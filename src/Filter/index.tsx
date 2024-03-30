@@ -2,7 +2,6 @@ import * as React from "react";
 import { useState, useEffect } from "react";
 
 import {
-  Box,
   FormControl,
   FormLabel,
   HStack,
@@ -10,16 +9,19 @@ import {
   InputGroup,
   InputRightAddon,
   VStack,
+  FormHelperText,
+  Select,
 } from "@chakra-ui/react";
 
 import { MdSearch } from "react-icons/md";
 
-import { pathWithSearch } from "../utils";
-
-import { Select } from "../index";
-
 interface FilterProps {
-  showSearch?: boolean;
+  urlSearch: string;
+  onChange: (urlSearch: URLSearchParams) => void;
+  searchBar?: {
+    searchParam: string;
+    helperText?: string;
+  };
   options?: {
     label: string;
     key: string;
@@ -29,36 +31,27 @@ interface FilterProps {
     }[];
     type: "select" | "date";
   }[];
-  initialPath: string;
-  onChange: (filter: string) => void;
 }
 
 export const Filter: React.FC<FilterProps> = ({
-  showSearch = true,
-  initialPath = "",
+  searchBar,
+  urlSearch = "",
   options = [],
   onChange,
 }) => {
-  const [filterValues, setFilterValues] = useState<any>({
-    search: "",
-  });
-
-  const addOriginToPath = (path: string) => {
-    return new URL(path, window.location.origin);
-  };
+  let initialFilterValues = searchBar ? { [searchBar.searchParam]: "" } : {};
+  const [filterValues, setFilterValues] = useState<any>(initialFilterValues);
 
   useEffect(() => {
-    if (initialPath) {
-      const url = addOriginToPath(initialPath);
-
-      const searchParams = url.searchParams;
+    if (urlSearch) {
+      const searchParams = new URLSearchParams(urlSearch);
       const values: any = {};
       searchParams.forEach((value, key) => {
         values[key] = value;
       });
       setFilterValues(values);
     }
-  }, [initialPath]);
+  }, [urlSearch]);
 
   const setNewValue = (key: string, value: string) => {
     setFilterValues({
@@ -69,64 +62,72 @@ export const Filter: React.FC<FilterProps> = ({
   };
 
   useEffect(() => {
-    let newValue = addOriginToPath(initialPath);
+    const searchParams = new URLSearchParams();
     Object.keys(filterValues).forEach((key) => {
-      newValue.searchParams.set(key, filterValues[key]);
+      searchParams.set(key, filterValues[key]);
     });
-    onChange(pathWithSearch(newValue.toString()));
+    onChange(searchParams);
   }, [filterValues]);
 
   return (
     <VStack align={"stretch"}>
-      {showSearch && (
+      {searchBar && (
         <FormControl>
           <InputGroup>
             <Input
-              value={filterValues.search}
+              value={filterValues[searchBar.searchParam]}
               onChange={(e) => {
-                setNewValue("search", e.target.value);
+                setNewValue(searchBar.searchParam, e.target.value);
               }}
             />
             <InputRightAddon>
               <MdSearch />
             </InputRightAddon>
           </InputGroup>
+          {searchBar.helperText && (
+            <FormHelperText>{searchBar.helperText}</FormHelperText>
+          )}
         </FormControl>
       )}
       {options.length > 0 && (
         <HStack align={"stretch"}>
           {options.map((option: any, index: number) => {
-            if (Object.keys(filterValues).includes(option.key) == false) {
-              return null;
-            }
             if (option.type === "select") {
               return (
-                <Box key={index}>
+                <FormControl key={index}>
+                  <FormLabel fontSize={"xs"} marginBottom={"sm"}>
+                    {option.label}
+                  </FormLabel>
                   <Select
-                    label={option.label}
-                    key={index}
-                    options={option.values || []}
+                    size={"xs"}
                     value={filterValues[option.key] || ""}
-                    onChange={(newValue) => {
-                      setNewValue(option.key, newValue);
+                    onChange={(e) => {
+                      setNewValue(option.key, e.target.value);
                     }}
-                  />
-                </Box>
+                  >
+                    {option.values?.map((value: any) => (
+                      <option key={value.value} value={value.value}>
+                        {value.label}
+                      </option>
+                    ))}
+                  </Select>
+                </FormControl>
               );
             } else if (option.type === "date") {
               return (
-                <Box key={index}>
-                  <FormControl>
-                    <FormLabel>{option.label}</FormLabel>
-                    <Input
-                      type={"date"}
-                      value={filterValues[option.key] || ""}
-                      onChange={(e) => {
-                        setNewValue(option.key, e.target.value);
-                      }}
-                    />
-                  </FormControl>
-                </Box>
+                <FormControl key={index}>
+                  <FormLabel fontSize={"xs"} marginBottom={"sm"}>
+                    {option.label}
+                  </FormLabel>
+                  <Input
+                    size={"xs"}
+                    type={"date"}
+                    value={filterValues[option.key] || ""}
+                    onChange={(e) => {
+                      setNewValue(option.key, e.target.value);
+                    }}
+                  />
+                </FormControl>
               );
             }
             return null;
