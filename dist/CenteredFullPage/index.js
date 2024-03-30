@@ -38,11 +38,10 @@ exports.CenteredFullPage = void 0;
 const react_1 = require("@chakra-ui/react");
 const React = __importStar(require("react"));
 const CenteredFullPage = (_a) => {
-    var { children, variant } = _a, rest = __rest(_a, ["children", "variant"]);
+    var { children, variant, contentMaxWidth = "container.lg" } = _a, rest = __rest(_a, ["children", "variant", "contentMaxWidth"]);
     const styles = (0, react_1.useMultiStyleConfig)("CenteredFullPage", { variant });
-    console.log(styles);
     return (React.createElement(react_1.Box, Object.assign({ __css: styles.wrapper }, rest),
         React.createElement(react_1.Center, { sx: styles.center },
-            React.createElement(react_1.Container, { sx: styles.inner }, children))));
+            React.createElement(react_1.Container, { sx: styles.inner, maxW: contentMaxWidth }, children))));
 };
 exports.CenteredFullPage = CenteredFullPage;
