@@ -1,7 +1,8 @@
-import { extendTheme, defineStyleConfig, VStack } from "@chakra-ui/react";
+import { extendTheme, defineStyleConfig, VStack, Td } from "@chakra-ui/react";
 
 import { CenteredFullPage } from "./CenteredFullPage/styleConfig";
 import { TutorialCard } from "./TutorialCard/styleConfig";
+import { FefeTable } from "./Table/styleConfig";
 
 export const theme = extendTheme({
   colors: {
@@ -21,6 +22,7 @@ export const theme = extendTheme({
   components: {
     CenteredFullPage,
     TutorialCard,
+    FefeTable,
     Button: {
       baseStyle: {},
       defaultProps: {

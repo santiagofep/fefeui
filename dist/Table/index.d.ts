@@ -1,20 +1,22 @@
 import * as React from "react";
-import { Table as ChakraTable } from "@chakra-ui/react";
+import { FlexProps, TableProps as ChakraTableProps } from "@chakra-ui/react";
 interface TableProps {
     headings: {
         key: string;
-        title: string;
+        title: React.ReactNode;
         rightAddon?: React.ReactNode;
-        align?: "left" | "center" | "right";
+        justify?: FlexProps["justify"];
+        padding?: FlexProps["padding"];
     }[];
     rows: {
         [key: string]: {
             value: any;
         };
     }[];
-    tableProps?: React.ComponentProps<typeof ChakraTable>;
     isSkeleton?: boolean;
     skeletonRows?: number;
+    variant?: string;
+    size?: ChakraTableProps["size"];
 }
 export declare const Table: React.FC<TableProps>;
 export {};

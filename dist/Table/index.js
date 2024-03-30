@@ -26,18 +26,20 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Table = void 0;
 const React = __importStar(require("react"));
 const react_1 = require("@chakra-ui/react");
-const Table = ({ headings, rows, tableProps, isSkeleton, skeletonRows = 5, }) => {
+const Table = ({ headings, rows, isSkeleton, skeletonRows = 5, variant, size, }) => {
+    const styles = (0, react_1.useMultiStyleConfig)("FefeTable", { variant });
     const skeletonArray = Array.from({ length: skeletonRows }, (_, index) => index);
-    return (React.createElement(react_1.Table, Object.assign({}, tableProps, { border: "1px solid", borderColor: "gray.200", size: "md" }),
+    return (React.createElement(react_1.Table, { size: size },
         React.createElement(react_1.Thead, { background: "gray.50" },
-            React.createElement("tr", null, headings.map((heading) => (React.createElement(react_1.Th, { key: heading.key },
-                React.createElement(react_1.Flex, { alignItems: "center", align: heading.align },
+            React.createElement("tr", null, headings.map((heading) => (React.createElement(react_1.Th, { key: heading.key, padding: heading.padding },
+                React.createElement(react_1.Flex, { alignItems: "center", width: "full", justify: heading.justify },
                     heading.title,
                     " ",
                     heading.rightAddon && (React.createElement(react_1.Box, { marginLeft: "0.25rem" }, heading.rightAddon)))))))),
         React.createElement(react_1.Tbody, null, isSkeleton ? (skeletonArray.map((index) => (React.createElement(react_1.Tr, { key: index }, headings.map((heading, index) => (React.createElement(react_1.Td, { key: index },
             React.createElement(react_1.Skeleton, { height: "20px" })))))))) : (React.createElement(React.Fragment, null, rows.map((row, index) => {
-            return (React.createElement(react_1.Tr, { key: index }, headings.map((heading, index) => (React.createElement(react_1.Td, { key: index, align: heading.align }, row[heading.key].value)))));
+            return (React.createElement(react_1.Tr, { key: index }, headings.map((heading, index) => (React.createElement(react_1.Td, { key: index, padding: heading.padding },
+                React.createElement(react_1.Flex, { w: "full", justify: heading.justify }, row[heading.key].value))))));
         }))))));
 };
 exports.Table = Table;
