@@ -5,7 +5,7 @@ import { ButtonProps } from "../types";
 import { Box, Button } from "@chakra-ui/react";
 
 interface RightButtonProps extends ButtonProps {
-  children: string;
+  children: React.ReactNode;
 }
 
 export const RightButton: React.FC<RightButtonProps> = (props) => {
