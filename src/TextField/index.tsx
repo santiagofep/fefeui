@@ -7,6 +7,7 @@ import {
   Input,
   FormHelperText,
   Skeleton,
+  InputProps,
 } from "@chakra-ui/react";
 
 interface TextFieldProps {
@@ -14,7 +15,7 @@ interface TextFieldProps {
   placeholder: string;
   value: string;
   onChange: (value: string) => void;
-  type: "text" | "email" | "password";
+  type: InputProps["type"];
   helperText?: string;
   isSkeleton?: boolean;
   required?: boolean;
