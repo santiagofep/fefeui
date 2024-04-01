@@ -4,7 +4,9 @@ import { useState, useEffect } from "react";
 import { ButtonProps } from "../types";
 import { Box, Button } from "@chakra-ui/react";
 
-interface RightButtonProps extends ButtonProps {}
+interface RightButtonProps extends ButtonProps {
+  children: string;
+}
 
 export const RightButton: React.FC<RightButtonProps> = (props) => {
   return (
