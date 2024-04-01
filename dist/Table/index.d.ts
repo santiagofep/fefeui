@@ -15,8 +15,10 @@ interface TableProps {
     }[];
     isSkeleton?: boolean;
     skeletonRows?: number;
+    skeletonHeight?: string;
     variant?: string;
     size?: ChakraTableProps["size"];
+    headingReplace?: React.ReactNode;
 }
 export declare const Table: React.FC<TableProps>;
 export {};

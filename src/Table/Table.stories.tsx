@@ -4,7 +4,16 @@ import { Meta, StoryObj } from "@storybook/react";
 
 import { Table } from "./index";
 import { MdPerson } from "react-icons/md";
-import { Checkbox, HStack, IconButton, Tag, VStack } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Checkbox,
+  Flex,
+  HStack,
+  IconButton,
+  Tag,
+  VStack,
+} from "@chakra-ui/react";
 
 const meta: Meta<typeof Table> = {
   component: Table,
@@ -57,6 +66,7 @@ export const IsSkeleton: Story = {
       },
     ],
     isSkeleton: true,
+    skeletonHeight: "30px",
   },
 };
 
@@ -65,7 +75,7 @@ export const ComplexTable: Story = {
     size: "sm",
     variant: "compact",
     headings: [
-      { title: <Checkbox />, key: "checkbox", padding: "0 0 0 1rem" },
+      { title: <Checkbox />, key: "checkbox", padding: "1rem 0 1rem 1rem" },
       { title: "Name", key: "name", rightAddon: <MdPerson size={15} /> },
       { title: "Age", key: "age" },
       { title: "Email", key: "email" },
@@ -115,5 +125,14 @@ export const ComplexTable: Story = {
         },
       };
     }),
+    headingReplace: (
+      <Flex justifyContent={"space-between"}>
+        <Box>Replace</Box>
+        <HStack>
+          <Button variant={"outline"}>Button</Button>
+          <Button variant={"outline"}>Button</Button>
+        </HStack>
+      </Flex>
+    ),
   },
 };

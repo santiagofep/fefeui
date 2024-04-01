@@ -31,8 +31,10 @@ interface TableProps {
   }[];
   isSkeleton?: boolean;
   skeletonRows?: number;
+  skeletonHeight?: string;
   variant?: string;
   size?: ChakraTableProps["size"];
+  headingReplace?: React.ReactNode;
 }
 
 export const Table: React.FC<TableProps> = ({
@@ -40,8 +42,10 @@ export const Table: React.FC<TableProps> = ({
   rows,
   isSkeleton,
   skeletonRows = 5,
+  skeletonHeight = "20px",
   variant,
   size,
+  headingReplace,
 }) => {
   const styles = useMultiStyleConfig("FefeTable", { variant });
 
@@ -50,55 +54,70 @@ export const Table: React.FC<TableProps> = ({
     (_, index) => index
   );
   return (
-    <ChakraTable size={size}>
-      <Thead background={"gray.50"}>
-        <tr>
-          {headings.map((heading) => (
-            <Th key={heading.key} padding={heading.padding}>
-              <Flex
-                alignItems={"center"}
-                width="full"
-                justify={heading.justify}
-              >
-                {heading.title}{" "}
-                {heading.rightAddon && (
-                  <Box marginLeft={"0.25rem"}>{heading.rightAddon}</Box>
-                )}
-              </Flex>
-            </Th>
-          ))}
-        </tr>
-      </Thead>
-
-      <Tbody>
-        {isSkeleton ? (
-          skeletonArray.map((index) => (
-            <Tr key={index}>
-              {headings.map((heading, index) => (
-                <Td key={index}>
-                  <Skeleton height={"20px"} />
-                </Td>
+    <Box position={"relative"}>
+      {headingReplace && (
+        <Box
+          position={"sticky"}
+          top={0}
+          left={0}
+          right={0}
+          zIndex={1}
+          background={"white"}
+        >
+          {headingReplace}
+        </Box>
+      )}
+      <ChakraTable size={size}>
+        {!headingReplace && (
+          <Thead background={"gray.50"}>
+            <tr>
+              {headings.map((heading) => (
+                <Th key={heading.key} padding={heading.padding}>
+                  <Flex
+                    alignItems={"center"}
+                    width="full"
+                    justify={heading.justify}
+                  >
+                    {heading.title}{" "}
+                    {heading.rightAddon && (
+                      <Box marginLeft={"0.25rem"}>{heading.rightAddon}</Box>
+                    )}
+                  </Flex>
+                </Th>
               ))}
-            </Tr>
-          ))
-        ) : (
-          <>
-            {rows.map((row, index) => {
-              return (
-                <Tr key={index}>
-                  {headings.map((heading, index) => (
-                    <Td key={index} padding={heading.padding}>
-                      <Flex w={"full"} justify={heading.justify}>
-                        {row[heading.key].value}
-                      </Flex>
-                    </Td>
-                  ))}
-                </Tr>
-              );
-            })}
-          </>
+            </tr>
+          </Thead>
         )}
-      </Tbody>
-    </ChakraTable>
+        <Tbody>
+          {isSkeleton ? (
+            skeletonArray.map((index) => (
+              <Tr key={index}>
+                {headings.map((heading, index) => (
+                  <Td key={index}>
+                    <Skeleton height={skeletonHeight} />
+                  </Td>
+                ))}
+              </Tr>
+            ))
+          ) : (
+            <>
+              {rows.map((row, index) => {
+                return (
+                  <Tr key={index}>
+                    {headings.map((heading, index) => (
+                      <Td key={index} padding={heading.padding}>
+                        <Flex w={"full"} justify={heading.justify}>
+                          {row[heading.key].value}
+                        </Flex>
+                      </Td>
+                    ))}
+                  </Tr>
+                );
+              })}
+            </>
+          )}
+        </Tbody>
+      </ChakraTable>
+    </Box>
   );
 };

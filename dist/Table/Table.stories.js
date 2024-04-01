@@ -74,6 +74,7 @@ exports.IsSkeleton = {
             },
         ],
         isSkeleton: true,
+        skeletonHeight: "30px",
     },
 };
 exports.ComplexTable = {
@@ -81,7 +82,7 @@ exports.ComplexTable = {
         size: "sm",
         variant: "compact",
         headings: [
-            { title: React.createElement(react_1.Checkbox, null), key: "checkbox", padding: "0 0 0 1rem" },
+            { title: React.createElement(react_1.Checkbox, null), key: "checkbox", padding: "1rem 0 1rem 1rem" },
             { title: "Name", key: "name", rightAddon: React.createElement(md_1.MdPerson, { size: 15 }) },
             { title: "Age", key: "age" },
             { title: "Email", key: "email" },
@@ -113,5 +114,10 @@ exports.ComplexTable = {
                 },
             };
         }),
+        headingReplace: (React.createElement(react_1.Flex, { justifyContent: "space-between" },
+            React.createElement(react_1.Box, null, "Replace"),
+            React.createElement(react_1.HStack, null,
+                React.createElement(react_1.Button, { variant: "outline" }, "Button"),
+                React.createElement(react_1.Button, { variant: "outline" }, "Button")))),
     },
 };
