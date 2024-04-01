@@ -27,8 +27,8 @@ exports.TextFieldButton = void 0;
 const React = __importStar(require("react"));
 const react_1 = require("react");
 const react_2 = require("@chakra-ui/react");
-const TextFieldButton = ({ label, buttonLabel, onSubmit, isLoading, placeholder, isSkeleton, }) => {
-    const [value, setValue] = (0, react_1.useState)("");
+const TextFieldButton = ({ label, buttonLabel, onSubmit, isLoading, placeholder, isSkeleton, initialValue = "", }) => {
+    const [value, setValue] = (0, react_1.useState)(initialValue);
     return (React.createElement(react_2.Skeleton, { isLoaded: !isSkeleton },
         React.createElement("form", { onSubmit: (e) => {
                 e.preventDefault();

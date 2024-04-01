@@ -18,6 +18,7 @@ interface TextFieldButtonProps {
   isLoading?: boolean;
   placeholder?: string;
   isSkeleton?: boolean;
+  initialValue?: string;
 }
 
 export const TextFieldButton: React.FC<TextFieldButtonProps> = ({
@@ -27,8 +28,9 @@ export const TextFieldButton: React.FC<TextFieldButtonProps> = ({
   isLoading,
   placeholder,
   isSkeleton,
+  initialValue = "",
 }) => {
-  const [value, setValue] = useState<string>("");
+  const [value, setValue] = useState<string>(initialValue);
   return (
     <Skeleton isLoaded={!isSkeleton}>
       <form
