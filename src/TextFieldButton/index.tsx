@@ -19,6 +19,7 @@ interface TextFieldButtonProps {
   placeholder?: string;
   isSkeleton?: boolean;
   initialValue?: string;
+  clearValueOnSubmit?: boolean;
 }
 
 export const TextFieldButton: React.FC<TextFieldButtonProps> = ({
@@ -29,6 +30,7 @@ export const TextFieldButton: React.FC<TextFieldButtonProps> = ({
   placeholder,
   isSkeleton,
   initialValue = "",
+  clearValueOnSubmit = true,
 }) => {
   const [value, setValue] = useState<string>(initialValue);
 
@@ -41,8 +43,10 @@ export const TextFieldButton: React.FC<TextFieldButtonProps> = ({
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          setValue("");
           onSubmit(value);
+          if (clearValueOnSubmit) {
+            setValue("");
+          }
         }}
       >
         <Flex>

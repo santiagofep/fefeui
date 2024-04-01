@@ -7,6 +7,7 @@ interface TextFieldButtonProps {
     placeholder?: string;
     isSkeleton?: boolean;
     initialValue?: string;
+    clearValueOnSubmit?: boolean;
 }
 export declare const TextFieldButton: React.FC<TextFieldButtonProps>;
 export {};
