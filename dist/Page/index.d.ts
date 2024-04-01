@@ -5,7 +5,8 @@ interface PageProps {
     description: string;
     children?: React.ReactNode;
     maxWidth?: ContainerProps["maxWidth"];
-    goBack?: () => void;
+    onGoBack?: () => void;
+    actions?: React.ReactNode;
 }
 export declare const Page: React.FC<PageProps>;
 export {};

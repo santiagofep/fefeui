@@ -5,3 +5,4 @@ export default meta;
 type Story = StoryObj<typeof Page>;
 export declare const Default: Story;
 export declare const GoBack: Story;
+export declare const Actions: Story;

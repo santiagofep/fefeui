@@ -19,7 +19,8 @@ interface PageProps {
   description: string;
   children?: React.ReactNode;
   maxWidth?: ContainerProps["maxWidth"];
-  goBack?: () => void;
+  onGoBack?: () => void;
+  actions?: React.ReactNode;
 }
 
 export const Page: React.FC<PageProps> = ({
@@ -27,23 +28,27 @@ export const Page: React.FC<PageProps> = ({
   description,
   children,
   maxWidth = "container.xl",
-  goBack,
+  onGoBack,
+  actions,
 }) => {
   return (
     <Container maxWidth={maxWidth}>
       <VStack align={"stretch"}>
-        <Flex alignItems={"center"}>
-          {goBack && (
-            <IconButton
-              aria-label="Go back"
-              onClick={goBack}
-              marginRight={"0.5rem"}
-              size={"sm"}
-            >
-              <MdArrowBack />
-            </IconButton>
-          )}
-          <Heading size="lg">{title}</Heading>
+        <Flex alignItems={"center"} justifyContent={"space-between"}>
+          <Flex alignItems={"center"}>
+            {onGoBack && (
+              <IconButton
+                aria-label="Go back"
+                onClick={onGoBack}
+                marginRight={"0.5rem"}
+                size={"sm"}
+              >
+                <MdArrowBack />
+              </IconButton>
+            )}
+            <Heading size="lg">{title}</Heading>
+          </Flex>
+          <Box>{actions && actions}</Box>
         </Flex>
         <Text>{description}</Text>
         <Divider />
