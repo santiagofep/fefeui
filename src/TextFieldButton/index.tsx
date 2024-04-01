@@ -31,6 +31,11 @@ export const TextFieldButton: React.FC<TextFieldButtonProps> = ({
   initialValue = "",
 }) => {
   const [value, setValue] = useState<string>(initialValue);
+
+  useEffect(() => {
+    setValue(initialValue);
+  }, [initialValue]);
+
   return (
     <Skeleton isLoaded={!isSkeleton}>
       <form
