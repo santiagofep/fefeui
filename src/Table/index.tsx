@@ -62,7 +62,6 @@ export const Table: React.FC<TableProps> = ({
     (_, index) => index
   );
   const itemsCount = rows.length;
-  console.log(headingReplace);
 
   return (
     <Box position={"relative"}>

@@ -30,7 +30,6 @@ const Table = ({ headings, rows, isSkeleton, skeletonRows = 5, skeletonHeight = 
     const styles = (0, react_1.useMultiStyleConfig)("FefeTable", { variant });
     const skeletonArray = Array.from({ length: skeletonRows }, (_, index) => index);
     const itemsCount = rows.length;
-    console.log(headingReplace);
     return (React.createElement(react_1.Box, { position: "relative" },
         headingReplace && (React.createElement(react_1.Box, { position: "sticky", top: 0, left: 0, right: 0, zIndex: 1, background: "white" }, headingReplace)),
         React.createElement(react_1.Table, { size: size },
