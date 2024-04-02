@@ -31,6 +31,7 @@ const md_1 = require("react-icons/md");
 const Filter = ({ searchBar, urlSearch = "", options = [], onChange, }) => {
     let initialFilterValues = searchBar ? { [searchBar.searchParam]: "" } : {};
     const [filterValues, setFilterValues] = (0, react_1.useState)(initialFilterValues);
+    const [initialFilterLoaded, setInitialFilterLoaded] = (0, react_1.useState)(false);
     (0, react_1.useEffect)(() => {
         if (urlSearch) {
             const searchParams = new URLSearchParams(urlSearch);
@@ -45,6 +46,10 @@ const Filter = ({ searchBar, urlSearch = "", options = [], onChange, }) => {
         setFilterValues(Object.assign(Object.assign({}, filterValues), { [key]: value, page: "1" }));
     };
     (0, react_1.useEffect)(() => {
+        if (!initialFilterLoaded) {
+            setInitialFilterLoaded(true);
+            return;
+        }
         const searchParams = new URLSearchParams();
         Object.keys(filterValues).forEach((key) => {
             searchParams.set(key, filterValues[key]);

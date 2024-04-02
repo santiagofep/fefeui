@@ -41,6 +41,7 @@ export const Filter: React.FC<FilterProps> = ({
 }) => {
   let initialFilterValues = searchBar ? { [searchBar.searchParam]: "" } : {};
   const [filterValues, setFilterValues] = useState<any>(initialFilterValues);
+  const [initialFilterLoaded, setInitialFilterLoaded] = useState(false);
 
   useEffect(() => {
     if (urlSearch) {
@@ -62,6 +63,10 @@ export const Filter: React.FC<FilterProps> = ({
   };
 
   useEffect(() => {
+    if (!initialFilterLoaded) {
+      setInitialFilterLoaded(true);
+      return;
+    }
     const searchParams = new URLSearchParams();
     Object.keys(filterValues).forEach((key) => {
       searchParams.set(key, filterValues[key]);
