@@ -53,18 +53,7 @@ export const IsSkeleton: Story = {
       { title: "Age", key: "age" },
       { title: "Email", key: "email" },
     ],
-    rows: [
-      {
-        name: { value: "John Doe" },
-        age: { value: 30 },
-        email: { value: "email@test.com" },
-      },
-      {
-        name: { value: "Jane Doe" },
-        age: { value: 25 },
-        email: { value: "email@test.com" },
-      },
-    ],
+    rows: [],
     isSkeleton: true,
     skeletonHeight: "30px",
   },
@@ -134,5 +123,26 @@ export const ComplexTable: Story = {
         </HStack>
       </Flex>
     ),
+  },
+};
+
+export const Empty: Story = {
+  args: {
+    size: "sm",
+    variant: "compact",
+    headings: [
+      { title: <Checkbox />, key: "checkbox", padding: "1rem 0 1rem 1rem" },
+      { title: "Name", key: "name", rightAddon: <MdPerson size={15} /> },
+      { title: "Age", key: "age" },
+      { title: "Email", key: "email" },
+      { title: "Email", key: "email2" },
+      { title: "Email", key: "email3", justify: "center" },
+      { title: "Actions", key: "actions", justify: "flex-end" },
+    ],
+    rows: [],
+    emptyData: {
+      title: "No data",
+      description: "There is no data to display",
+    },
   },
 };

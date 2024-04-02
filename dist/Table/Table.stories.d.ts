@@ -6,3 +6,4 @@ type Story = StoryObj<typeof Table>;
 export declare const Default: Story;
 export declare const IsSkeleton: Story;
 export declare const ComplexTable: Story;
+export declare const Empty: Story;

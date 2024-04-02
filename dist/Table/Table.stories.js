@@ -23,7 +23,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ComplexTable = exports.IsSkeleton = exports.Default = void 0;
+exports.Empty = exports.ComplexTable = exports.IsSkeleton = exports.Default = void 0;
 const React = __importStar(require("react"));
 const index_1 = require("./index");
 const md_1 = require("react-icons/md");
@@ -61,18 +61,7 @@ exports.IsSkeleton = {
             { title: "Age", key: "age" },
             { title: "Email", key: "email" },
         ],
-        rows: [
-            {
-                name: { value: "John Doe" },
-                age: { value: 30 },
-                email: { value: "email@test.com" },
-            },
-            {
-                name: { value: "Jane Doe" },
-                age: { value: 25 },
-                email: { value: "email@test.com" },
-            },
-        ],
+        rows: [],
         isSkeleton: true,
         skeletonHeight: "30px",
     },
@@ -119,5 +108,25 @@ exports.ComplexTable = {
             React.createElement(react_1.HStack, null,
                 React.createElement(react_1.Button, { variant: "outline" }, "Button"),
                 React.createElement(react_1.Button, { variant: "outline" }, "Button")))),
+    },
+};
+exports.Empty = {
+    args: {
+        size: "sm",
+        variant: "compact",
+        headings: [
+            { title: React.createElement(react_1.Checkbox, null), key: "checkbox", padding: "1rem 0 1rem 1rem" },
+            { title: "Name", key: "name", rightAddon: React.createElement(md_1.MdPerson, { size: 15 }) },
+            { title: "Age", key: "age" },
+            { title: "Email", key: "email" },
+            { title: "Email", key: "email2" },
+            { title: "Email", key: "email3", justify: "center" },
+            { title: "Actions", key: "actions", justify: "flex-end" },
+        ],
+        rows: [],
+        emptyData: {
+            title: "No data",
+            description: "There is no data to display",
+        },
     },
 };

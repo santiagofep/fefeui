@@ -19,6 +19,10 @@ interface TableProps {
     variant?: string;
     size?: ChakraTableProps["size"];
     headingReplace?: React.ReactNode;
+    emptyData?: {
+        title: string;
+        description: string;
+    };
 }
 export declare const Table: React.FC<TableProps>;
 export {};

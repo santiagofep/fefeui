@@ -14,6 +14,9 @@ import {
   FlexProps,
   useMultiStyleConfig,
   TableProps as ChakraTableProps,
+  Center,
+  VStack,
+  Heading,
 } from "@chakra-ui/react";
 
 interface TableProps {
@@ -35,6 +38,10 @@ interface TableProps {
   variant?: string;
   size?: ChakraTableProps["size"];
   headingReplace?: React.ReactNode;
+  emptyData?: {
+    title: string;
+    description: string;
+  };
 }
 
 export const Table: React.FC<TableProps> = ({
@@ -46,6 +53,7 @@ export const Table: React.FC<TableProps> = ({
   variant,
   size,
   headingReplace,
+  emptyData,
 }) => {
   const styles = useMultiStyleConfig("FefeTable", { variant });
 
@@ -53,6 +61,9 @@ export const Table: React.FC<TableProps> = ({
     { length: skeletonRows },
     (_, index) => index
   );
+  const itemsCount = rows.length;
+  console.log(headingReplace);
+
   return (
     <Box position={"relative"}>
       {headingReplace && (
@@ -89,7 +100,7 @@ export const Table: React.FC<TableProps> = ({
           </Thead>
         )}
         <Tbody>
-          {isSkeleton ? (
+          {isSkeleton &&
             skeletonArray.map((index) => (
               <Tr key={index}>
                 {headings.map((heading, index) => (
@@ -98,8 +109,8 @@ export const Table: React.FC<TableProps> = ({
                   </Td>
                 ))}
               </Tr>
-            ))
-          ) : (
+            ))}
+          {!isSkeleton && (
             <>
               {rows.map((row, index) => {
                 return (
@@ -118,6 +129,14 @@ export const Table: React.FC<TableProps> = ({
           )}
         </Tbody>
       </ChakraTable>
+      {!isSkeleton && itemsCount === 0 && (
+        <Center border={"1px solid"} borderTop={0} borderColor={"gray.100"}>
+          <VStack my={20} spacing={0}>
+            <Heading size="md">{emptyData?.title}</Heading>
+            <Box>{emptyData?.description}</Box>
+          </VStack>
+        </Center>
+      )}
     </Box>
   );
 };
