@@ -19,6 +19,7 @@ export const Default: Story = {
     buttonLabel: "Submit",
     placeholder: "Enter your email",
     onSubmit: (value) => console.log(value),
+    helperText: "We'll never share your email.",
   },
 };
 

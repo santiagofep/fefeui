@@ -9,6 +9,7 @@ import {
   InputGroup,
   Button,
   Skeleton,
+  FormHelperText,
 } from "@chakra-ui/react";
 
 interface TextFieldButtonProps {
@@ -20,6 +21,7 @@ interface TextFieldButtonProps {
   isSkeleton?: boolean;
   initialValue?: string;
   clearValueOnSubmit?: boolean;
+  helperText?: string;
 }
 
 export const TextFieldButton: React.FC<TextFieldButtonProps> = ({
@@ -31,6 +33,7 @@ export const TextFieldButton: React.FC<TextFieldButtonProps> = ({
   isSkeleton,
   initialValue = "",
   clearValueOnSubmit = true,
+  helperText,
 }) => {
   const [value, setValue] = useState<string>(initialValue);
 
@@ -63,6 +66,7 @@ export const TextFieldButton: React.FC<TextFieldButtonProps> = ({
                 {buttonLabel}
               </Button>
             </InputGroup>
+            {helperText && <FormHelperText>{helperText}</FormHelperText>}
           </FormControl>
         </Flex>
       </form>
